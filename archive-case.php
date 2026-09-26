@@ -35,7 +35,7 @@ get_header();
 				<div class="cases-page-card__number"><?php echo esc_html( sprintf( '%02d', $index ) ); ?></div>
 				<div class="cases-page-card__content">
 					<span><?php echo esc_html( $case['type'] ?? '' ); ?></span>
-					<h2><?php the_title(); ?></h2>
+					<h3><?php the_title(); ?></h3>
 					<p><?php echo esc_html( $case['lead'] ?? '' ); ?></p>
 
 					<?php if ( ! empty( $case['work'] ) ) : ?>
