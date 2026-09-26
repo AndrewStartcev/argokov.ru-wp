@@ -1,0 +1,237 @@
+{
+  "key": "group_argokov_services",
+  "title": "Услуги — контент",
+  "fields": [
+    {
+      "key": "field_argokov_services_tab_hero",
+      "label": "Первый экран",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_services_hero_eyebrow",
+      "label": "Надзаголовок",
+      "name": "services_hero_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_services_hero_title",
+      "label": "H1 — основной текст",
+      "name": "services_hero_title",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_services_hero_accent",
+      "label": "H1 — акцент",
+      "name": "services_hero_title_accent",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_services_hero_text",
+      "label": "Описание",
+      "name": "services_hero_text",
+      "type": "textarea",
+      "rows": 4,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_services_tab_catalog",
+      "label": "Каталог",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_services_catalog_eyebrow",
+      "label": "Надзаголовок",
+      "name": "services_catalog_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_services_catalog_title",
+      "label": "H2",
+      "name": "services_catalog_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_services_catalog_copy",
+      "label": "Описание",
+      "name": "services_catalog_copy",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_services_filters",
+      "label": "Фильтры",
+      "name": "services_filters",
+      "type": "repeater",
+      "layout": "table",
+      "button_label": "Добавить",
+      "sub_fields": [
+        {
+          "key": "field_argokov_services_filter_key",
+          "label": "Ключ",
+          "name": "key",
+          "type": "text",
+          "wrapper": {
+            "width": "35"
+          }
+        },
+        {
+          "key": "field_argokov_services_filter_label",
+          "label": "Название",
+          "name": "label",
+          "type": "text",
+          "wrapper": {
+            "width": "65"
+          }
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_services_items",
+      "label": "Услуги",
+      "name": "services_items",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить услугу",
+      "sub_fields": [
+        {
+          "key": "field_argokov_services_item_number",
+          "label": "Номер",
+          "name": "number",
+          "type": "text",
+          "wrapper": {
+            "width": "10"
+          }
+        },
+        {
+          "key": "field_argokov_services_item_category",
+          "label": "Ключ категории",
+          "name": "category",
+          "type": "text",
+          "wrapper": {
+            "width": "20"
+          }
+        },
+        {
+          "key": "field_argokov_services_item_category_label",
+          "label": "Подпись категории",
+          "name": "category_label",
+          "type": "text",
+          "wrapper": {
+            "width": "20"
+          }
+        },
+        {
+          "key": "field_argokov_services_item_title",
+          "label": "H2",
+          "name": "title",
+          "type": "text",
+          "wrapper": {
+            "width": "50"
+          }
+        },
+        {
+          "key": "field_argokov_services_item_text",
+          "label": "Описание",
+          "name": "text",
+          "type": "textarea",
+          "rows": 3,
+          "new_lines": ""
+        },
+        {
+          "key": "field_argokov_services_item_tags",
+          "label": "Теги",
+          "name": "tags",
+          "type": "repeater",
+          "layout": "table",
+          "button_label": "Добавить",
+          "sub_fields": [
+            {
+              "key": "field_argokov_services_item_tag",
+              "label": "Тег",
+              "name": "text",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "key": "field_argokov_services_item_url",
+          "label": "Ссылка",
+          "name": "url",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_services_tab_cta",
+      "label": "CTA",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_services_cta_eyebrow",
+      "label": "Надзаголовок",
+      "name": "services_cta_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_services_cta_title",
+      "label": "H2",
+      "name": "services_cta_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_services_cta_text",
+      "label": "Описание",
+      "name": "services_cta_text",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_services_cta_button",
+      "label": "Текст кнопки",
+      "name": "services_cta_button_label",
+      "type": "text"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "page-services.php"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "the_content",
+    "excerpt",
+    "discussion",
+    "comments",
+    "revisions",
+    "author",
+    "format",
+    "featured_image",
+    "categories",
+    "tags",
+    "send-trackbacks"
+  ],
+  "active": true,
+  "description": "Структурный каталог услуг.",
+  "show_in_rest": 0,
+  "modified": 1790397000
+}
