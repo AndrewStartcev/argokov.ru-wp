@@ -23,6 +23,17 @@ while ( have_posts() ) :
 		)
 	);
 
+	$service_url_map = array(
+		'Корпоративные сайты'          => '/services/development/corporate-sites/',
+		'Интернет-магазины'            => '/services/development/internet-shops/',
+		'Веб-сервисы и кабинеты'       => '/services/development/web-services/',
+		'Техническая поддержка сайтов' => '/services/support/',
+		'Разовая доработка'             => '/services/support/one-time-improvement/',
+		'Приём чужого проекта'          => '/services/support/project-takeover/',
+		'Технические задачи SEO'        => '/services/development/technical-seo/',
+		'CRM, 1С и внешние сервисы'     => '/services/development/integrations/',
+	);
+
 	$items = argokov_rows(
 		'services_items',
 		array(
@@ -128,12 +139,18 @@ while ( have_posts() ) :
 
 		<div class="services-grid" aria-live="polite">
 			<?php foreach ( $items as $item ) : ?>
+				<?php
+				$item_title = $item['title'] ?? '';
+				$item_url   = isset( $service_url_map[ $item_title ] )
+					? $service_url_map[ $item_title ]
+					: ( $item['url'] ?? '' );
+				?>
 				<article class="service-catalog-card" data-category="<?php echo esc_attr( $item['category'] ?? '' ); ?>">
 					<div class="service-catalog-card__top"><span><?php echo esc_html( $item['number'] ?? '' ); ?></span><small><?php echo esc_html( $item['category_label'] ?? '' ); ?></small></div>
-					<h2><?php echo esc_html( $item['title'] ?? '' ); ?></h2>
+					<h3><?php echo esc_html( $item_title ); ?></h3>
 					<p><?php echo esc_html( $item['text'] ?? '' ); ?></p>
 					<?php if ( ! empty( $item['tags'] ) && is_array( $item['tags'] ) ) : ?><div class="service-catalog-card__tags"><?php foreach ( $item['tags'] as $tag ) : ?><span><?php echo esc_html( $tag['text'] ?? '' ); ?></span><?php endforeach; ?></div><?php endif; ?>
-					<?php if ( ! empty( $item['url'] ) ) : ?><a href="<?php echo esc_url( home_url( $item['url'] ) ); ?>">Подробнее <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a><?php endif; ?>
+					<?php if ( $item_url ) : ?><a href="<?php echo esc_url( home_url( $item_url ) ); ?>">Подробнее <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a><?php endif; ?>
 				</article>
 			<?php endforeach; ?>
 		</div>
