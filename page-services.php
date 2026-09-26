@@ -23,7 +23,83 @@ while ( have_posts() ) :
 		)
 	);
 
-	$items = argokov_rows( 'services_items', array() );
+	$items = argokov_rows(
+		'services_items',
+		array(
+			array(
+				'number' => '01',
+				'category' => 'development',
+				'category_label' => 'Разработка',
+				'title' => 'Корпоративные сайты',
+				'text' => 'Структура, дизайн, разработка, CMS, интеграции и запуск сайта для компании.',
+				'tags' => array( array( 'text' => 'WordPress' ), array( 'text' => 'Под ключ' ), array( 'text' => 'SEO-основа' ) ),
+				'url' => '/services/development/corporate-sites/',
+			),
+			array(
+				'number' => '02',
+				'category' => 'development',
+				'category_label' => 'Разработка',
+				'title' => 'Интернет-магазины',
+				'text' => 'Каталог, фильтры, корзина, оплата, доставка и обмен данными с учётной системой.',
+				'tags' => array( array( 'text' => 'WooCommerce' ), array( 'text' => '1С' ), array( 'text' => 'CRM' ) ),
+				'url' => '/services/development/internet-shops/',
+			),
+			array(
+				'number' => '03',
+				'category' => 'development',
+				'category_label' => 'Разработка',
+				'title' => 'Веб-сервисы и кабинеты',
+				'text' => 'Нестандартная бизнес-логика, роли пользователей, личные кабинеты и API.',
+				'tags' => array( array( 'text' => 'PHP' ), array( 'text' => 'React' ), array( 'text' => 'API' ) ),
+				'url' => '/services/development/web-services/',
+			),
+			array(
+				'number' => '04',
+				'category' => 'support',
+				'category_label' => 'Поддержка',
+				'title' => 'Техническая поддержка сайтов',
+				'text' => 'Регулярные задачи, контроль состояния, исправления и развитие готового проекта.',
+				'tags' => array( array( 'text' => 'WordPress' ), array( 'text' => 'Битрикс' ), array( 'text' => 'Custom' ) ),
+				'url' => '/services/support/',
+			),
+			array(
+				'number' => '05',
+				'category' => 'support',
+				'category_label' => 'Поддержка',
+				'title' => 'Разовая доработка',
+				'text' => 'Исправление ошибки, новый блок, функция или интеграция без обязательного абонентского договора.',
+				'tags' => array( array( 'text' => 'PHP' ), array( 'text' => 'JavaScript' ), array( 'text' => 'CMS' ) ),
+				'url' => '/services/support/one-time-improvement/',
+			),
+			array(
+				'number' => '06',
+				'category' => 'support',
+				'category_label' => 'Поддержка',
+				'title' => 'Приём чужого проекта',
+				'text' => 'Восстанавливаем техническую картину сайта без документации и прежней команды.',
+				'tags' => array( array( 'text' => 'Диагностика' ), array( 'text' => 'Аудит' ), array( 'text' => 'NDA' ) ),
+				'url' => '/services/support/project-takeover/',
+			),
+			array(
+				'number' => '07',
+				'category' => 'seo',
+				'category_label' => 'SEO и данные',
+				'title' => 'Технические задачи SEO',
+				'text' => 'Шаблоны метаданных, индексация, скорость, редиректы и масштабируемые посадочные страницы.',
+				'tags' => array( array( 'text' => 'SEO' ), array( 'text' => 'CWV' ), array( 'text' => 'Метаданные' ) ),
+				'url' => '/services/development/technical-seo/',
+			),
+			array(
+				'number' => '08',
+				'category' => 'integration',
+				'category_label' => 'Интеграции',
+				'title' => 'CRM, 1С и внешние сервисы',
+				'text' => 'Связываем сайт с CRM, оплатой, доставкой, телефонией и внешними API.',
+				'tags' => array( array( 'text' => 'REST API' ), array( 'text' => 'CRM' ), array( 'text' => '1С' ) ),
+				'url' => '/services/development/integrations/',
+			),
+		)
+	);
 	?>
 	<section class="inner-hero surface">
 		<nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Главная</a><span>/</span><span><?php the_title(); ?></span></nav>
