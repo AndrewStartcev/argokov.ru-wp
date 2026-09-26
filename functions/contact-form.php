@@ -7,6 +7,12 @@
 
 defined( 'ABSPATH' ) || exit;
 
+/**
+ * Keep the exact BEM markup from the form template.
+ * CF7 wpautop inserts <p>/<br> and breaks the two-column layout.
+ */
+add_filter( 'wpcf7_autop_or_not', '__return_false' );
+
 function argokov_contact_form_shortcode() {
 	return trim( (string) argokov_option( 'site_contact_form_shortcode', '' ) );
 }
