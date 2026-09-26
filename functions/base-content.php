@@ -404,6 +404,26 @@ function argokov_base_content_seed_menus() {
 	);
 }
 
+function argokov_base_content_seed_wp_options( $options ) {
+	if ( ! is_array( $options ) ) {
+		return;
+	}
+
+	$allowed = array( 'blogname', 'blogdescription' );
+
+	foreach ( $allowed as $option_name ) {
+		if ( ! array_key_exists( $option_name, $options ) ) {
+			continue;
+		}
+
+		$current = get_option( $option_name, '' );
+
+		if ( '' === trim( (string) $current ) || ( 'blogname' === $option_name && 'Мой сайт' === $current ) ) {
+			update_option( $option_name, sanitize_text_field( $options[ $option_name ] ) );
+		}
+	}
+}
+
 function argokov_seed_base_content() {
 	if ( ! is_admin() || wp_doing_ajax() || ! current_user_can( 'manage_options' ) ) {
 		return;
@@ -424,6 +444,10 @@ function argokov_seed_base_content() {
 
 	if ( $seeded_version >= $version ) {
 		return;
+	}
+
+	if ( ! empty( $data['wp_options'] ) ) {
+		argokov_base_content_seed_wp_options( $data['wp_options'] );
 	}
 
 	$entity_ids = array(
