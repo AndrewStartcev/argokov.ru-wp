@@ -1,6 +1,6 @@
 {
   "key": "group_argokov_support",
-  "title": "Поддержка — контент",
+  "title": "Направление услуг — Поддержка",
   "fields": [
     {
       "key": "field_argokov_support_tab_hero",
@@ -749,9 +749,9 @@
   "location": [
     [
       {
-        "param": "page_template",
+        "param": "service_direction_slug",
         "operator": "==",
-        "value": "page-support.php"
+        "value": "support"
       }
     ]
   ],
@@ -774,7 +774,7 @@
     "send-trackbacks"
   ],
   "active": true,
-  "description": "Структурный контент страницы технической поддержки.",
+  "description": "Контент страницы направления /services/support/.",
   "show_in_rest": 0,
-  "modified": 1790400000
+  "modified": 1790411001
 }
