@@ -1,0 +1,19 @@
+/*
+Theme Name: Argokov
+Theme URI: https://argokov.ru/
+Author: Андрей Старцев
+Author URI: https://starcev.agency/
+Description: WordPress-тема сайта «Аргоков». Интеграция чистой HTML-вёрстки без изменения исходной BEM-структуры.
+Version: 0.1.0
+Text Domain: argokov
+*/
+
+.admin-bar .site-shell {
+  min-height: calc(100vh - 32px);
+}
+
+@media (max-width: 782px) {
+  .admin-bar .site-shell {
+    min-height: calc(100vh - 46px);
+  }
+}
