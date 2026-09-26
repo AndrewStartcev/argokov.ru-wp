@@ -59,7 +59,7 @@ get_header();
 <div class="materials-grid">
 
 <article class="material-card">
-<a href="/materials/razrabotchik-perestal-otvechat/" class="material-card__cover" aria-label="Читать: Что делать, если прежний разработчик перестал отвечать"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/material-developer-silent-cover.png" alt="Рабочее место разработчика и открытый проект сайта" loading="lazy" decoding="async" sizes="(max-width: 720px) 100vw, 33vw" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/></a>
+<a href="/materials/razrabotchik-perestal-otvechat/" class="material-card__cover" aria-label="Читать: Что делать, если прежний разработчик перестал отвечать"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/material-developer-silent-cover.png" alt="Рабочее место разработчика и открытый проект сайта" loading="lazy" decoding="async" sizes="(max-width: 720px) 100vw, 33vw" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/></a>
 <div class="material-card__body">
 
 <div class="material-card__top">
@@ -89,7 +89,7 @@ get_header();
 <article class="material-card material-card--planned">
 
 <div class="material-card__cover">
-<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/material-support-cover.webp" alt="Рабочее место специалиста по технической поддержке сайтов" loading="lazy" decoding="async" sizes="(max-width: 720px) 100vw, 33vw" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/><span class="material-card__status">Готовим материал</span>
+<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/material-support-cover.webp" alt="Рабочее место специалиста по технической поддержке сайтов" loading="lazy" decoding="async" sizes="(max-width: 720px) 100vw, 33vw" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/><span class="material-card__status">Готовим материал</span>
 </div>
 
 <div class="material-card__body">
@@ -121,7 +121,7 @@ get_header();
 <article class="material-card material-card--planned">
 
 <div class="material-card__cover">
-<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/material-rebuild-cover.webp" alt="Сравнение доработки сайта и новой разработки" loading="lazy" decoding="async" sizes="(max-width: 720px) 100vw, 33vw" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/><span class="material-card__status">Готовим материал</span>
+<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/material-rebuild-cover.webp" alt="Сравнение доработки сайта и новой разработки" loading="lazy" decoding="async" sizes="(max-width: 720px) 100vw, 33vw" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/><span class="material-card__status">Готовим материал</span>
 </div>
 
 <div class="material-card__body">
