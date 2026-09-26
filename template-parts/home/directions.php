@@ -67,7 +67,15 @@ $directions = argokov_rows(
 			$image_alt   = argokov_image_alt( $image, $direction['title'] ?? '' );
 			$features    = isset( $direction['features'] ) && is_array( $direction['features'] ) ? $direction['features'] : array();
 			$anchor_id   = sanitize_html_class( $direction['id'] ?? '' );
-			$direction_url = ! empty( $direction['url'] ) ? home_url( $direction['url'] ) : '';
+			$direction_path = ! empty( $direction['url'] ) ? $direction['url'] : '';
+
+			if ( ! $direction_path && 'development' === $direction_id ) {
+				$direction_path = '/services/development/';
+			} elseif ( ! $direction_path && 'support' === $direction_id ) {
+				$direction_path = '/services/support/';
+			}
+
+			$direction_url = $direction_path ? home_url( $direction_path ) : '';
 			?>
 			<article class="direction-card<?php echo esc_attr( $variant ); ?>"<?php if ( $anchor_id ) : ?> id="<?php echo esc_attr( $anchor_id ); ?>"<?php endif; ?>>
 				<?php if ( $direction_url ) : ?><a class="direction-card__cover" href="<?php echo esc_url( $direction_url ); ?>"><?php else : ?><div class="direction-card__cover"><?php endif; ?>
