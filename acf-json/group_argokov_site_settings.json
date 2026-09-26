@@ -398,6 +398,82 @@
       "name": "case_cta_button_label",
       "type": "text",
       "default_value": "Связаться"
+    },
+    {
+      "key": "field_argokov_tab_mega_menu",
+      "label": "Mega-menu услуг",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_mega_menu_eyebrow",
+      "label": "Надзаголовок",
+      "name": "mega_menu_eyebrow",
+      "type": "text",
+      "default_value": "Услуги",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_mega_menu_title",
+      "label": "Заголовок",
+      "name": "mega_menu_title",
+      "type": "text",
+      "default_value": "Разработка и поддержка сайтов",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_mega_menu_all_label",
+      "label": "Ссылка «Все услуги»",
+      "name": "mega_menu_all_label",
+      "type": "text",
+      "default_value": "Все услуги"
+    },
+    {
+      "key": "field_argokov_mega_menu_cta_eyebrow",
+      "label": "CTA — надзаголовок",
+      "name": "mega_menu_cta_eyebrow",
+      "type": "text",
+      "default_value": "Не знаешь, что выбрать?"
+    },
+    {
+      "key": "field_argokov_mega_menu_cta_title",
+      "label": "CTA — заголовок",
+      "name": "mega_menu_cta_title",
+      "type": "text",
+      "default_value": "Разберём задачу и подскажем, с чего начать"
+    },
+    {
+      "key": "field_argokov_mega_menu_cta_text",
+      "label": "CTA — текст",
+      "name": "mega_menu_cta_text",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": "",
+      "default_value": "Пришли ссылку на сайт или коротко опиши задачу. Сначала изучим проект, потом предложим решение."
+    },
+    {
+      "key": "field_argokov_mega_menu_cta_button",
+      "label": "CTA — кнопка",
+      "name": "mega_menu_cta_button",
+      "type": "text",
+      "default_value": "Получить консультацию",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_mega_menu_cta_note",
+      "label": "CTA — подпись",
+      "name": "mega_menu_cta_note",
+      "type": "text",
+      "default_value": "Можно обратиться даже без готового ТЗ",
+      "wrapper": {
+        "width": "50"
+      }
     }
   ],
   "location": [
@@ -417,5 +493,5 @@
   "active": true,
   "description": "Глобальные контакты, география, соцсети и данные оператора сайта.",
   "show_in_rest": 0,
-  "modified": 1790405000
+  "modified": 1790413000
 }
