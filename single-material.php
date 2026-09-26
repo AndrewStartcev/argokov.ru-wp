@@ -103,7 +103,7 @@ while ( have_posts() ) :
 				<?php if ( $toc ) : ?>
 					<nav><?php foreach ( $toc as $index => $item ) : ?><a href="#<?php echo esc_attr( $item['anchor'] ); ?>"><span><?php echo esc_html( sprintf( '%02d', $index + 1 ) ); ?></span><?php echo esc_html( $item['title'] ); ?></a><?php endforeach; ?></nav>
 				<?php endif; ?>
-				<a href="<?php echo esc_url( home_url( '/support/' ) ); ?>">Передать сайт на поддержку <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
+				<a href="<?php echo esc_url( home_url( '/services/support/' ) ); ?>">Передать сайт на поддержку <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
 			</aside>
 
 			<div>
