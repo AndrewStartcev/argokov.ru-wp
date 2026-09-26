@@ -54,11 +54,11 @@ while ( have_posts() ) :
 
 	<section class="inner-cta surface">
 		<div>
-			<p class="section-eyebrow">Похожая задача</p>
-			<h2>Обсудим твой проект</h2>
-			<p>Пришли ссылку или описание задачи. Посмотрим вводные и предложим понятный следующий шаг.</p>
+			<p class="section-eyebrow"><?php echo esc_html( argokov_option( 'case_cta_eyebrow', 'Похожая задача' ) ); ?></p>
+			<h2><?php echo esc_html( argokov_option( 'case_cta_title', 'Обсудим твой проект' ) ); ?></h2>
+			<p><?php echo esc_html( argokov_option( 'case_cta_text', 'Пришли ссылку или описание задачи. Посмотрим вводные и предложим понятный следующий шаг.' ) ); ?></p>
 		</div>
-		<a class="button" href="<?php echo esc_url( home_url( '/contacts/' ) ); ?>">Связаться <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
+		<a class="button" href="<?php echo esc_url( home_url( '/contacts/' ) ); ?>"><?php echo esc_html( argokov_option( 'case_cta_button_label', 'Связаться' ) ); ?> <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
 	</section>
 	<?php
 endwhile;
