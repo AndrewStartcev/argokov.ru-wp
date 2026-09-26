@@ -184,3 +184,20 @@ function argokov_admin_footer_version() {
 	return '';
 }
 add_filter( 'update_footer', 'argokov_admin_footer_version', 100 );
+
+
+/**
+ * Comments belong only to materials.
+ */
+function argokov_limit_comments_support() {
+	foreach ( array( 'page', 'case' ) as $post_type ) {
+		remove_post_type_support( $post_type, 'comments' );
+		remove_post_type_support( $post_type, 'trackbacks' );
+	}
+}
+add_action( 'init', 'argokov_limit_comments_support', 100 );
+
+/**
+ * Remove the generic WordPress welcome panel.
+ */
+remove_action( 'welcome_panel', 'wp_welcome_panel' );
