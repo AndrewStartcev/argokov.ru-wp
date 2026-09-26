@@ -1,0 +1,166 @@
+{
+  "key": "group_argokov_faq_page",
+  "title": "FAQ — контент",
+  "fields": [
+    {
+      "key": "field_argokov_faq_page_tab_hero",
+      "label": "Первый экран",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_faq_page_hero_eyebrow",
+      "label": "Надзаголовок",
+      "name": "faq_page_hero_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_faq_page_hero_title",
+      "label": "H1 — основной текст",
+      "name": "faq_page_hero_title",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_faq_page_hero_accent",
+      "label": "H1 — акцент",
+      "name": "faq_page_hero_title_accent",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_faq_page_hero_text",
+      "label": "Описание",
+      "name": "faq_page_hero_text",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_faq_page_tab_list",
+      "label": "Вопросы",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_faq_page_eyebrow",
+      "label": "Надзаголовок",
+      "name": "faq_page_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_faq_page_title",
+      "label": "H2",
+      "name": "faq_page_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_faq_page_filters",
+      "label": "Фильтры",
+      "name": "faq_page_filters",
+      "type": "repeater",
+      "layout": "table",
+      "button_label": "Добавить",
+      "sub_fields": [
+        {
+          "key": "field_argokov_faq_page_filter_key",
+          "label": "Ключ",
+          "name": "key",
+          "type": "text",
+          "wrapper": {
+            "width": "35"
+          }
+        },
+        {
+          "key": "field_argokov_faq_page_filter_label",
+          "label": "Название",
+          "name": "label",
+          "type": "text",
+          "wrapper": {
+            "width": "65"
+          }
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_faq_page_items",
+      "label": "Вопросы",
+      "name": "faq_page_items",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить вопрос",
+      "sub_fields": [
+        {
+          "key": "field_argokov_faq_page_item_number",
+          "label": "Номер",
+          "name": "number",
+          "type": "text",
+          "wrapper": {
+            "width": "10"
+          }
+        },
+        {
+          "key": "field_argokov_faq_page_item_category",
+          "label": "Категория",
+          "name": "category",
+          "type": "text",
+          "wrapper": {
+            "width": "20"
+          }
+        },
+        {
+          "key": "field_argokov_faq_page_item_question",
+          "label": "Вопрос",
+          "name": "question",
+          "type": "text",
+          "wrapper": {
+            "width": "70"
+          }
+        },
+        {
+          "key": "field_argokov_faq_page_item_answer",
+          "label": "Ответ",
+          "name": "answer",
+          "type": "textarea",
+          "rows": 4,
+          "new_lines": ""
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "page-faq.php"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "the_content",
+    "excerpt",
+    "discussion",
+    "comments",
+    "revisions",
+    "author",
+    "format",
+    "featured_image",
+    "categories",
+    "tags",
+    "send-trackbacks"
+  ],
+  "active": true,
+  "description": "FAQ без Schema.org; структурированная разметка будет отдельным модулем.",
+  "show_in_rest": 0,
+  "modified": 1790397000
+}
