@@ -3340,6 +3340,17 @@ a {
   line-height: 1.5;
 }
 
+.cookie-notice__content p a {
+  color: #b49be5;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cookie-notice__content p a:hover,
+.cookie-notice__content p a:focus-visible {
+  color: #d1bef3;
+}
+
 .cookie-notice__actions {
   display: flex;
   align-items: center;
