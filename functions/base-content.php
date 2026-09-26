@@ -224,7 +224,7 @@ function argokov_base_content_home_page( $home_data ) {
 	return $page_id;
 }
 
-function argokov_base_content_upsert_page( $page_data, $entity_ids ) {
+function argokov_base_content_upsert_page( $page_data, $entity_ids, $page_ids = array() ) {
 	if ( empty( $page_data['key'] ) || empty( $page_data['title'] ) || empty( $page_data['slug'] ) ) {
 		return 0;
 	}
@@ -235,6 +235,16 @@ function argokov_base_content_upsert_page( $page_data, $entity_ids ) {
 		(string) $page_data['slug']
 	);
 
+	$parent_id = 0;
+
+	if ( ! empty( $page_data['parent_key'] ) ) {
+		$parent_key = sanitize_key( $page_data['parent_key'] );
+
+		if ( ! empty( $page_ids[ $parent_key ] ) ) {
+			$parent_id = (int) $page_ids[ $parent_key ];
+		}
+	}
+
 	if ( ! $page_id ) {
 		$result = wp_insert_post(
 			array(
@@ -243,6 +253,7 @@ function argokov_base_content_upsert_page( $page_data, $entity_ids ) {
 				'post_title'   => (string) $page_data['title'],
 				'post_name'    => (string) $page_data['slug'],
 				'post_content' => isset( $page_data['content'] ) ? (string) $page_data['content'] : '',
+				'post_parent'  => $parent_id,
 			),
 			true
 		);
@@ -265,6 +276,15 @@ function argokov_base_content_upsert_page( $page_data, $entity_ids ) {
 				)
 			);
 		}
+	}
+
+	if ( $parent_id && (int) wp_get_post_parent_id( $page_id ) !== $parent_id ) {
+		wp_update_post(
+			array(
+				'ID'          => $page_id,
+				'post_parent' => $parent_id,
+			)
+		);
 	}
 
 	update_post_meta(
@@ -535,7 +555,7 @@ function argokov_seed_base_content() {
 
 	if ( ! empty( $data['pages'] ) && is_array( $data['pages'] ) ) {
 		foreach ( $data['pages'] as $page_data ) {
-			$page_id = argokov_base_content_upsert_page( $page_data, $entity_ids );
+			$page_id = argokov_base_content_upsert_page( $page_data, $entity_ids, $page_ids );
 
 			if ( $page_id && ! empty( $page_data['key'] ) ) {
 				$page_ids[ sanitize_key( $page_data['key'] ) ] = $page_id;
