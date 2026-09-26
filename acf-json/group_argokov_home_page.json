@@ -1,0 +1,1006 @@
+{
+  "key": "group_argokov_home_page",
+  "title": "Главная страница",
+  "fields": [
+    {
+      "key": "field_argokov_home_tab_hero",
+      "label": "Первый экран",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_home_hero_eyebrow",
+      "label": "Надзаголовок",
+      "name": "home_hero_eyebrow",
+      "type": "text",
+      "default_value": "Разработка · поддержка · сложные доработки"
+    },
+    {
+      "key": "field_argokov_home_hero_title",
+      "label": "H1 — основной текст",
+      "name": "home_hero_title",
+      "type": "text",
+      "default_value": "Разработка и поддержка сайтов",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_home_hero_title_accent",
+      "label": "H1 — акцент",
+      "name": "home_hero_title_accent",
+      "type": "text",
+      "default_value": "для бизнеса",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_home_hero_lead",
+      "label": "Описание",
+      "name": "home_hero_lead",
+      "type": "textarea",
+      "rows": 4,
+      "new_lines": "",
+      "default_value": "Создаём новые сайты и берём на поддержку существующие — на любой CMS или с самописным кодом. Разбираемся даже в старых и сложных проектах, исправляем накопленные проблемы и развиваем дальше."
+    },
+    {
+      "key": "field_argokov_home_hero_button",
+      "label": "Текст кнопки",
+      "name": "home_hero_button_label",
+      "type": "text",
+      "default_value": "Обсудить задачу"
+    },
+    {
+      "key": "field_argokov_home_hero_visual_eyebrow",
+      "label": "Правый блок — надзаголовок",
+      "name": "home_hero_visual_eyebrow",
+      "type": "text",
+      "default_value": "С чем можно обратиться",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_home_hero_visual_title",
+      "label": "Правый блок — H2",
+      "name": "home_hero_visual_title",
+      "type": "text",
+      "default_value": "Работаем с проектами на любом этапе",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_home_hero_layers",
+      "label": "Карточки направлений",
+      "name": "home_hero_layers",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить направление",
+      "sub_fields": [
+        {
+          "key": "field_argokov_home_hero_layer_number",
+          "label": "Номер",
+          "name": "number",
+          "type": "text",
+          "wrapper": {
+            "width": "15"
+          }
+        },
+        {
+          "key": "field_argokov_home_hero_layer_title",
+          "label": "Заголовок",
+          "name": "title",
+          "type": "text",
+          "wrapper": {
+            "width": "35"
+          }
+        },
+        {
+          "key": "field_argokov_home_hero_layer_text",
+          "label": "Описание",
+          "name": "text",
+          "type": "textarea",
+          "rows": 3,
+          "new_lines": "",
+          "wrapper": {
+            "width": "35"
+          }
+        },
+        {
+          "key": "field_argokov_home_hero_layer_style",
+          "label": "Стиль",
+          "name": "style",
+          "type": "select",
+          "choices": {
+            "interface": "Интерфейс",
+            "content": "Контент",
+            "connections": "Связи",
+            "support": "Поддержка"
+          },
+          "return_format": "value",
+          "wrapper": {
+            "width": "15"
+          }
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_home_hero_notes",
+      "label": "Нижняя подпись",
+      "name": "home_hero_notes",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить фразу",
+      "sub_fields": [
+        {
+          "key": "field_argokov_home_hero_note_text",
+          "label": "Текст",
+          "name": "text",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_home_tab_proof",
+      "label": "Преимущества",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_home_proof",
+      "label": "Карточки",
+      "name": "home_proof_items",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить преимущество",
+      "sub_fields": [
+        {
+          "key": "field_argokov_home_proof_number",
+          "label": "Номер",
+          "name": "number",
+          "type": "text",
+          "wrapper": {
+            "width": "15"
+          }
+        },
+        {
+          "key": "field_argokov_home_proof_title",
+          "label": "Заголовок",
+          "name": "title",
+          "type": "text",
+          "wrapper": {
+            "width": "35"
+          }
+        },
+        {
+          "key": "field_argokov_home_proof_text",
+          "label": "Описание",
+          "name": "text",
+          "type": "textarea",
+          "rows": 3,
+          "new_lines": "",
+          "wrapper": {
+            "width": "50"
+          }
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_home_tab_directions",
+      "label": "Основные направления",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_home_directions_eyebrow",
+      "label": "Надзаголовок",
+      "name": "home_directions_eyebrow",
+      "type": "text",
+      "default_value": "Основные направления"
+    },
+    {
+      "key": "field_argokov_home_directions_title",
+      "label": "H2",
+      "name": "home_directions_title",
+      "type": "text",
+      "default_value": "Создаём новые сайты и развиваем существующие"
+    },
+    {
+      "key": "field_argokov_home_directions_copy",
+      "label": "Описание",
+      "name": "home_directions_copy",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": "",
+      "default_value": "Можно прийти с идеей нового проекта, старым сайтом или задачей, от которой отказались другие."
+    },
+    {
+      "key": "field_argokov_home_directions_index",
+      "label": "Индекс секции",
+      "name": "home_directions_index",
+      "type": "text",
+      "default_value": "02"
+    },
+    {
+      "key": "field_argokov_home_directions",
+      "label": "Карточки",
+      "name": "home_directions",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить направление",
+      "sub_fields": [
+        {
+          "key": "field_argokov_home_direction_id",
+          "label": "ID якоря",
+          "name": "id",
+          "type": "text",
+          "wrapper": {
+            "width": "20"
+          }
+        },
+        {
+          "key": "field_argokov_home_direction_variant",
+          "label": "Вариант",
+          "name": "variant",
+          "type": "select",
+          "choices": {
+            "default": "Обычная",
+            "accent": "Акцентная"
+          },
+          "return_format": "value",
+          "wrapper": {
+            "width": "20"
+          }
+        },
+        {
+          "key": "field_argokov_home_direction_image",
+          "label": "Изображение",
+          "name": "image",
+          "type": "image",
+          "return_format": "array",
+          "preview_size": "medium",
+          "library": "all",
+          "mime_types": "png,webp,jpg,jpeg",
+          "wrapper": {
+            "width": "30"
+          }
+        },
+        {
+          "key": "field_argokov_home_direction_number",
+          "label": "Номер",
+          "name": "number",
+          "type": "text",
+          "wrapper": {
+            "width": "15"
+          }
+        },
+        {
+          "key": "field_argokov_home_direction_title",
+          "label": "H3",
+          "name": "title",
+          "type": "text",
+          "wrapper": {
+            "width": "50"
+          }
+        },
+        {
+          "key": "field_argokov_home_direction_lead",
+          "label": "Описание",
+          "name": "lead",
+          "type": "textarea",
+          "rows": 3,
+          "new_lines": ""
+        },
+        {
+          "key": "field_argokov_home_direction_features",
+          "label": "Пункты",
+          "name": "features",
+          "type": "repeater",
+          "layout": "row",
+          "button_label": "Добавить пункт",
+          "sub_fields": [
+            {
+              "key": "field_argokov_home_direction_feature_text",
+              "label": "Текст",
+              "name": "text",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "key": "field_argokov_home_direction_footer",
+          "label": "Подпись внизу",
+          "name": "footer_text",
+          "type": "text",
+          "wrapper": {
+            "width": "50"
+          }
+        },
+        {
+          "key": "field_argokov_home_direction_button",
+          "label": "Текст кнопки",
+          "name": "button_label",
+          "type": "text",
+          "wrapper": {
+            "width": "50"
+          }
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_home_tab_cases",
+      "label": "Кейсы",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_home_cases_eyebrow",
+      "label": "Надзаголовок",
+      "name": "home_cases_eyebrow",
+      "type": "text",
+      "default_value": "Выбранные проекты"
+    },
+    {
+      "key": "field_argokov_home_cases_title",
+      "label": "H2",
+      "name": "home_cases_title",
+      "type": "text",
+      "default_value": "Показываем не макеты, а выполненную работу"
+    },
+    {
+      "key": "field_argokov_home_cases_copy",
+      "label": "Описание",
+      "name": "home_cases_copy",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": "",
+      "default_value": "Коротко о задаче, нашей роли и том, что было сделано внутри проекта."
+    },
+    {
+      "key": "field_argokov_home_cases_index",
+      "label": "Индекс секции",
+      "name": "home_cases_index",
+      "type": "text",
+      "default_value": "03"
+    },
+    {
+      "key": "field_argokov_home_cases_selected",
+      "label": "Выбранные кейсы",
+      "name": "home_cases_selected",
+      "type": "relationship",
+      "post_type": [
+        "case"
+      ],
+      "filters": [
+        "search"
+      ],
+      "return_format": "id",
+      "max": 3
+    },
+    {
+      "key": "field_argokov_home_cases_note",
+      "label": "Примечание",
+      "name": "home_cases_note",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": "",
+      "default_value": "Часть проектов не публикуем: работаем по NDA и соблюдаем договорённости с клиентами. О релевантном опыте можем рассказать лично — без раскрытия закрытых данных."
+    },
+    {
+      "key": "field_argokov_home_cases_link",
+      "label": "Текст ссылки",
+      "name": "home_cases_link_label",
+      "type": "text",
+      "default_value": "Смотреть все кейсы"
+    },
+    {
+      "key": "field_argokov_home_tab_legacy",
+      "label": "Сложные проекты",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_home_legacy_eyebrow",
+      "label": "Надзаголовок",
+      "name": "home_legacy_eyebrow",
+      "type": "text",
+      "default_value": "Сложные и старые проекты"
+    },
+    {
+      "key": "field_argokov_home_legacy_title",
+      "label": "H2",
+      "name": "home_legacy_title",
+      "type": "text",
+      "default_value": "Доработка и поддержка сайтов, за которые другие не берутся"
+    },
+    {
+      "key": "field_argokov_home_legacy_intro",
+      "label": "Вводный текст",
+      "name": "home_legacy_intro",
+      "type": "wysiwyg",
+      "tabs": "all",
+      "toolbar": "basic",
+      "media_upload": 0,
+      "delay": 0
+    },
+    {
+      "key": "field_argokov_home_legacy_services_title",
+      "label": "H3 — что можем сделать",
+      "name": "home_legacy_services_title",
+      "type": "text",
+      "default_value": "Что можем сделать"
+    },
+    {
+      "key": "field_argokov_home_legacy_services",
+      "label": "Список работ",
+      "name": "home_legacy_services",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить работу",
+      "sub_fields": [
+        {
+          "key": "field_argokov_home_legacy_service_number",
+          "label": "Номер",
+          "name": "number",
+          "type": "text",
+          "wrapper": {
+            "width": "15"
+          }
+        },
+        {
+          "key": "field_argokov_home_legacy_service_text",
+          "label": "Текст",
+          "name": "text",
+          "type": "text",
+          "wrapper": {
+            "width": "85"
+          }
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_home_legacy_projects_eyebrow",
+      "label": "Правый блок — надзаголовок",
+      "name": "home_legacy_projects_eyebrow",
+      "type": "text",
+      "default_value": "Можно передать нам"
+    },
+    {
+      "key": "field_argokov_home_legacy_projects_title",
+      "label": "Правый блок — H3",
+      "name": "home_legacy_projects_title",
+      "type": "text",
+      "default_value": "С каким проектом можно обратиться"
+    },
+    {
+      "key": "field_argokov_home_legacy_projects",
+      "label": "Типы проектов",
+      "name": "home_legacy_projects",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить тип проекта",
+      "sub_fields": [
+        {
+          "key": "field_argokov_home_legacy_project_number",
+          "label": "Номер",
+          "name": "number",
+          "type": "text",
+          "wrapper": {
+            "width": "15"
+          }
+        },
+        {
+          "key": "field_argokov_home_legacy_project_text",
+          "label": "Текст",
+          "name": "text",
+          "type": "text",
+          "wrapper": {
+            "width": "85"
+          }
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_home_legacy_stack_title",
+      "label": "Заголовок технологий",
+      "name": "home_legacy_stack_title",
+      "type": "text",
+      "default_value": "Технологии и платформы"
+    },
+    {
+      "key": "field_argokov_home_legacy_stack",
+      "label": "Технологии",
+      "name": "home_legacy_stack",
+      "type": "repeater",
+      "layout": "table",
+      "button_label": "Добавить технологию",
+      "sub_fields": [
+        {
+          "key": "field_argokov_home_legacy_stack_item",
+          "label": "Название",
+          "name": "text",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_home_legacy_action_text",
+      "label": "Текст CTA",
+      "name": "home_legacy_action_text",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": "",
+      "default_value": "Не нашли свою CMS? Всё равно пришли ссылку — сначала изучим проект, а не будем отказывать по названию технологии."
+    },
+    {
+      "key": "field_argokov_home_legacy_action_label",
+      "label": "Кнопка",
+      "name": "home_legacy_action_label",
+      "type": "text",
+      "default_value": "Обсудить доработку"
+    },
+    {
+      "key": "field_argokov_home_tab_process",
+      "label": "Процесс",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_home_process_eyebrow",
+      "label": "Надзаголовок",
+      "name": "home_process_eyebrow",
+      "type": "text",
+      "default_value": "Как устроена работа"
+    },
+    {
+      "key": "field_argokov_home_process_title",
+      "label": "H2",
+      "name": "home_process_title",
+      "type": "text",
+      "default_value": "Понятный процесс без сюрпризов"
+    },
+    {
+      "key": "field_argokov_home_process_copy",
+      "label": "Описание",
+      "name": "home_process_copy",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": "",
+      "default_value": "На каждом этапе видно, что происходит с проектом, зачем это делается и что будет дальше."
+    },
+    {
+      "key": "field_argokov_home_process_index",
+      "label": "Индекс секции",
+      "name": "home_process_index",
+      "type": "text",
+      "default_value": "04"
+    },
+    {
+      "key": "field_argokov_home_process_steps",
+      "label": "Этапы",
+      "name": "home_process_steps",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить этап",
+      "sub_fields": [
+        {
+          "key": "field_argokov_home_process_step_number",
+          "label": "Номер",
+          "name": "number",
+          "type": "text",
+          "wrapper": {
+            "width": "15"
+          }
+        },
+        {
+          "key": "field_argokov_home_process_step_title",
+          "label": "H3",
+          "name": "title",
+          "type": "text",
+          "wrapper": {
+            "width": "35"
+          }
+        },
+        {
+          "key": "field_argokov_home_process_step_text",
+          "label": "Описание",
+          "name": "text",
+          "type": "textarea",
+          "rows": 3,
+          "new_lines": "",
+          "wrapper": {
+            "width": "50"
+          }
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_home_process_notes",
+      "label": "Нижние метки",
+      "name": "home_process_notes",
+      "type": "repeater",
+      "layout": "table",
+      "button_label": "Добавить метку",
+      "sub_fields": [
+        {
+          "key": "field_argokov_home_process_note",
+          "label": "Текст",
+          "name": "text",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_home_tab_formats",
+      "label": "Форматы сотрудничества",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_home_formats_eyebrow",
+      "label": "Надзаголовок",
+      "name": "home_formats_eyebrow",
+      "type": "text",
+      "default_value": "Форматы сотрудничества"
+    },
+    {
+      "key": "field_argokov_home_formats_title",
+      "label": "H2",
+      "name": "home_formats_title",
+      "type": "text",
+      "default_value": "Подключаемся так, как удобно проекту"
+    },
+    {
+      "key": "field_argokov_home_formats_copy",
+      "label": "Описание",
+      "name": "home_formats_copy",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": "",
+      "default_value": "Можно начать с одной задачи, заказать проект целиком или передать сайт на постоянное развитие."
+    },
+    {
+      "key": "field_argokov_home_formats_index",
+      "label": "Индекс секции",
+      "name": "home_formats_index",
+      "type": "text",
+      "default_value": "05"
+    },
+    {
+      "key": "field_argokov_home_formats",
+      "label": "Карточки",
+      "name": "home_formats",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить формат",
+      "sub_fields": [
+        {
+          "key": "field_argokov_home_format_label",
+          "label": "Метка",
+          "name": "label",
+          "type": "text",
+          "wrapper": {
+            "width": "20"
+          }
+        },
+        {
+          "key": "field_argokov_home_format_variant",
+          "label": "Вариант",
+          "name": "variant",
+          "type": "select",
+          "choices": {
+            "default": "Обычная",
+            "primary": "Основная"
+          },
+          "return_format": "value",
+          "wrapper": {
+            "width": "20"
+          }
+        },
+        {
+          "key": "field_argokov_home_format_title",
+          "label": "H3",
+          "name": "title",
+          "type": "text",
+          "wrapper": {
+            "width": "60"
+          }
+        },
+        {
+          "key": "field_argokov_home_format_text",
+          "label": "Описание",
+          "name": "text",
+          "type": "textarea",
+          "rows": 3,
+          "new_lines": ""
+        },
+        {
+          "key": "field_argokov_home_format_features",
+          "label": "Пункты",
+          "name": "features",
+          "type": "repeater",
+          "layout": "row",
+          "button_label": "Добавить пункт",
+          "sub_fields": [
+            {
+              "key": "field_argokov_home_format_feature",
+              "label": "Текст",
+              "name": "text",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "key": "field_argokov_home_format_button",
+          "label": "Текст кнопки",
+          "name": "button_label",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_home_tab_studio",
+      "label": "О студии",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_home_studio_eyebrow",
+      "label": "Надзаголовок",
+      "name": "home_studio_eyebrow",
+      "type": "text",
+      "default_value": "О студии"
+    },
+    {
+      "key": "field_argokov_home_studio_title",
+      "label": "H2",
+      "name": "home_studio_title",
+      "type": "text",
+      "default_value": "Аргоков — студия с личной ответственностью"
+    },
+    {
+      "key": "field_argokov_home_studio_lead",
+      "label": "Описание",
+      "name": "home_studio_lead",
+      "type": "textarea",
+      "rows": 4,
+      "new_lines": "",
+      "default_value": "Мы работаем как студия, а не как случайный набор исполнителей. Андрей лично ведёт архитектуру и отвечает за техническое качество, а под задачу подключаются нужные специалисты."
+    },
+    {
+      "key": "field_argokov_home_studio_quote",
+      "label": "Цитата",
+      "name": "home_studio_quote",
+      "type": "textarea",
+      "rows": 4,
+      "new_lines": "",
+      "default_value": "Название «Аргоков» связано с важной для нас семейной историей. Для студии оно означает силу, ответственность и работу, за которую не стыдно."
+    },
+    {
+      "key": "field_argokov_home_studio_facts",
+      "label": "Факты",
+      "name": "home_studio_facts",
+      "type": "repeater",
+      "layout": "table",
+      "button_label": "Добавить факт",
+      "sub_fields": [
+        {
+          "key": "field_argokov_home_studio_fact_value",
+          "label": "Значение",
+          "name": "value",
+          "type": "text",
+          "wrapper": {
+            "width": "35"
+          }
+        },
+        {
+          "key": "field_argokov_home_studio_fact_label",
+          "label": "Подпись",
+          "name": "label",
+          "type": "text",
+          "wrapper": {
+            "width": "65"
+          }
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_home_studio_link",
+      "label": "Текст ссылки",
+      "name": "home_studio_link_label",
+      "type": "text",
+      "default_value": "Познакомиться с нами"
+    },
+    {
+      "key": "field_argokov_home_tab_faq",
+      "label": "FAQ",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_home_faq_eyebrow",
+      "label": "Надзаголовок",
+      "name": "home_faq_eyebrow",
+      "type": "text",
+      "default_value": "Частые вопросы"
+    },
+    {
+      "key": "field_argokov_home_faq_title",
+      "label": "H2",
+      "name": "home_faq_title",
+      "type": "text",
+      "default_value": "До начала работы"
+    },
+    {
+      "key": "field_argokov_home_faq_copy",
+      "label": "Описание",
+      "name": "home_faq_copy",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": "",
+      "default_value": "Коротко ответили на вопросы, которые обычно возникают перед первым обращением."
+    },
+    {
+      "key": "field_argokov_home_faq_link",
+      "label": "Текст ссылки",
+      "name": "home_faq_link_label",
+      "type": "text",
+      "default_value": "Задать свой вопрос"
+    },
+    {
+      "key": "field_argokov_home_faq",
+      "label": "Вопросы",
+      "name": "home_faq_items",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить вопрос",
+      "sub_fields": [
+        {
+          "key": "field_argokov_home_faq_number",
+          "label": "Номер",
+          "name": "number",
+          "type": "text",
+          "wrapper": {
+            "width": "15"
+          }
+        },
+        {
+          "key": "field_argokov_home_faq_question",
+          "label": "Вопрос",
+          "name": "question",
+          "type": "text",
+          "wrapper": {
+            "width": "85"
+          }
+        },
+        {
+          "key": "field_argokov_home_faq_answer",
+          "label": "Ответ",
+          "name": "answer",
+          "type": "textarea",
+          "rows": 4,
+          "new_lines": ""
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_home_tab_materials",
+      "label": "Материалы",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_home_materials_eyebrow",
+      "label": "Надзаголовок",
+      "name": "home_materials_eyebrow",
+      "type": "text",
+      "default_value": "Полезные материалы"
+    },
+    {
+      "key": "field_argokov_home_materials_title",
+      "label": "H2",
+      "name": "home_materials_title",
+      "type": "text",
+      "default_value": "Разбираем разработку, поддержку и развитие сайтов"
+    },
+    {
+      "key": "field_argokov_home_materials_copy",
+      "label": "Описание",
+      "name": "home_materials_copy",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": "",
+      "default_value": "Практические материалы о технической поддержке, доработках, безопасности и SEO — без пересказа очевидных вещей."
+    },
+    {
+      "key": "field_argokov_home_materials_index",
+      "label": "Индекс секции",
+      "name": "home_materials_index",
+      "type": "text",
+      "default_value": "06"
+    },
+    {
+      "key": "field_argokov_home_materials_selected",
+      "label": "Выбранные материалы",
+      "name": "home_materials_selected",
+      "type": "relationship",
+      "post_type": [
+        "material"
+      ],
+      "filters": [
+        "search"
+      ],
+      "return_format": "id",
+      "max": 3
+    },
+    {
+      "key": "field_argokov_home_materials_link",
+      "label": "Текст ссылки",
+      "name": "home_materials_link_label",
+      "type": "text",
+      "default_value": "Смотреть все статьи"
+    },
+    {
+      "key": "field_argokov_home_tab_contact",
+      "label": "Контактный блок",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_home_contact_eyebrow",
+      "label": "Надзаголовок",
+      "name": "home_contact_eyebrow",
+      "type": "text",
+      "default_value": "Начнём с задачи"
+    },
+    {
+      "key": "field_argokov_home_contact_title",
+      "label": "H2",
+      "name": "home_contact_title",
+      "type": "text",
+      "default_value": "Расскажите, что нужно сделать"
+    },
+    {
+      "key": "field_argokov_home_contact_text",
+      "label": "Описание",
+      "name": "home_contact_text",
+      "type": "textarea",
+      "rows": 4,
+      "new_lines": "",
+      "default_value": "Можно прислать ссылку на сайт, кратко описать проблему или приложить готовое техническое задание. Изучим материалы, зададим уточняющие вопросы и предложим следующий шаг."
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_type",
+        "operator": "==",
+        "value": "front_page"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "the_content",
+    "excerpt",
+    "discussion",
+    "comments",
+    "revisions",
+    "author",
+    "format",
+    "featured_image",
+    "categories",
+    "tags",
+    "send-trackbacks"
+  ],
+  "active": true,
+  "description": "Контент главной страницы. Schema.org здесь намеренно не настраивается.",
+  "show_in_rest": 0,
+  "modified": 1790394000
+}
