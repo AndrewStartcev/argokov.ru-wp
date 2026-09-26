@@ -7957,3 +7957,30 @@ html[data-theme="light"] .catalog-filter button.is-active { background: #f2eafa;
     flex: 1 1 100%;
   }
 }
+
+
+/* Argokov runtime form states */
+.contact-modal[hidden] {
+  display: none;
+}
+
+.contact__form--unavailable {
+  justify-content: center;
+}
+
+.contact__form--unavailable p {
+  margin: 0;
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.contact__form--unavailable p + p {
+  margin-top: 12px;
+}
+
+.contact__form--unavailable a {
+  color: var(--violet);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
