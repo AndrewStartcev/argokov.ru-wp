@@ -208,24 +208,29 @@ Schema.org не добавляем автоматически на текуще�
 
 ## Архитектура услуг
 
-Услуги строятся как иерархия WordPress Pages, чтобы можно было создавать десятки и сотни отдельных SEO-посадочных без отдельного CPT и кастомной permalink-логики.
+Услуги — отдельный тип записи `service`. Обычные WordPress Pages для отдельных услуг не используем.
 
-Базовая структура:
+Структура:
 
-- `/services/` — общий каталог услуг;
-- `/services/development/` — направление «Разработка»;
-- `/services/support/` — направление «Поддержка»;
-- конкретные услуги — дочерние страницы соответствующего направления, например:
-  - `/services/development/corporate-sites/`;
-  - `/services/development/internet-shops/`;
-  - `/services/development/web-services/`;
-  - `/services/development/technical-seo/`;
-  - `/services/development/integrations/`;
-  - `/services/support/one-time-improvement/`;
-  - `/services/support/project-takeover/`.
+- `/services/` — архив CPT `service`;
+- `service_direction` — иерархическая таксономия направлений;
+- `/services/development/` — термин «Разработка»;
+- `/services/support/` — термин «Поддержка»;
+- `/services/development/corporate-sites/` — отдельная запись CPT `service`;
+- `/services/support/one-time-improvement/` — отдельная запись CPT `service`.
 
-Для конкретных услуг используется `page-service-detail.php` + ACF-группа `group_argokov_service_detail`.
+Каждая услуга имеет собственную запись, ACF-контент, permalink, Rank Math Title/Description и принадлежность к направлению. Это позволяет масштабировать каталог до сотен услуг без разрастания дерева обычных страниц.
 
-«Разработка» и «Поддержка» не являются отдельными пунктами верхнего уровня меню: они вложены в «Услуги». Старые адреса `/development/` и `/support/` перенаправляются 301 на новые вложенные URL.
+Страницы направлений «Разработка» и «Поддержка» — архивы терминов `service_direction`, а не Pages. Их расширенный контент хранится в ACF полях терминов.
 
-На главной карточки основных направлений ведут на реальные страницы направлений. В подвале ссылки услуг ведут на реальные URL без якорей-заглушек.
+Шаблоны:
+
+- `archive-service.php` — общий каталог;
+- `taxonomy-service_direction.php` — направление;
+- `single-service.php` — отдельная услуга;
+- `template-parts/service/direction-development.php`;
+- `template-parts/service/direction-support.php`.
+
+Старые page-based шаблоны услуг удалены. Старые `/development/` и `/support/` перенаправляются 301 на новые адреса.
+
+Для SEO-кластеризации используем связи «архив → направление → услуга», внутреннюю перелинковку и отдельные метаданные каждой услуги. Schema.org остаётся отдельным будущим модулем и в эту архитектуру не вшивается.
