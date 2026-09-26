@@ -54,7 +54,16 @@ $directions = argokov_rows(
 			<?php
 			$variant     = ( $direction['variant'] ?? 'default' ) === 'accent' ? ' direction-card--accent' : '';
 			$image       = $direction['image'] ?? array();
-			$image_url   = argokov_image_url( $image, $direction['image_fallback'] ?? '' );
+			$fallback    = $direction['image_fallback'] ?? '';
+			$direction_id = $direction['id'] ?? '';
+
+			if ( ! $fallback && 'development' === $direction_id ) {
+				$fallback = 'assets/images/service-development-cover.webp';
+			} elseif ( ! $fallback && 'support' === $direction_id ) {
+				$fallback = 'assets/images/service-support-cover.webp';
+			}
+
+			$image_url   = argokov_image_url( $image, $fallback );
 			$image_alt   = argokov_image_alt( $image, $direction['title'] ?? '' );
 			$features    = isset( $direction['features'] ) && is_array( $direction['features'] ) ? $direction['features'] : array();
 			$anchor_id   = sanitize_html_class( $direction['id'] ?? '' );
