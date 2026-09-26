@@ -37,6 +37,6 @@ $facts = argokov_rows(
 			</div>
 		<?php endif; ?>
 
-		<a class="text-link" href="<?php echo esc_url( home_url( '/about/' ) ); ?>"><?php echo esc_html( argokov_field( 'home_studio_link_label', 'Познакомиться с нами' ) ); ?> <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
+		<a class="text-link" href="#contact"><?php echo esc_html( argokov_field( 'home_studio_link_label', 'Познакомиться с нами' ) ); ?> <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
 	</div>
 </section>
