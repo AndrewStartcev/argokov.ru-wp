@@ -1,0 +1,41 @@
+{
+  "key": "group_argokov_material",
+  "title": "Материал — дополнительные данные",
+  "fields": [
+    {
+      "key": "field_argokov_material_topic",
+      "label": "Тематика",
+      "name": "material_topic",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_material_reading_time",
+      "label": "Время чтения, минут",
+      "name": "material_reading_time",
+      "type": "number",
+      "min": 1,
+      "step": 1,
+      "wrapper": {
+        "width": "50"
+      }
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "material"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "active": true,
+  "description": "Дополнительные данные материала. Schema.org будет реализована отдельным модулем позже.",
+  "show_in_rest": 0,
+  "modified": 1790394000
+}
