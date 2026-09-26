@@ -143,6 +143,36 @@
 
   window.setTimeout(showCookieNotice, 700);
 
+  const MEGA_MENU_CLOSE_DELAY = 380;
+
+  document.querySelectorAll(".site-nav__mega-item").forEach((item) => {
+    const trigger = item.querySelector(".site-nav__mega-trigger");
+    let closeTimer = 0;
+
+    const openMenu = () => {
+      window.clearTimeout(closeTimer);
+      item.classList.add("is-open");
+      trigger?.setAttribute("aria-expanded", "true");
+    };
+
+    const scheduleClose = () => {
+      window.clearTimeout(closeTimer);
+      closeTimer = window.setTimeout(() => {
+        item.classList.remove("is-open");
+        trigger?.setAttribute("aria-expanded", "false");
+      }, MEGA_MENU_CLOSE_DELAY);
+    };
+
+    item.addEventListener("mouseenter", openMenu);
+    item.addEventListener("mouseleave", scheduleClose);
+    item.addEventListener("focusin", openMenu);
+    item.addEventListener("focusout", (event) => {
+      if (!item.contains(event.relatedTarget)) {
+        scheduleClose();
+      }
+    });
+  });
+
   const contactModal = document.querySelector("#contact-modal");
   const contactModalClose = contactModal?.querySelector(".contact-modal__close");
 
