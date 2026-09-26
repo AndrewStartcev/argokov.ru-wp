@@ -326,6 +326,16 @@
           "wrapper": {
             "width": "50"
           }
+        },
+        {
+          "key": "field_argokov_home_direction_url",
+          "label": "Ссылка на страницу направления",
+          "name": "url",
+          "type": "text",
+          "instructions": "Относительный URL, например /services/development/",
+          "wrapper": {
+            "width": "50"
+          }
         }
       ]
     },
@@ -1002,5 +1012,5 @@
   "active": true,
   "description": "Контент главной страницы. Schema.org здесь намеренно не настраивается.",
   "show_in_rest": 0,
-  "modified": 1790394000
+  "modified": 1790409000
 }
