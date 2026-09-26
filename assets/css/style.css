@@ -7995,3 +7995,51 @@ html[data-theme="light"] .catalog-filter button.is-active { background: #f2eafa;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
+
+
+/* Contact Form 7 exact layout fixes */
+.contact__form > p,
+.contact__form .contact-form__row > p {
+  display: contents;
+  margin: 0;
+}
+
+.contact-form__row > .contact-form__field {
+  width: calc(50% - 6px);
+}
+
+.contact-form__consent .wpcf7-list-item > label {
+  display: flex;
+  width: 100%;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.contact-form__consent .wpcf7-list-item-label {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.contact-form__consent .wpcf7-list-item-label > a {
+  display: inline;
+}
+
+.contact-form__consent .wpcf7-form-control-wrap,
+.contact-form__consent .wpcf7-acceptance,
+.contact-form__consent .wpcf7-list-item {
+  width: 100%;
+}
+
+.contact__form .wpcf7-spinner {
+  margin: 0 0 0 10px;
+}
+
+@media (max-width: 620px) {
+  .contact-form__row {
+    flex-direction: column;
+  }
+
+  .contact-form__row > .contact-form__field {
+    width: 100%;
+  }
+}
