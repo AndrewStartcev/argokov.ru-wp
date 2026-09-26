@@ -145,6 +145,17 @@ function argokov_base_content_upsert_item( $item, $post_type ) {
 	return $post_id;
 }
 
+function argokov_base_content_apply_resolved_fields( $post_id, $fields, $entity_ids ) {
+	if ( ! $post_id || ! is_array( $fields ) ) {
+		return;
+	}
+
+	foreach ( $fields as $field_name => $value ) {
+		$value = argokov_base_content_resolve_value( $value, $entity_ids );
+		argokov_base_content_update_field_if_empty( $field_name, $value, $post_id );
+	}
+}
+
 function argokov_base_content_resolve_value( $value, $entity_ids ) {
 	if ( is_array( $value ) ) {
 		$resolved = array();
@@ -442,6 +453,39 @@ function argokov_seed_base_content() {
 
 			if ( $material_id && ! empty( $material['key'] ) ) {
 				$entity_ids['material'][ sanitize_key( $material['key'] ) ] = $material_id;
+			}
+		}
+	}
+
+	/*
+	 * Relationship fields can reference entities that did not exist when the
+	 * first pass created the records. Apply fields again after every entity ID
+	 * is known; non-empty values remain untouched.
+	 */
+	if ( ! empty( $data['cases'] ) && is_array( $data['cases'] ) ) {
+		foreach ( $data['cases'] as $case ) {
+			$key = ! empty( $case['key'] ) ? sanitize_key( $case['key'] ) : '';
+
+			if ( $key && ! empty( $entity_ids['case'][ $key ] ) && ! empty( $case['fields'] ) ) {
+				argokov_base_content_apply_resolved_fields(
+					$entity_ids['case'][ $key ],
+					$case['fields'],
+					$entity_ids
+				);
+			}
+		}
+	}
+
+	if ( ! empty( $data['materials'] ) && is_array( $data['materials'] ) ) {
+		foreach ( $data['materials'] as $material ) {
+			$key = ! empty( $material['key'] ) ? sanitize_key( $material['key'] ) : '';
+
+			if ( $key && ! empty( $entity_ids['material'][ $key ] ) && ! empty( $material['fields'] ) ) {
+				argokov_base_content_apply_resolved_fields(
+					$entity_ids['material'][ $key ],
+					$material['fields'],
+					$entity_ids
+				);
 			}
 		}
 	}
