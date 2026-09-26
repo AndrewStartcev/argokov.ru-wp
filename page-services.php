@@ -1,245 +1,73 @@
 <?php
 /**
- * Services page
+ * Services page.
  *
  * @package Argokov
  */
 
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+defined( 'ABSPATH' ) || exit;
 
 get_header();
-?>
 
-<section class="inner-hero surface">
-
-<nav class="breadcrumbs" aria-label="Хлебные крошки">
-<a href="/">Главная</a><span>/</span><span>Услуги для сайта на любом этапе</span>
-</nav>
-
-<p class="section-eyebrow">
-Все направления
-</p>
-
-<h1>
-Услуги для сайта <span>на любом этапе</span>
-</h1>
-
-<p>
-Разрабатываем новые сайты, принимаем готовые проекты на поддержку и решаем отдельные технические задачи. Фильтр помогает быстро найти нужное направление.
-</p>
-
-</section>
-
-<section class="catalog-section surface" aria-labelledby="services-title">
-
-<header class="development-heading">
-
-<div>
-
-<p class="section-eyebrow">
-Каталог услуг
-</p>
-
-<h2 id="services-title">
-От первого запуска до постоянного развития
-</h2>
-
-</div>
-
-<p>
-Каждое направление позже получит отдельную SEO-страницу. Сейчас каталог показывает общую архитектуру услуг и связи между ними.
-</p>
-
-</header>
-
-<div class="catalog-filter" role="group" aria-label="Фильтр услуг">
-<button type="button" class="is-active" aria-pressed="true">Все услуги<span>8</span></button><button type="button" class="" aria-pressed="false">Разработка<span>3</span></button><button type="button" class="" aria-pressed="false">Поддержка<span>3</span></button><button type="button" class="" aria-pressed="false">SEO<span>1</span></button><button type="button" class="" aria-pressed="false">Интеграции<span>1</span></button>
-</div>
-
-<div class="services-grid" aria-live="polite">
-
-<article class="service-catalog-card" data-category="development">
-
-<div class="service-catalog-card__top">
-<span>01</span><small>Разработка</small>
-</div>
-
-<h2>
-Корпоративные сайты
-</h2>
-
-<p>
-Структура, дизайн, разработка, CMS, интеграции и запуск сайта для компании.
-</p>
-
-<div class="service-catalog-card__tags">
-<span>WordPress</span><span>Под ключ</span><span>SEO-основа</span>
-</div>
-<a href="/development/">Подробнее <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
-</article>
-
-<article class="service-catalog-card" data-category="development">
-
-<div class="service-catalog-card__top">
-<span>02</span><small>Разработка</small>
-</div>
-
-<h2>
-Интернет-магазины
-</h2>
-
-<p>
-Каталог, фильтры, корзина, оплата, доставка и обмен данными с учётной системой.
-</p>
-
-<div class="service-catalog-card__tags">
-<span>WooCommerce</span><span>1С</span><span>CRM</span>
-</div>
-<a href="/development/#types">Подробнее <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
-</article>
-
-<article class="service-catalog-card" data-category="development">
-
-<div class="service-catalog-card__top">
-<span>03</span><small>Разработка</small>
-</div>
-
-<h2>
-Веб-сервисы и кабинеты
-</h2>
-
-<p>
-Нестандартная бизнес-логика, роли пользователей, личные кабинеты и API.
-</p>
-
-<div class="service-catalog-card__tags">
-<span>PHP</span><span>React</span><span>API</span>
-</div>
-<a href="/development/#types">Подробнее <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
-</article>
-
-<article class="service-catalog-card" data-category="support">
-
-<div class="service-catalog-card__top">
-<span>04</span><small>Поддержка</small>
-</div>
-
-<h2>
-Техническая поддержка сайтов
-</h2>
-
-<p>
-Регулярные задачи, контроль состояния, исправления и развитие готового проекта.
-</p>
-
-<div class="service-catalog-card__tags">
-<span>WordPress</span><span>Битрикс</span><span>Custom</span>
-</div>
-<a href="/support/">Подробнее <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
-</article>
-
-<article class="service-catalog-card" data-category="support">
-
-<div class="service-catalog-card__top">
-<span>05</span><small>Поддержка</small>
-</div>
-
-<h2>
-Разовая доработка
-</h2>
-
-<p>
-Исправление ошибки, новый блок, функция или интеграция без обязательного абонентского договора.
-</p>
-
-<div class="service-catalog-card__tags">
-<span>PHP</span><span>JavaScript</span><span>CMS</span>
-</div>
-<a href="/support/#directions">Подробнее <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
-</article>
-
-<article class="service-catalog-card" data-category="support">
-
-<div class="service-catalog-card__top">
-<span>06</span><small>Поддержка</small>
-</div>
-
-<h2>
-Приём чужого проекта
-</h2>
-
-<p>
-Восстанавливаем техническую картину сайта без документации и прежней команды.
-</p>
-
-<div class="service-catalog-card__tags">
-<span>Диагностика</span><span>Аудит</span><span>NDA</span>
-</div>
-<a href="/support/#start">Подробнее <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
-</article>
-
-<article class="service-catalog-card" data-category="seo">
-
-<div class="service-catalog-card__top">
-<span>07</span><small>SEO и данные</small>
-</div>
-
-<h2>
-Технические задачи SEO
-</h2>
-
-<p>
-Шаблоны метаданных, Schema.org, скорость, редиректы, индексация и посадочные страницы.
-</p>
-
-<div class="service-catalog-card__tags">
-<span>Schema.org</span><span>CWV</span><span>Метаданные</span>
-</div>
-<a href="/development/#seo">Подробнее <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
-</article>
-
-<article class="service-catalog-card" data-category="integration">
-
-<div class="service-catalog-card__top">
-<span>08</span><small>Интеграции</small>
-</div>
-
-<h2>
-CRM, 1С и внешние сервисы
-</h2>
-
-<p>
-Связываем сайт с CRM, оплатой, доставкой, телефонией и внешними API.
-</p>
-
-<div class="service-catalog-card__tags">
-<span>REST API</span><span>CRM</span><span>1С</span>
-</div>
-<a href="/development/#included">Подробнее <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
-</article>
-
-</div>
-
-</section>
-
-<section class="inner-cta surface">
-
-<div>
-
-<p class="section-eyebrow">
-Не нашли задачу
-</p>
-
-<h2>
-Пришли ссылку на сайт — разберёмся
-</h2>
-
-<p>
-Не обязательно подбирать правильное название услуги. Сначала поймём задачу и предложим подходящий формат.
-</p>
-
-</div>
-<a class="button" href="#contact" data-contact-modal="true">Обсудить задачу <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
-</section>
-
-<?php get_footer(); ?>
+while ( have_posts() ) :
+	the_post();
+
+	$filters = argokov_rows(
+		'services_filters',
+		array(
+			array( 'key' => 'all', 'label' => 'Все услуги' ),
+			array( 'key' => 'development', 'label' => 'Разработка' ),
+			array( 'key' => 'support', 'label' => 'Поддержка' ),
+			array( 'key' => 'seo', 'label' => 'SEO' ),
+			array( 'key' => 'integration', 'label' => 'Интеграции' ),
+		)
+	);
+
+	$items = argokov_rows( 'services_items', array() );
+	?>
+	<section class="inner-hero surface">
+		<nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Главная</a><span>/</span><span><?php the_title(); ?></span></nav>
+		<p class="section-eyebrow"><?php echo esc_html( argokov_field( 'services_hero_eyebrow', 'Все направления' ) ); ?></p>
+		<h1><?php echo esc_html( argokov_field( 'services_hero_title', 'Услуги для сайта' ) ); ?> <span><?php echo esc_html( argokov_field( 'services_hero_title_accent', 'на любом этапе' ) ); ?></span></h1>
+		<p><?php echo esc_html( argokov_field( 'services_hero_text', 'Разрабатываем новые сайты, принимаем готовые проекты на поддержку и решаем отдельные технические задачи. Фильтр помогает быстро найти нужное направление.' ) ); ?></p>
+	</section>
+
+	<section class="catalog-section surface" aria-labelledby="services-title">
+		<header class="development-heading">
+			<div><p class="section-eyebrow"><?php echo esc_html( argokov_field( 'services_catalog_eyebrow', 'Каталог услуг' ) ); ?></p><h2 id="services-title"><?php echo esc_html( argokov_field( 'services_catalog_title', 'От первого запуска до постоянного развития' ) ); ?></h2></div>
+			<p><?php echo esc_html( argokov_field( 'services_catalog_copy', 'Каждое направление позже получит отдельную SEO-страницу. Сейчас каталог показывает общую архитектуру услуг и связи между ними.' ) ); ?></p>
+		</header>
+
+		<?php if ( $filters ) : ?>
+			<div class="catalog-filter" role="group" aria-label="Фильтр услуг">
+				<?php foreach ( $filters as $index => $filter ) : ?>
+					<?php
+					$key = $filter['key'] ?? '';
+					$count = 'all' === $key ? count( $items ) : count( array_filter( $items, static function ( $item ) use ( $key ) { return isset( $item['category'] ) && $item['category'] === $key; } ) );
+					?>
+					<button type="button" class="<?php echo 0 === $index ? 'is-active' : ''; ?>" aria-pressed="<?php echo 0 === $index ? 'true' : 'false'; ?>" data-filter="<?php echo esc_attr( $key ); ?>"><?php echo esc_html( $filter['label'] ?? '' ); ?><span><?php echo (int) $count; ?></span></button>
+				<?php endforeach; ?>
+			</div>
+		<?php endif; ?>
+
+		<div class="services-grid" aria-live="polite">
+			<?php foreach ( $items as $item ) : ?>
+				<article class="service-catalog-card" data-category="<?php echo esc_attr( $item['category'] ?? '' ); ?>">
+					<div class="service-catalog-card__top"><span><?php echo esc_html( $item['number'] ?? '' ); ?></span><small><?php echo esc_html( $item['category_label'] ?? '' ); ?></small></div>
+					<h2><?php echo esc_html( $item['title'] ?? '' ); ?></h2>
+					<p><?php echo esc_html( $item['text'] ?? '' ); ?></p>
+					<?php if ( ! empty( $item['tags'] ) && is_array( $item['tags'] ) ) : ?><div class="service-catalog-card__tags"><?php foreach ( $item['tags'] as $tag ) : ?><span><?php echo esc_html( $tag['text'] ?? '' ); ?></span><?php endforeach; ?></div><?php endif; ?>
+					<?php if ( ! empty( $item['url'] ) ) : ?><a href="<?php echo esc_url( home_url( $item['url'] ) ); ?>">Подробнее <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a><?php endif; ?>
+				</article>
+			<?php endforeach; ?>
+		</div>
+	</section>
+
+	<section class="inner-cta surface">
+		<div><p class="section-eyebrow"><?php echo esc_html( argokov_field( 'services_cta_eyebrow', 'Не нашли задачу' ) ); ?></p><h2><?php echo esc_html( argokov_field( 'services_cta_title', 'Пришли ссылку на сайт — разберёмся' ) ); ?></h2><p><?php echo esc_html( argokov_field( 'services_cta_text', 'Не обязательно подбирать правильное название услуги. Сначала поймём задачу и предложим подходящий формат.' ) ); ?></p></div>
+		<a class="button" href="#contact" data-contact-modal="true"><?php echo esc_html( argokov_field( 'services_cta_button_label', 'Обсудить задачу' ) ); ?> <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
+	</section>
+	<?php
+endwhile;
+
+get_footer();
