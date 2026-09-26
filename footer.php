@@ -79,7 +79,7 @@ $footer_studio = array(
 					<span>Оператор сайта</span><strong><?php echo esc_html( $operator_name ); ?></strong><small><?php echo esc_html( $operator_detail ); ?></small>
 				</div>
 				<div class="site-footer__documents" aria-label="Юридическая информация">
-					<a href="/privacy/">Политика обработки персональных данных</a><a href="/consent/">Согласие на обработку персональных данных</a><a href="/cookies/">Использование cookie</a><a href="/requisites/">Реквизиты</a>
+					<a href="<?php echo esc_url( home_url( '/privacy/' ) ); ?>">Политика обработки персональных данных</a><a href="<?php echo esc_url( home_url( '/consent/' ) ); ?>">Согласие на обработку персональных данных</a><a href="<?php echo esc_url( home_url( '/cookies/' ) ); ?>">Использование cookie</a><a href="<?php echo esc_url( home_url( '/requisites/' ) ); ?>">Реквизиты</a>
 				</div>
 				<div class="site-footer__copyright">
 					<span>© <?php echo esc_html( wp_date( 'Y' ) ); ?> Аргоков</span><span>Сайты с ответственностью за результат</span>
