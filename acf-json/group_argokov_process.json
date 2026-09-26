@@ -1,0 +1,181 @@
+{
+  "key": "group_argokov_process",
+  "title": "Как работаем — контент",
+  "fields": [
+    {
+      "key": "field_argokov_process_tab_hero",
+      "label": "Первый экран",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_process_hero_eyebrow",
+      "label": "Надзаголовок",
+      "name": "process_hero_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_process_hero_title",
+      "label": "H1 — основной текст",
+      "name": "process_hero_title",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_process_hero_accent",
+      "label": "H1 — акцент",
+      "name": "process_hero_title_accent",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_process_hero_text",
+      "label": "Описание",
+      "name": "process_hero_text",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_process_tab_steps",
+      "label": "Этапы",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_process_steps_eyebrow",
+      "label": "Надзаголовок",
+      "name": "process_steps_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_process_steps_title",
+      "label": "H2",
+      "name": "process_steps_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_process_steps_copy",
+      "label": "Описание",
+      "name": "process_steps_copy",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_process_steps",
+      "label": "Этапы",
+      "name": "process_steps",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить этап",
+      "sub_fields": [
+        {
+          "key": "field_argokov_process_step_number",
+          "label": "Номер",
+          "name": "number",
+          "type": "text",
+          "wrapper": {
+            "width": "10"
+          }
+        },
+        {
+          "key": "field_argokov_process_step_title",
+          "label": "H2",
+          "name": "title",
+          "type": "text",
+          "wrapper": {
+            "width": "35"
+          }
+        },
+        {
+          "key": "field_argokov_process_step_text",
+          "label": "Описание",
+          "name": "text",
+          "type": "textarea",
+          "rows": 3,
+          "new_lines": "",
+          "wrapper": {
+            "width": "35"
+          }
+        },
+        {
+          "key": "field_argokov_process_step_result",
+          "label": "Результат",
+          "name": "result",
+          "type": "text",
+          "wrapper": {
+            "width": "20"
+          }
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_process_tab_cta",
+      "label": "CTA",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_process_cta_eyebrow",
+      "label": "Надзаголовок",
+      "name": "process_cta_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_process_cta_title",
+      "label": "H2",
+      "name": "process_cta_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_process_cta_text",
+      "label": "Описание",
+      "name": "process_cta_text",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_process_cta_button",
+      "label": "Текст кнопки",
+      "name": "process_cta_button_label",
+      "type": "text"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "page-process.php"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "the_content",
+    "excerpt",
+    "discussion",
+    "comments",
+    "revisions",
+    "author",
+    "format",
+    "featured_image",
+    "categories",
+    "tags",
+    "send-trackbacks"
+  ],
+  "active": true,
+  "description": "Этапы работы студии.",
+  "show_in_rest": 0,
+  "modified": 1790397000
+}
