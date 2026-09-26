@@ -8147,3 +8147,13 @@ html[data-theme="light"] .catalog-filter button.is-active { background: #f2eafa;
   color: var(--muted);
   font-size: 13px;
 }
+
+
+.direction-card h3 a {
+  color: inherit;
+}
+
+.direction-card h3 a:hover,
+.direction-card h3 a:focus-visible {
+  color: var(--violet);
+}
