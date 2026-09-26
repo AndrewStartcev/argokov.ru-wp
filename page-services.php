@@ -111,7 +111,7 @@ while ( have_posts() ) :
 	<section class="catalog-section surface" aria-labelledby="services-title">
 		<header class="development-heading">
 			<div><p class="section-eyebrow"><?php echo esc_html( argokov_field( 'services_catalog_eyebrow', 'Каталог услуг' ) ); ?></p><h2 id="services-title"><?php echo esc_html( argokov_field( 'services_catalog_title', 'От первого запуска до постоянного развития' ) ); ?></h2></div>
-			<p><?php echo esc_html( argokov_field( 'services_catalog_copy', 'Каждое направление позже получит отдельную SEO-страницу. Сейчас каталог показывает общую архитектуру услуг и связи между ними.' ) ); ?></p>
+			<p><?php echo esc_html( argokov_field( 'services_catalog_copy', 'Каталог строим как систему SEO-страниц: направления ведут к отдельным услугам, которые можно расширять под конкретные задачи, технологии и условия проекта.' ) ); ?></p>
 		</header>
 
 		<?php if ( $filters ) : ?>
