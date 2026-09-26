@@ -1,6 +1,6 @@
 {
   "key": "group_argokov_development",
-  "title": "Разработка — контент",
+  "title": "Направление услуг — Разработка",
   "fields": [
     {
       "key": "field_argokov_dev_tab_hero",
@@ -632,9 +632,9 @@
   "location": [
     [
       {
-        "param": "page_template",
+        "param": "service_direction_slug",
         "operator": "==",
-        "value": "page-development.php"
+        "value": "development"
       }
     ]
   ],
@@ -657,7 +657,7 @@
     "send-trackbacks"
   ],
   "active": true,
-  "description": "Структурный контент страницы разработки.",
+  "description": "Контент страницы направления /services/development/.",
   "show_in_rest": 0,
-  "modified": 1790400000
+  "modified": 1790411000
 }
