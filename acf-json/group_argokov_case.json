@@ -1,0 +1,88 @@
+{
+  "key": "group_argokov_case",
+  "title": "Кейс — данные",
+  "fields": [
+    {
+      "key": "field_argokov_case_type",
+      "label": "Тип / направление",
+      "name": "case_type",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_case_lead",
+      "label": "Краткое описание",
+      "name": "case_lead",
+      "type": "textarea",
+      "rows": 4,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_case_work",
+      "label": "Что сделали",
+      "name": "case_work",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить пункт",
+      "sub_fields": [
+        {
+          "key": "field_argokov_case_work_text",
+          "label": "Пункт",
+          "name": "text",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_case_tech",
+      "label": "Технологии",
+      "name": "case_technologies",
+      "type": "repeater",
+      "layout": "table",
+      "button_label": "Добавить технологию",
+      "sub_fields": [
+        {
+          "key": "field_argokov_case_tech_text",
+          "label": "Технология",
+          "name": "text",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_case_url",
+      "label": "Ссылка на проект",
+      "name": "case_website_url",
+      "type": "url"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "case"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "the_content",
+    "excerpt",
+    "discussion",
+    "comments",
+    "revisions",
+    "author",
+    "format",
+    "categories",
+    "tags",
+    "send-trackbacks"
+  ],
+  "active": true,
+  "description": "Данные кейса для архива и главной страницы.",
+  "show_in_rest": 0,
+  "modified": 1790394000
+}
