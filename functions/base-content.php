@@ -315,14 +315,9 @@ function argokov_base_content_upsert_page( $page_data, $entity_ids, $page_ids = 
 	return $page_id;
 }
 
-function argokov_base_content_create_menu( $name, $location, $items ) {
+function argokov_base_content_create_menu( $name, $location, $items, $rebuild = false ) {
 	$locations = get_theme_mod( 'nav_menu_locations', array() );
-
-	if ( ! empty( $locations[ $location ] ) ) {
-		return;
-	}
-
-	$menu = wp_get_nav_menu_object( $name );
+	$menu      = wp_get_nav_menu_object( $name );
 
 	if ( $menu ) {
 		$menu_id = (int) $menu->term_id;
@@ -337,7 +332,16 @@ function argokov_base_content_create_menu( $name, $location, $items ) {
 	$existing = wp_get_nav_menu_items( $menu_id );
 	$existing = is_array( $existing ) ? $existing : array();
 
+	if ( $rebuild && $existing ) {
+		foreach ( $existing as $menu_item ) {
+			wp_delete_post( $menu_item->ID, true );
+		}
+		$existing = array();
+	}
+
 	if ( ! $existing ) {
+		$menu_item_ids = array();
+
 		foreach ( $items as $item ) {
 			if ( empty( $item['label'] ) || empty( $item['path'] ) ) {
 				continue;
@@ -347,16 +351,31 @@ function argokov_base_content_create_menu( $name, $location, $items ) {
 				? $item['path']
 				: home_url( $item['path'] );
 
-			wp_update_nav_menu_item(
+			$parent_id = 0;
+
+			if ( ! empty( $item['parent_key'] ) ) {
+				$parent_key = sanitize_key( $item['parent_key'] );
+
+				if ( ! empty( $menu_item_ids[ $parent_key ] ) ) {
+					$parent_id = (int) $menu_item_ids[ $parent_key ];
+				}
+			}
+
+			$menu_item_id = wp_update_nav_menu_item(
 				$menu_id,
 				0,
 				array(
-					'menu-item-title'  => (string) $item['label'],
-					'menu-item-url'    => $url,
-					'menu-item-status' => 'publish',
-					'menu-item-type'   => 'custom',
+					'menu-item-title'     => (string) $item['label'],
+					'menu-item-url'       => $url,
+					'menu-item-status'    => 'publish',
+					'menu-item-type'      => 'custom',
+					'menu-item-parent-id' => $parent_id,
 				)
 			);
+
+			if ( ! is_wp_error( $menu_item_id ) && ! empty( $item['key'] ) ) {
+				$menu_item_ids[ sanitize_key( $item['key'] ) ] = (int) $menu_item_id;
+			}
 		}
 	}
 
@@ -365,63 +384,57 @@ function argokov_base_content_create_menu( $name, $location, $items ) {
 }
 
 function argokov_base_content_seed_menus() {
-	argokov_base_content_create_menu(
-		'Основное меню',
-		'primary',
-		array(
-			array( 'label' => 'Услуги', 'path' => '/services/' ),
-			array( 'label' => 'Разработка', 'path' => '/development/' ),
-			array( 'label' => 'Поддержка', 'path' => '/support/' ),
-			array( 'label' => 'Кейсы', 'path' => '/cases/' ),
-			array( 'label' => 'Статьи', 'path' => '/materials/' ),
-			array( 'label' => 'Студия', 'path' => '/about/' ),
-			array( 'label' => 'Контакты', 'path' => '/contacts/' ),
-		)
+	$menu_version = 2;
+	$rebuild      = (int) get_option( 'argokov_menu_seed_version', 0 ) < $menu_version;
+
+	$primary = array(
+		array( 'key' => 'services', 'label' => 'Услуги', 'path' => '/services/' ),
+		array( 'key' => 'development', 'parent_key' => 'services', 'label' => 'Разработка', 'path' => '/services/development/' ),
+		array( 'key' => 'support', 'parent_key' => 'services', 'label' => 'Поддержка', 'path' => '/services/support/' ),
+		array( 'key' => 'cases', 'label' => 'Кейсы', 'path' => '/cases/' ),
+		array( 'key' => 'process', 'label' => 'Как работаем', 'path' => '/process/' ),
+		array( 'key' => 'materials', 'label' => 'Статьи', 'path' => '/materials/' ),
+		array( 'key' => 'faq', 'label' => 'Вопросы', 'path' => '/faq/' ),
+		array( 'key' => 'about', 'label' => 'Студия', 'path' => '/about/' ),
+		array( 'key' => 'contacts', 'label' => 'Контакты', 'path' => '/contacts/' ),
 	);
 
-	argokov_base_content_create_menu(
-		'Мобильное меню',
-		'mobile',
-		array(
-			array( 'label' => 'Услуги', 'path' => '/services/' ),
-			array( 'label' => 'Разработка', 'path' => '/development/' ),
-			array( 'label' => 'Поддержка', 'path' => '/support/' ),
-			array( 'label' => 'Статьи', 'path' => '/materials/' ),
-			array( 'label' => 'Кейсы', 'path' => '/cases/' ),
-			array( 'label' => 'О студии', 'path' => '/about/' ),
-			array( 'label' => 'Как работаем', 'path' => '/process/' ),
-			array( 'label' => 'Частые вопросы', 'path' => '/faq/' ),
-			array( 'label' => 'Контакты', 'path' => '/contacts/' ),
-		)
-	);
+	argokov_base_content_create_menu( 'Основное меню', 'primary', $primary, $rebuild );
+	argokov_base_content_create_menu( 'Мобильное меню', 'mobile', $primary, $rebuild );
 
 	argokov_base_content_create_menu(
 		'Подвал — услуги',
 		'footer_services',
 		array(
-			array( 'label' => 'Все услуги', 'path' => '/services/' ),
-			array( 'label' => 'Разработка сайтов', 'path' => '/development/' ),
-			array( 'label' => 'Поддержка сайтов', 'path' => '/support/' ),
-			array( 'label' => 'Доработка сайтов', 'path' => '/#improvements' ),
-			array( 'label' => 'Интернет-магазины', 'path' => '/development/#types' ),
-			array( 'label' => 'Интеграции', 'path' => '/development/#included' ),
-			array( 'label' => 'Техническое SEO', 'path' => '/development/#seo' ),
-			array( 'label' => 'Сложные проекты', 'path' => '/#improvements' ),
-		)
+			array( 'key' => 'all-services', 'label' => 'Все услуги', 'path' => '/services/' ),
+			array( 'key' => 'dev-services', 'label' => 'Разработка сайтов', 'path' => '/services/development/' ),
+			array( 'key' => 'support-services', 'label' => 'Поддержка сайтов', 'path' => '/services/support/' ),
+			array( 'key' => 'improvement', 'label' => 'Доработка сайтов', 'path' => '/services/support/one-time-improvement/' ),
+			array( 'key' => 'shops', 'label' => 'Интернет-магазины', 'path' => '/services/development/internet-shops/' ),
+			array( 'key' => 'integrations', 'label' => 'Интеграции', 'path' => '/services/development/integrations/' ),
+			array( 'key' => 'technical-seo', 'label' => 'Техническое SEO', 'path' => '/services/development/technical-seo/' ),
+			array( 'key' => 'project-takeover', 'label' => 'Сложные проекты', 'path' => '/services/support/project-takeover/' ),
+		),
+		$rebuild
 	);
 
 	argokov_base_content_create_menu(
 		'Подвал — студия',
 		'footer_studio',
 		array(
-			array( 'label' => 'Кейсы', 'path' => '/cases/' ),
-			array( 'label' => 'О студии', 'path' => '/about/' ),
-			array( 'label' => 'Как работаем', 'path' => '/process/' ),
-			array( 'label' => 'Материалы', 'path' => '/materials/' ),
-			array( 'label' => 'Частые вопросы', 'path' => '/faq/' ),
-			array( 'label' => 'Контакты', 'path' => '/contacts/' ),
-		)
+			array( 'key' => 'cases', 'label' => 'Кейсы', 'path' => '/cases/' ),
+			array( 'key' => 'about', 'label' => 'О студии', 'path' => '/about/' ),
+			array( 'key' => 'process', 'label' => 'Как работаем', 'path' => '/process/' ),
+			array( 'key' => 'materials', 'label' => 'Материалы', 'path' => '/materials/' ),
+			array( 'key' => 'faq', 'label' => 'Частые вопросы', 'path' => '/faq/' ),
+			array( 'key' => 'contacts', 'label' => 'Контакты', 'path' => '/contacts/' ),
+		),
+		$rebuild
 	);
+
+	if ( $rebuild ) {
+		update_option( 'argokov_menu_seed_version', $menu_version );
+	}
 }
 
 function argokov_base_content_seed_wp_options( $options ) {
