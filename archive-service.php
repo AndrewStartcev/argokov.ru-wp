@@ -13,7 +13,7 @@ $directions = get_terms(
 	array(
 		'taxonomy'   => 'service_direction',
 		'hide_empty' => false,
-		'orderby'    => 'term_order',
+		'orderby'    => 'term_id',
 	)
 );
 
