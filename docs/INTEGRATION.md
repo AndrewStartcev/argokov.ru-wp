@@ -204,3 +204,28 @@ Seeder:
 Schema.org не добавляем автоматически на текущем этапе.
 
 Отдельный модуль структурированных данных будет проектироваться после окончательного утверждения контентной модели. До этого тема не должна выводить `itemscope`, `itemprop`, JSON-LD или дублировать Schema Rank Math.
+
+
+## Архитектура услуг
+
+Услуги строятся как иерархия WordPress Pages, чтобы можно было создавать десятки и сотни отдельных SEO-посадочных без отдельного CPT и кастомной permalink-логики.
+
+Базовая структура:
+
+- `/services/` — общий каталог услуг;
+- `/services/development/` — направление «Разработка»;
+- `/services/support/` — направление «Поддержка»;
+- конкретные услуги — дочерние страницы соответствующего направления, например:
+  - `/services/development/corporate-sites/`;
+  - `/services/development/internet-shops/`;
+  - `/services/development/web-services/`;
+  - `/services/development/technical-seo/`;
+  - `/services/development/integrations/`;
+  - `/services/support/one-time-improvement/`;
+  - `/services/support/project-takeover/`.
+
+Для конкретных услуг используется `page-service-detail.php` + ACF-группа `group_argokov_service_detail`.
+
+«Разработка» и «Поддержка» не являются отдельными пунктами верхнего уровня меню: они вложены в «Услуги». Старые адреса `/development/` и `/support/` перенаправляются 301 на новые вложенные URL.
+
+На главной карточки основных направлений ведут на реальные страницы направлений. В подвале ссылки услуг ведут на реальные URL без якорей-заглушек.
