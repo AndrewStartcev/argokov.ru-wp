@@ -1,14 +1,18 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-function argokov_option( $name, $default = '' ) {
-	if ( function_exists( 'get_field' ) ) {
-		$value = get_field( $name, 'option' );
-		if ( null !== $value && '' !== $value && false !== $value ) {
-			return $value;
-		}
+function argokov_field( $name, $default = '', $post_id = false ) {
+	if ( ! function_exists( 'get_field' ) ) {
+		return $default;
 	}
-	return $default;
+
+	$value = get_field( $name, $post_id );
+
+	return ( null === $value || false === $value || '' === $value ) ? $default : $value;
+}
+
+function argokov_option( $name, $default = '' ) {
+	return argokov_field( $name, $default, 'option' );
 }
 
 function argokov_phone_href( $phone ) {
@@ -61,4 +65,44 @@ function argokov_render_flat_menu( $location, $fallback_items ) {
 			esc_html( $label )
 		);
 	}
+}
+
+
+function argokov_asset( $path ) {
+	return get_theme_file_uri( ltrim( (string) $path, '/' ) );
+}
+
+function argokov_image_url( $image, $fallback = '' ) {
+	if ( is_array( $image ) && ! empty( $image['url'] ) ) {
+		return $image['url'];
+	}
+
+	if ( is_numeric( $image ) ) {
+		$url = wp_get_attachment_image_url( (int) $image, 'full' );
+		if ( $url ) {
+			return $url;
+		}
+	}
+
+	return $fallback ? argokov_asset( $fallback ) : '';
+}
+
+function argokov_image_alt( $image, $fallback = '' ) {
+	if ( is_array( $image ) && ! empty( $image['alt'] ) ) {
+		return $image['alt'];
+	}
+
+	if ( is_numeric( $image ) ) {
+		$alt = get_post_meta( (int) $image, '_wp_attachment_image_alt', true );
+		if ( $alt ) {
+			return $alt;
+		}
+	}
+
+	return $fallback;
+}
+
+function argokov_rows( $name, $fallback = array(), $post_id = false ) {
+	$rows = argokov_field( $name, array(), $post_id );
+	return is_array( $rows ) && $rows ? $rows : $fallback;
 }
