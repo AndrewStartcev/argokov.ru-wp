@@ -5,6 +5,7 @@ foreach ( array(
 	'/functions/theme-support.php',
 	'/functions/assets.php',
 	'/functions/acf.php',
+	'/functions/base-content.php',
 	'/functions/helpers.php',
 	'/functions/remove-functions.php',
 	'/functions/post-types.php',
