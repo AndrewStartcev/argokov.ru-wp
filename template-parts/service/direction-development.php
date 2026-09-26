@@ -236,6 +236,8 @@ defined( 'ABSPATH' ) || exit;
 		</div>
 	</section>
 
+	<?php get_template_part( 'template-parts/service/direction-services' ); ?>
+
 	<?php
 	get_template_part(
 		'template-parts/common/contact-section',
