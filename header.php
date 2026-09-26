@@ -1,13 +1,34 @@
 <?php
-/**
- * Site header.
- *
- * @package Argokov
- */
+if ( ! defined( 'ABSPATH' ) ) { exit; }
 
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+$location_short    = argokov_option( 'site_location_short', 'Иркутск · вся Россия' );
+$location_full     = argokov_option( 'site_location_full', 'Иркутск · работаем по всей России' );
+$availability      = argokov_option( 'site_availability_short', 'Обращения 24/7' );
+$availability_full = argokov_option( 'site_availability_full', 'Принимаем обращения 24/7' );
+$phone             = argokov_option( 'site_phone', '+7 999 000-00-00' );
+$email             = argokov_option( 'site_email', 'mail@argokov.ru' );
+
+$primary_menu = array(
+	array( '/services/', 'Услуги' ),
+	array( '/development/', 'Разработка' ),
+	array( '/support/', 'Поддержка' ),
+	array( '/cases/', 'Кейсы' ),
+	array( '/materials/', 'Статьи' ),
+	array( '/about/', 'Студия' ),
+	array( '/contacts/', 'Контакты' ),
+);
+
+$mobile_menu = array(
+	array( '/services/', 'Услуги' ),
+	array( '/development/', 'Разработка' ),
+	array( '/support/', 'Поддержка' ),
+	array( '/materials/', 'Статьи' ),
+	array( '/cases/', 'Кейсы' ),
+	array( '/about/', 'О студии' ),
+	array( '/process/', 'Как работаем' ),
+	array( '/faq/', 'Частые вопросы' ),
+	array( '/contacts/', 'Контакты' ),
+);
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -49,16 +70,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</a>
 
 			<nav class="site-nav" aria-label="Основная навигация">
-				<a href="/services/">Услуги</a><a href="/development/">Разработка</a><a href="/support/">Поддержка</a><a href="/cases/">Кейсы</a><a href="/materials/">Статьи</a><a href="/about/">Студия</a><a href="/contacts/">Контакты</a>
+				<?php argokov_render_flat_menu( 'primary', $primary_menu ); ?>
 			</nav>
 
 			<div class="site-header__right">
 				<div class="site-header__info">
 					<div class="site-header__location">
-						<span>Иркутск · вся Россия</span><span class="availability"><span class="availability__dot" aria-hidden="true"></span>Обращения 24/7</span>
+						<span><?php echo esc_html( $location_short ); ?></span><span class="availability"><span class="availability__dot" aria-hidden="true"></span><?php echo esc_html( $availability ); ?></span>
 					</div>
 					<div class="site-header__contacts">
-						<a href="tel:+79990000000">+7 999 000-00-00</a><a href="mailto:mail@argokov.ru">mail@argokov.ru</a>
+						<a href="<?php echo esc_url( 'tel:' . argokov_phone_href( $phone ) ); ?>"><?php echo esc_html( $phone ); ?></a><a href="<?php echo esc_url( 'mailto:' . sanitize_email( $email ) ); ?>"><?php echo esc_html( antispambot( $email ) ); ?></a>
 					</div>
 				</div>
 
@@ -72,10 +93,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 						<summary aria-label="Открыть меню"><span></span><span></span><span></span></summary>
 						<div class="mobile-nav__panel surface">
 							<nav aria-label="Мобильная навигация">
-								<a href="/services/">Услуги</a><a href="/development/">Разработка</a><a href="/support/">Поддержка</a><a href="/materials/">Статьи</a><a href="/cases/">Кейсы</a><a href="/about/">О студии</a><a href="/process/">Как работаем</a><a href="/faq/">Частые вопросы</a><a href="/contacts/">Контакты</a>
+								<?php argokov_render_flat_menu( 'mobile', $mobile_menu ); ?>
 							</nav>
 							<div class="mobile-nav__meta">
-								<span>Иркутск · работаем по всей России</span><span class="availability"><span class="availability__dot" aria-hidden="true"></span>Принимаем обращения 24/7</span><a href="tel:+79990000000">+7 999 000-00-00</a><a href="mailto:mail@argokov.ru">mail@argokov.ru</a>
+								<span><?php echo esc_html( $location_full ); ?></span><span class="availability"><span class="availability__dot" aria-hidden="true"></span><?php echo esc_html( $availability_full ); ?></span><a href="<?php echo esc_url( 'tel:' . argokov_phone_href( $phone ) ); ?>"><?php echo esc_html( $phone ); ?></a><a href="<?php echo esc_url( 'mailto:' . sanitize_email( $email ) ); ?>"><?php echo esc_html( antispambot( $email ) ); ?></a>
 							</div>
 						</div>
 					</details>
