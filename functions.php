@@ -6,6 +6,7 @@ foreach ( array(
 	'/functions/assets.php',
 	'/functions/acf.php',
 	'/functions/base-content.php',
+	'/functions/comments.php',
 	'/functions/helpers.php',
 	'/functions/remove-functions.php',
 	'/functions/post-types.php',
