@@ -7,6 +7,35 @@ $availability      = argokov_option( 'site_availability_short', 'Обращен�
 $availability_full = argokov_option( 'site_availability_full', 'Принимаем обращения 24/7' );
 $phone             = argokov_option( 'site_phone', '+7 999 000-00-00' );
 $email             = argokov_option( 'site_email', 'mail@argokov.ru' );
+$service_mega_menu = argokov_service_mega_menu_data( 6 );
+
+if ( ! $service_mega_menu ) {
+	$service_mega_menu = array(
+		array(
+			'title' => 'Разработка',
+			'url' => home_url( '/services/development/' ),
+			'services' => array(
+				array( 'title' => 'Корпоративные сайты', 'url' => home_url( '/services/development/corporate-sites/' ) ),
+				array( 'title' => 'Интернет-магазины', 'url' => home_url( '/services/development/internet-shops/' ) ),
+				array( 'title' => 'Веб-сервисы и кабинеты', 'url' => home_url( '/services/development/web-services/' ) ),
+				array( 'title' => 'Техническое SEO', 'url' => home_url( '/services/development/technical-seo/' ) ),
+				array( 'title' => 'CRM, 1С и интеграции', 'url' => home_url( '/services/development/integrations/' ) ),
+			),
+			'total' => 5,
+		),
+		array(
+			'title' => 'Поддержка',
+			'url' => home_url( '/services/support/' ),
+			'services' => array(
+				array( 'title' => 'Разовая доработка', 'url' => home_url( '/services/support/one-time-improvement/' ) ),
+				array( 'title' => 'Приём чужого проекта', 'url' => home_url( '/services/support/project-takeover/' ) ),
+			),
+			'total' => 2,
+		),
+	);
+}
+
+$services_menu_active = is_post_type_archive( 'service' ) || is_singular( 'service' ) || is_tax( 'service_direction' );
 
 $primary_menu = array(
 	array(
@@ -66,7 +95,66 @@ $mobile_menu = $primary_menu;
 			</a>
 
 			<nav class="site-nav" aria-label="Основная навигация">
-				<?php argokov_render_nested_menu( 'primary', $primary_menu, 'desktop' ); ?>
+				<div class="site-nav__mega-item<?php echo $services_menu_active ? ' is-current' : ''; ?>">
+					<a class="site-nav__mega-trigger" href="<?php echo esc_url( get_post_type_archive_link( 'service' ) ?: home_url( '/services/' ) ); ?>"<?php if ( $services_menu_active ) : ?> aria-current="page"<?php endif; ?>>
+						Услуги
+						<svg class="site-nav__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m4 6 4 4 4-4"></path></svg>
+					</a>
+
+					<div class="site-nav__mega" aria-label="Меню услуг">
+						<div class="site-nav__mega-main">
+							<div class="site-nav__mega-heading">
+								<div>
+									<span>Услуги</span>
+									<strong>Разработка и поддержка сайтов</strong>
+								</div>
+								<a href="<?php echo esc_url( get_post_type_archive_link( 'service' ) ?: home_url( '/services/' ) ); ?>">Все услуги
+									<svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg>
+								</a>
+							</div>
+
+							<div class="site-nav__mega-groups">
+								<?php foreach ( $service_mega_menu as $group ) : ?>
+									<section class="site-nav__mega-group">
+										<a class="site-nav__mega-group-title" href="<?php echo esc_url( $group['url'] ?? home_url( '/services/' ) ); ?>">
+											<?php echo esc_html( $group['title'] ?? 'Услуги' ); ?>
+											<svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg>
+										</a>
+
+										<?php if ( ! empty( $group['services'] ) ) : ?>
+											<div class="site-nav__mega-links">
+												<?php foreach ( $group['services'] as $service_item ) : ?>
+													<a href="<?php echo esc_url( $service_item['url'] ?? '#' ); ?>"><?php echo esc_html( $service_item['title'] ?? '' ); ?></a>
+												<?php endforeach; ?>
+											</div>
+										<?php endif; ?>
+
+										<?php if ( ! empty( $group['total'] ) && (int) $group['total'] > count( $group['services'] ?? array() ) ) : ?>
+											<a class="site-nav__mega-more" href="<?php echo esc_url( $group['url'] ?? home_url( '/services/' ) ); ?>">Ещё <?php echo esc_html( (int) $group['total'] - count( $group['services'] ?? array() ) ); ?> услуг</a>
+										<?php endif; ?>
+									</section>
+								<?php endforeach; ?>
+							</div>
+						</div>
+
+						<aside class="site-nav__mega-cta">
+							<span class="site-nav__mega-cta-label">Не знаешь, что выбрать?</span>
+							<strong>Разберём задачу и подскажем, с чего начать</strong>
+							<p>Пришли ссылку на сайт или коротко опиши задачу. Сначала изучим проект, потом предложим решение.</p>
+							<a class="button" href="#contact" data-contact-modal="true">Получить консультацию
+								<svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg>
+							</a>
+							<small>Можно обратиться даже без готового ТЗ</small>
+						</aside>
+					</div>
+				</div>
+
+				<a href="<?php echo esc_url( get_post_type_archive_link( 'case' ) ?: home_url( '/cases/' ) ); ?>"<?php if ( is_post_type_archive( 'case' ) || is_singular( 'case' ) ) : ?> aria-current="page"<?php endif; ?>>Кейсы</a>
+				<a href="<?php echo esc_url( home_url( '/process/' ) ); ?>"<?php if ( is_page( 'process' ) ) : ?> aria-current="page"<?php endif; ?>>Как работаем</a>
+				<a href="<?php echo esc_url( get_post_type_archive_link( 'material' ) ?: home_url( '/materials/' ) ); ?>"<?php if ( is_post_type_archive( 'material' ) || is_singular( 'material' ) ) : ?> aria-current="page"<?php endif; ?>>Статьи</a>
+				<a href="<?php echo esc_url( home_url( '/faq/' ) ); ?>"<?php if ( is_page( 'faq' ) ) : ?> aria-current="page"<?php endif; ?>>Вопросы</a>
+				<a href="<?php echo esc_url( home_url( '/about/' ) ); ?>"<?php if ( is_page( 'about' ) ) : ?> aria-current="page"<?php endif; ?>>Студия</a>
+				<a href="<?php echo esc_url( home_url( '/contacts/' ) ); ?>"<?php if ( is_page( 'contacts' ) ) : ?> aria-current="page"<?php endif; ?>>Контакты</a>
 			</nav>
 
 			<div class="site-header__right">
