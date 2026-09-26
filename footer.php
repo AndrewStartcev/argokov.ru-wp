@@ -41,7 +41,7 @@ $footer_studio = array(
 							<path d="m45 44-12.9-15.6-8.1 7.9V46l6.2-6.1 3.4-3.3 5.7 7.4H45Z"></path>
 							<circle cx="24" cy="25" r="5.2"></circle>
 						</svg>
-						<div><strong>Аргоков<span>.</span></strong><small>Разработка и поддержка сайтов</small></div>
+						<div><strong><?php echo esc_html( get_bloginfo( 'name' ) ?: 'Аргоков' ); ?><span>.</span></strong><small><?php echo esc_html( get_bloginfo( 'description' ) ?: 'Разработка и поддержка сайтов' ); ?></small></div>
 					</div>
 					<p><?php echo esc_html( $description ); ?></p>
 					<div class="site-footer__brand-meta">
