@@ -67,15 +67,16 @@ $directions = argokov_rows(
 			$image_alt   = argokov_image_alt( $image, $direction['title'] ?? '' );
 			$features    = isset( $direction['features'] ) && is_array( $direction['features'] ) ? $direction['features'] : array();
 			$anchor_id   = sanitize_html_class( $direction['id'] ?? '' );
+			$direction_url = ! empty( $direction['url'] ) ? home_url( $direction['url'] ) : '';
 			?>
 			<article class="direction-card<?php echo esc_attr( $variant ); ?>"<?php if ( $anchor_id ) : ?> id="<?php echo esc_attr( $anchor_id ); ?>"<?php endif; ?>>
-				<div class="direction-card__cover">
+				<?php if ( $direction_url ) : ?><a class="direction-card__cover" href="<?php echo esc_url( $direction_url ); ?>"><?php else : ?><div class="direction-card__cover"><?php endif; ?>
 					<?php if ( $image_url ) : ?><img src="<?php echo esc_url( $image_url ); ?>" alt="<?php echo esc_attr( $image_alt ); ?>" loading="lazy" decoding="async" sizes="(max-width: 960px) 100vw, 50vw" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"><?php endif; ?>
 					<span class="direction-card__number"><?php echo esc_html( $direction['number'] ?? '' ); ?></span>
-				</div>
+				<?php if ( $direction_url ) : ?></a><?php else : ?></div><?php endif; ?>
 
 				<div class="direction-card__body">
-					<h3><?php echo esc_html( $direction['title'] ?? '' ); ?></h3>
+					<h3><?php if ( $direction_url ) : ?><a href="<?php echo esc_url( $direction_url ); ?>"><?php endif; ?><?php echo esc_html( $direction['title'] ?? '' ); ?><?php if ( $direction_url ) : ?></a><?php endif; ?></h3>
 					<p class="direction-card__lead"><?php echo esc_html( $direction['lead'] ?? '' ); ?></p>
 
 					<?php if ( $features ) : ?>
@@ -88,7 +89,7 @@ $directions = argokov_rows(
 
 					<div class="direction-card__footer">
 						<span><?php echo esc_html( $direction['footer_text'] ?? '' ); ?></span>
-						<a href="#contact" data-contact-modal="true"><?php echo esc_html( $direction['button_label'] ?? 'Обсудить задачу' ); ?> <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
+						<a href="<?php echo esc_url( $direction_url ?: '#contact' ); ?>"<?php if ( ! $direction_url ) : ?> data-contact-modal="true"<?php endif; ?>><?php echo esc_html( $direction['button_label'] ?? 'Подробнее' ); ?> <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
 					</div>
 				</div>
 			</article>
