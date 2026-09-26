@@ -1,0 +1,388 @@
+{
+  "key": "group_argokov_about",
+  "title": "О студии — контент",
+  "fields": [
+    {
+      "key": "field_argokov_about_tab_hero",
+      "label": "Первый экран",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_about_hero_eyebrow",
+      "label": "Надзаголовок",
+      "name": "about_hero_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_about_hero_title",
+      "label": "H1 — основной текст",
+      "name": "about_hero_title",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_about_hero_accent",
+      "label": "H1 — акцент",
+      "name": "about_hero_title_accent",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_about_hero_text",
+      "label": "Описание",
+      "name": "about_hero_text",
+      "type": "textarea",
+      "rows": 4,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_about_tab_founder",
+      "label": "Основатель",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_about_founder_eyebrow",
+      "label": "Надзаголовок",
+      "name": "about_founder_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_about_founder_title",
+      "label": "H2",
+      "name": "about_founder_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_about_founder_text",
+      "label": "Текст",
+      "name": "about_founder_text",
+      "type": "wysiwyg",
+      "tabs": "all",
+      "toolbar": "basic",
+      "media_upload": 0,
+      "delay": 0
+    },
+    {
+      "key": "field_argokov_about_founder_quote",
+      "label": "Цитата",
+      "name": "about_founder_quote",
+      "type": "textarea",
+      "rows": 4,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_about_interview_label",
+      "label": "Текст ссылки на интервью",
+      "name": "about_interview_label",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_about_interview_url",
+      "label": "Ссылка на интервью",
+      "name": "about_interview_url",
+      "type": "url",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_about_facts",
+      "label": "Факты",
+      "name": "about_facts",
+      "type": "repeater",
+      "layout": "table",
+      "button_label": "Добавить факт",
+      "sub_fields": [
+        {
+          "key": "field_argokov_about_fact_value",
+          "label": "Значение",
+          "name": "value",
+          "type": "text",
+          "wrapper": {
+            "width": "35"
+          }
+        },
+        {
+          "key": "field_argokov_about_fact_label",
+          "label": "Подпись",
+          "name": "label",
+          "type": "text",
+          "wrapper": {
+            "width": "65"
+          }
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_about_tab_story",
+      "label": "История",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_about_story_eyebrow",
+      "label": "Надзаголовок",
+      "name": "about_story_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_about_story_title",
+      "label": "H2",
+      "name": "about_story_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_about_story_copy",
+      "label": "Описание",
+      "name": "about_story_copy",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_about_timeline",
+      "label": "Этапы",
+      "name": "about_timeline",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить этап",
+      "sub_fields": [
+        {
+          "key": "field_argokov_about_timeline_year",
+          "label": "Год",
+          "name": "year",
+          "type": "text",
+          "wrapper": {
+            "width": "20"
+          }
+        },
+        {
+          "key": "field_argokov_about_timeline_title",
+          "label": "H3",
+          "name": "title",
+          "type": "text",
+          "wrapper": {
+            "width": "40"
+          }
+        },
+        {
+          "key": "field_argokov_about_timeline_text",
+          "label": "Описание",
+          "name": "text",
+          "type": "textarea",
+          "rows": 3,
+          "new_lines": "",
+          "wrapper": {
+            "width": "40"
+          }
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_about_tab_model",
+      "label": "Модель студии",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_about_model_eyebrow",
+      "label": "Надзаголовок",
+      "name": "about_model_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_about_model_title",
+      "label": "H2",
+      "name": "about_model_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_about_model_text",
+      "label": "Описание",
+      "name": "about_model_text",
+      "type": "textarea",
+      "rows": 4,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_about_model_link_label",
+      "label": "Текст ссылки",
+      "name": "about_model_link_label",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_about_roles",
+      "label": "Роли",
+      "name": "about_roles",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить",
+      "sub_fields": [
+        {
+          "key": "field_argokov_about_role_label",
+          "label": "Метка",
+          "name": "label",
+          "type": "text",
+          "wrapper": {
+            "width": "20"
+          }
+        },
+        {
+          "key": "field_argokov_about_role_title",
+          "label": "H3",
+          "name": "title",
+          "type": "text",
+          "wrapper": {
+            "width": "40"
+          }
+        },
+        {
+          "key": "field_argokov_about_role_text",
+          "label": "Описание",
+          "name": "text",
+          "type": "textarea",
+          "rows": 3,
+          "new_lines": "",
+          "wrapper": {
+            "width": "40"
+          }
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_about_tab_values",
+      "label": "Подход",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_about_values_eyebrow",
+      "label": "Надзаголовок",
+      "name": "about_values_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_about_values_title",
+      "label": "H2",
+      "name": "about_values_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_about_values",
+      "label": "Принципы",
+      "name": "about_values",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить",
+      "sub_fields": [
+        {
+          "key": "field_argokov_about_value_number",
+          "label": "Номер",
+          "name": "number",
+          "type": "text",
+          "wrapper": {
+            "width": "15"
+          }
+        },
+        {
+          "key": "field_argokov_about_value_title",
+          "label": "H3",
+          "name": "title",
+          "type": "text",
+          "wrapper": {
+            "width": "35"
+          }
+        },
+        {
+          "key": "field_argokov_about_value_text",
+          "label": "Описание",
+          "name": "text",
+          "type": "textarea",
+          "rows": 3,
+          "new_lines": "",
+          "wrapper": {
+            "width": "50"
+          }
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_about_values_link_label",
+      "label": "Текст ссылки",
+      "name": "about_values_link_label",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_about_tab_cta",
+      "label": "CTA",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_about_cta_eyebrow",
+      "label": "Надзаголовок",
+      "name": "about_cta_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_about_cta_title",
+      "label": "H2",
+      "name": "about_cta_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_about_cta_text",
+      "label": "Описание",
+      "name": "about_cta_text",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_about_cta_button",
+      "label": "Текст кнопки",
+      "name": "about_cta_button_label",
+      "type": "text"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "page-about.php"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "the_content",
+    "excerpt",
+    "discussion",
+    "comments",
+    "revisions",
+    "author",
+    "format",
+    "featured_image",
+    "categories",
+    "tags",
+    "send-trackbacks"
+  ],
+  "active": true,
+  "description": "Структурный контент страницы «О студии».",
+  "show_in_rest": 0,
+  "modified": 1790397000
+}
