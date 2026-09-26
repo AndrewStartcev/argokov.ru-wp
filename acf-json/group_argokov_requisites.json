@@ -1,0 +1,245 @@
+{
+  "key": "group_argokov_requisites",
+  "title": "Реквизиты — контент",
+  "fields": [
+    {
+      "key": "field_argokov_req_tab_hero",
+      "label": "Первый экран",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_req_hero_eyebrow",
+      "label": "Надзаголовок",
+      "name": "req_hero_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_req_hero_title",
+      "label": "H1 — основной текст",
+      "name": "req_hero_title",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_req_hero_accent",
+      "label": "H1 — акцент",
+      "name": "req_hero_title_accent",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_req_hero_text",
+      "label": "Описание",
+      "name": "req_hero_text",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_req_identity_type",
+      "label": "Тип организации",
+      "name": "req_identity_type",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_req_identity_note",
+      "label": "Статус",
+      "name": "req_identity_note",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_req_tab_groups",
+      "label": "Реквизиты",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_req_groups",
+      "label": "Группы реквизитов",
+      "name": "req_groups",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить группу",
+      "sub_fields": [
+        {
+          "key": "field_argokov_req_group_number",
+          "label": "Номер",
+          "name": "number",
+          "type": "text",
+          "wrapper": {
+            "width": "10"
+          }
+        },
+        {
+          "key": "field_argokov_req_group_title",
+          "label": "H2",
+          "name": "title",
+          "type": "text",
+          "wrapper": {
+            "width": "30"
+          }
+        },
+        {
+          "key": "field_argokov_req_group_items",
+          "label": "Строки",
+          "name": "items",
+          "type": "repeater",
+          "layout": "table",
+          "button_label": "Добавить",
+          "sub_fields": [
+            {
+              "key": "field_argokov_req_group_item_label",
+              "label": "Название",
+              "name": "label",
+              "type": "text",
+              "wrapper": {
+                "width": "40"
+              }
+            },
+            {
+              "key": "field_argokov_req_group_item_value",
+              "label": "Значение",
+              "name": "value",
+              "type": "text",
+              "wrapper": {
+                "width": "60"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_req_tab_docs",
+      "label": "Документы",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_req_docs_eyebrow",
+      "label": "Надзаголовок",
+      "name": "req_docs_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_req_docs_title",
+      "label": "H2",
+      "name": "req_docs_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_req_docs_text",
+      "label": "Описание",
+      "name": "req_docs_text",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_req_pdf_url",
+      "label": "PDF",
+      "name": "req_pdf_url",
+      "type": "url",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_req_docx_url",
+      "label": "DOCX",
+      "name": "req_docx_url",
+      "type": "url",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_req_docs_note_title",
+      "label": "Заголовок примечания",
+      "name": "req_docs_note_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_req_docs_note_text",
+      "label": "Примечание",
+      "name": "req_docs_note_text",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_req_tab_cta",
+      "label": "CTA",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_req_cta_eyebrow",
+      "label": "Надзаголовок",
+      "name": "req_cta_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_req_cta_title",
+      "label": "H2",
+      "name": "req_cta_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_req_cta_text",
+      "label": "Описание",
+      "name": "req_cta_text",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_req_cta_button",
+      "label": "Текст кнопки",
+      "name": "req_cta_button_label",
+      "type": "text"
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "page-requisites.php"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "the_content",
+    "excerpt",
+    "discussion",
+    "comments",
+    "revisions",
+    "author",
+    "format",
+    "featured_image",
+    "categories",
+    "tags",
+    "send-trackbacks"
+  ],
+  "active": true,
+  "description": "Юридические и банковские реквизиты.",
+  "show_in_rest": 0,
+  "modified": 1790397000
+}
