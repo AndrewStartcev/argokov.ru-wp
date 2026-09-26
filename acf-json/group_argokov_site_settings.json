@@ -183,6 +183,221 @@
       "name": "site_contact_form_shortcode",
       "type": "text",
       "instructions": "Вставь shortcode Contact Form 7. Пока поле пустое, выводится исходная форма из верстки."
+    },
+    {
+      "key": "field_argokov_tab_archives",
+      "label": "Архивы",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_cases_archive_eyebrow",
+      "label": "Кейсы — надзаголовок",
+      "name": "cases_archive_eyebrow",
+      "type": "text",
+      "default_value": "Выполненная работа"
+    },
+    {
+      "key": "field_argokov_cases_archive_title",
+      "label": "Кейсы — H1",
+      "name": "cases_archive_title",
+      "type": "text",
+      "default_value": "Кейсы",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_cases_archive_accent",
+      "label": "Кейсы — акцент H1",
+      "name": "cases_archive_title_accent",
+      "type": "text",
+      "default_value": "без красивых легенд",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_cases_archive_text",
+      "label": "Кейсы — описание",
+      "name": "cases_archive_text",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": "",
+      "default_value": "Показываем задачу, техническую работу и то, как проект развивается после запуска. Часть проектов не публикуем из-за NDA."
+    },
+    {
+      "key": "field_argokov_cases_catalog_eyebrow",
+      "label": "Кейсы — каталог, надзаголовок",
+      "name": "cases_catalog_eyebrow",
+      "type": "text",
+      "default_value": "Выбранные проекты"
+    },
+    {
+      "key": "field_argokov_cases_catalog_title",
+      "label": "Кейсы — каталог, H2",
+      "name": "cases_catalog_title",
+      "type": "text",
+      "default_value": "Сайты, за которые продолжаем отвечать"
+    },
+    {
+      "key": "field_argokov_cases_catalog_text",
+      "label": "Кейсы — каталог, описание",
+      "name": "cases_catalog_text",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": "",
+      "default_value": "Кейс для нас — не только макет. Важны архитектура, интеграции, управляемость и возможность развивать проект дальше."
+    },
+    {
+      "key": "field_argokov_cases_nda_title",
+      "label": "Кейсы — NDA, заголовок",
+      "name": "cases_nda_title",
+      "type": "text",
+      "default_value": "Не все проекты можно показать публично"
+    },
+    {
+      "key": "field_argokov_cases_nda_text",
+      "label": "Кейсы — NDA, текст",
+      "name": "cases_nda_text",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": "",
+      "default_value": "Работаем по NDA и соблюдаем договорённости. По запросу можем подобрать похожий опыт без раскрытия закрытых данных."
+    },
+    {
+      "key": "field_argokov_cases_nda_link",
+      "label": "Кейсы — NDA, ссылка",
+      "name": "cases_nda_link_label",
+      "type": "text",
+      "default_value": "Запросить похожий кейс"
+    },
+    {
+      "key": "field_argokov_materials_archive_eyebrow",
+      "label": "Статьи — надзаголовок",
+      "name": "materials_archive_eyebrow",
+      "type": "text",
+      "default_value": "Практика веб-разработки"
+    },
+    {
+      "key": "field_argokov_materials_archive_title",
+      "label": "Статьи — H1",
+      "name": "materials_archive_title",
+      "type": "text",
+      "default_value": "Статьи о разработке,",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_materials_archive_accent",
+      "label": "Статьи — акцент H1",
+      "name": "materials_archive_title_accent",
+      "type": "text",
+      "default_value": "поддержке и развитии сайтов",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_materials_archive_text",
+      "label": "Статьи — описание",
+      "name": "materials_archive_text",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": "",
+      "default_value": "Разбираем реальные технические ситуации: как принять чужой проект, не потерять данные, оценить доработки и подготовить сайт к продвижению."
+    },
+    {
+      "key": "field_argokov_materials_catalog_eyebrow",
+      "label": "Статьи — каталог, надзаголовок",
+      "name": "materials_catalog_eyebrow",
+      "type": "text",
+      "default_value": "Новые материалы"
+    },
+    {
+      "key": "field_argokov_materials_catalog_title",
+      "label": "Статьи — каталог, H2",
+      "name": "materials_catalog_title",
+      "type": "text",
+      "default_value": "Полезно владельцу сайта и команде"
+    },
+    {
+      "key": "field_argokov_materials_catalog_text",
+      "label": "Статьи — каталог, описание",
+      "name": "materials_catalog_text",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": "",
+      "default_value": "Пишем о том, с чем сталкиваемся в проектах: конкретно, честно и с понятным следующим действием."
+    },
+    {
+      "key": "field_argokov_tab_common_blocks",
+      "label": "Общие блоки",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_author_bio",
+      "label": "Описание автора статей",
+      "name": "site_author_bio",
+      "type": "textarea",
+      "rows": 4,
+      "new_lines": "",
+      "default_value": "Веб-разработчик и основатель студии «Аргоков». Более 10 лет разрабатывает и принимает на поддержку сайты на WordPress, 1С-Битрикс и с самописным кодом."
+    },
+    {
+      "key": "field_argokov_modal_eyebrow",
+      "label": "Модальное окно — надзаголовок",
+      "name": "contact_modal_eyebrow",
+      "type": "text",
+      "default_value": "Обсудить задачу"
+    },
+    {
+      "key": "field_argokov_modal_title",
+      "label": "Модальное окно — H2",
+      "name": "contact_modal_title",
+      "type": "text",
+      "default_value": "Расскажите о проекте"
+    },
+    {
+      "key": "field_argokov_modal_text",
+      "label": "Модальное окно — текст",
+      "name": "contact_modal_text",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": "",
+      "default_value": "Можно отправить ссылку, описание или готовое техническое задание. Изучим и предложим следующий шаг."
+    },
+    {
+      "key": "field_argokov_case_cta_eyebrow",
+      "label": "Кейс — CTA надзаголовок",
+      "name": "case_cta_eyebrow",
+      "type": "text",
+      "default_value": "Похожая задача"
+    },
+    {
+      "key": "field_argokov_case_cta_title",
+      "label": "Кейс — CTA H2",
+      "name": "case_cta_title",
+      "type": "text",
+      "default_value": "Обсудим твой проект"
+    },
+    {
+      "key": "field_argokov_case_cta_text",
+      "label": "Кейс — CTA текст",
+      "name": "case_cta_text",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": "",
+      "default_value": "Пришли ссылку или описание задачи. Посмотрим вводные и предложим понятный следующий шаг."
+    },
+    {
+      "key": "field_argokov_case_cta_button",
+      "label": "Кейс — CTA кнопка",
+      "name": "case_cta_button_label",
+      "type": "text",
+      "default_value": "Связаться"
     }
   ],
   "location": [
@@ -202,5 +417,5 @@
   "active": true,
   "description": "Глобальные контакты, география, соцсети и данные оператора сайта.",
   "show_in_rest": 0,
-  "modified": 1790393000
+  "modified": 1790405000
 }
