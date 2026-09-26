@@ -96,6 +96,8 @@ $footer_studio = array(
 		<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m7 14 5-5 5 5"></path></svg>
 	</button>
 </main>
+
+<?php get_template_part( 'template-parts/common/contact-modal' ); ?>
 <?php wp_footer(); ?>
 </body>
 </html>
