@@ -1,0 +1,59 @@
+{
+  "key": "group_argokov_legal_page",
+  "title": "Юридическая страница",
+  "fields": [
+    {
+      "key": "field_argokov_legal_revision_date",
+      "label": "Дата редакции",
+      "name": "legal_revision_date",
+      "type": "date_picker",
+      "display_format": "j F Y",
+      "return_format": "Y-m-d",
+      "first_day": 1
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "page-privacy.php"
+      }
+    ],
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "page-consent.php"
+      }
+    ],
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "page-cookies.php"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "excerpt",
+    "discussion",
+    "comments",
+    "revisions",
+    "author",
+    "format",
+    "featured_image",
+    "categories",
+    "tags",
+    "send-trackbacks"
+  ],
+  "active": true,
+  "description": "Текст юридической страницы хранится в обычном содержимом страницы.",
+  "show_in_rest": 0,
+  "modified": 1790397000
+}
