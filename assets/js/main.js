@@ -143,7 +143,7 @@
 
   window.setTimeout(showCookieNotice, 700);
 
-  const MEGA_MENU_CLOSE_DELAY = 380;
+  const MEGA_MENU_CLOSE_DELAY = 450;
 
   document.querySelectorAll(".site-nav__mega-item").forEach((item) => {
     const trigger = item.querySelector(".site-nav__mega-trigger");
