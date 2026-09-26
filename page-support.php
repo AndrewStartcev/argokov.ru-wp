@@ -123,7 +123,7 @@ while ( have_posts() ) :
 
 	<section class="support-hero surface" aria-labelledby="support-title">
 		<div class="support-hero__content">
-			<nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Главная</a><span>/</span><span><?php the_title(); ?></span></nav>
+			<nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Главная</a><span>/</span><a href="<?php echo esc_url( home_url( '/services/' ) ); ?>">Услуги</a><span>/</span><span><?php the_title(); ?></span></nav>
 			<p class="section-eyebrow"><?php echo esc_html( argokov_field( 'support_hero_eyebrow', 'Любая CMS · самописные сайты · доисторический код' ) ); ?></p>
 			<h1 id="support-title"><?php echo esc_html( argokov_field( 'support_hero_title', 'Техническая поддержка' ) ); ?> <span><?php echo esc_html( argokov_field( 'support_hero_title_accent', 'и развитие сайтов' ) ); ?></span></h1>
 			<p class="support-hero__lead"><?php echo esc_html( argokov_field( 'support_hero_lead', 'Берём на себя техническую сторону готового сайта: исправляем ошибки, внедряем новые функции, поддерживаем интеграции и последовательно развиваем проект.' ) ); ?></p>
