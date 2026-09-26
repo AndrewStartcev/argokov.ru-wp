@@ -6,7 +6,10 @@
       "key": "field_argokov_material_topic",
       "label": "Тематика",
       "name": "material_topic",
-      "type": "text"
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
     },
     {
       "key": "field_argokov_material_reading_time",
@@ -18,6 +21,305 @@
       "wrapper": {
         "width": "50"
       }
+    },
+    {
+      "key": "field_argokov_material_lead",
+      "label": "Лид статьи",
+      "name": "material_lead",
+      "type": "textarea",
+      "rows": 4,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_material_blocks",
+      "label": "Содержание статьи",
+      "name": "material_blocks",
+      "type": "flexible_content",
+      "button_label": "Добавить блок",
+      "layouts": {
+        "layout_argokov_material_intro": {
+          "key": "layout_argokov_material_intro",
+          "name": "intro",
+          "label": "Вводный абзац",
+          "display": "block",
+          "sub_fields": [
+            {
+              "key": "field_argokov_material_intro_text",
+              "label": "Текст",
+              "name": "text",
+              "type": "textarea",
+              "rows": 4,
+              "new_lines": ""
+            }
+          ]
+        },
+        "layout_argokov_material_callout": {
+          "key": "layout_argokov_material_callout",
+          "name": "callout",
+          "label": "Выделенный блок",
+          "display": "block",
+          "sub_fields": [
+            {
+              "key": "field_argokov_material_callout_title",
+              "label": "Заголовок",
+              "name": "title",
+              "type": "text",
+              "wrapper": {
+                "width": "60"
+              }
+            },
+            {
+              "key": "field_argokov_material_callout_variant",
+              "label": "Вариант",
+              "name": "variant",
+              "type": "select",
+              "choices": {
+                "default": "Обычный",
+                "important": "Важный"
+              },
+              "return_format": "value",
+              "wrapper": {
+                "width": "40"
+              }
+            },
+            {
+              "key": "field_argokov_material_callout_text",
+              "label": "Текст",
+              "name": "text",
+              "type": "textarea",
+              "rows": 4,
+              "new_lines": ""
+            }
+          ]
+        },
+        "layout_argokov_material_section": {
+          "key": "layout_argokov_material_section",
+          "name": "section",
+          "label": "Раздел статьи",
+          "display": "block",
+          "sub_fields": [
+            {
+              "key": "field_argokov_material_section_anchor",
+              "label": "Якорь",
+              "name": "anchor",
+              "type": "text",
+              "wrapper": {
+                "width": "30"
+              }
+            },
+            {
+              "key": "field_argokov_material_section_title",
+              "label": "H2",
+              "name": "title",
+              "type": "text",
+              "wrapper": {
+                "width": "70"
+              }
+            },
+            {
+              "key": "field_argokov_material_section_content",
+              "label": "Текст",
+              "name": "content",
+              "type": "wysiwyg",
+              "tabs": "all",
+              "toolbar": "basic",
+              "media_upload": 0,
+              "delay": 0,
+              "instructions": "Только обычный контент: абзацы, списки, ссылки, strong/em. Без дизайн-классов."
+            }
+          ]
+        },
+        "layout_argokov_material_checklist": {
+          "key": "layout_argokov_material_checklist",
+          "name": "checklist",
+          "label": "Чек-лист",
+          "display": "block",
+          "sub_fields": [
+            {
+              "key": "field_argokov_material_checklist_title",
+              "label": "H3",
+              "name": "title",
+              "type": "text"
+            },
+            {
+              "key": "field_argokov_material_checklist_items",
+              "label": "Пункты",
+              "name": "items",
+              "type": "repeater",
+              "layout": "table",
+              "button_label": "Добавить пункт",
+              "sub_fields": [
+                {
+                  "key": "field_argokov_material_checklist_item",
+                  "label": "Текст",
+                  "name": "text",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        "layout_argokov_material_code": {
+          "key": "layout_argokov_material_code",
+          "name": "code",
+          "label": "Код",
+          "display": "block",
+          "sub_fields": [
+            {
+              "key": "field_argokov_material_code_language",
+              "label": "Язык",
+              "name": "language",
+              "type": "text",
+              "wrapper": {
+                "width": "25"
+              }
+            },
+            {
+              "key": "field_argokov_material_code_filename",
+              "label": "Файл",
+              "name": "filename",
+              "type": "text",
+              "wrapper": {
+                "width": "35"
+              }
+            },
+            {
+              "key": "field_argokov_material_code_value",
+              "label": "Код",
+              "name": "code",
+              "type": "textarea",
+              "rows": 8,
+              "new_lines": "",
+              "wrapper": {
+                "width": "40"
+              }
+            },
+            {
+              "key": "field_argokov_material_code_caption",
+              "label": "Подпись",
+              "name": "caption",
+              "type": "textarea",
+              "rows": 3,
+              "new_lines": ""
+            }
+          ]
+        },
+        "layout_argokov_material_mistakes": {
+          "key": "layout_argokov_material_mistakes",
+          "name": "mistakes",
+          "label": "Карточки / ошибки",
+          "display": "block",
+          "sub_fields": [
+            {
+              "key": "field_argokov_material_mistakes_items",
+              "label": "Карточки",
+              "name": "items",
+              "type": "repeater",
+              "layout": "row",
+              "button_label": "Добавить карточку",
+              "sub_fields": [
+                {
+                  "key": "field_argokov_material_mistake_number",
+                  "label": "Номер",
+                  "name": "number",
+                  "type": "text",
+                  "wrapper": {
+                    "width": "15"
+                  }
+                },
+                {
+                  "key": "field_argokov_material_mistake_title",
+                  "label": "H3",
+                  "name": "title",
+                  "type": "text",
+                  "wrapper": {
+                    "width": "35"
+                  }
+                },
+                {
+                  "key": "field_argokov_material_mistake_text",
+                  "label": "Описание",
+                  "name": "text",
+                  "type": "textarea",
+                  "rows": 3,
+                  "new_lines": "",
+                  "wrapper": {
+                    "width": "50"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "layout_argokov_material_conclusion": {
+          "key": "layout_argokov_material_conclusion",
+          "name": "conclusion",
+          "label": "Вывод / CTA",
+          "display": "block",
+          "sub_fields": [
+            {
+              "key": "field_argokov_material_conclusion_eyebrow",
+              "label": "Надзаголовок",
+              "name": "eyebrow",
+              "type": "text"
+            },
+            {
+              "key": "field_argokov_material_conclusion_title",
+              "label": "H2",
+              "name": "title",
+              "type": "text"
+            },
+            {
+              "key": "field_argokov_material_conclusion_text",
+              "label": "Текст",
+              "name": "text",
+              "type": "textarea",
+              "rows": 4,
+              "new_lines": ""
+            },
+            {
+              "key": "field_argokov_material_conclusion_button",
+              "label": "Текст кнопки",
+              "name": "button_label",
+              "type": "text"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "key": "field_argokov_material_related",
+      "label": "Материалы по теме",
+      "name": "material_related",
+      "type": "relationship",
+      "post_type": [
+        "material"
+      ],
+      "filters": [
+        "search"
+      ],
+      "return_format": "id",
+      "max": 3
+    },
+    {
+      "key": "field_argokov_material_contact_eyebrow",
+      "label": "Контактный блок — надзаголовок",
+      "name": "material_contact_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_material_contact_title",
+      "label": "Контактный блок — H2",
+      "name": "material_contact_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_material_contact_text",
+      "label": "Контактный блок — описание",
+      "name": "material_contact_text",
+      "type": "textarea",
+      "rows": 4,
+      "new_lines": ""
     }
   ],
   "location": [
@@ -35,7 +337,17 @@
   "label_placement": "top",
   "instruction_placement": "label",
   "active": true,
-  "description": "Дополнительные данные материала. Schema.org будет реализована отдельным модулем позже.",
+  "description": "Редакционный материал: тема, лид, структурные блоки, связанные статьи. Schema.org будет отдельным модулем.",
   "show_in_rest": 0,
-  "modified": 1790394000
+  "modified": 1790401000,
+  "hide_on_screen": [
+    "the_content",
+    "discussion",
+    "revisions",
+    "author",
+    "format",
+    "categories",
+    "tags",
+    "send-trackbacks"
+  ]
 }
