@@ -6899,7 +6899,8 @@ html[data-theme="light"] :where(.comment-form input::placeholder, .comment-form 
   text-transform: uppercase;
 }
 
-.service-catalog-card h2 {
+.service-catalog-card h2,
+.service-catalog-card h3 {
   margin: 40px 0 13px;
   color: var(--heading);
   font-size: 21px;
