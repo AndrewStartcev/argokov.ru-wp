@@ -15,6 +15,19 @@ if ( is_array( $selected ) && $selected ) {
 		$thumbnail_url = $thumbnail_id ? wp_get_attachment_image_url( $thumbnail_id, 'large' ) : '';
 		$thumbnail_alt = $thumbnail_id ? get_post_meta( $thumbnail_id, '_wp_attachment_image_alt', true ) : '';
 
+		if ( ! $thumbnail_url ) {
+			$material_slug = get_post_field( 'post_name', $material_id );
+			$cover_map     = array(
+				'tehnicheskaya-podderzhka-sayta'          => 'assets/images/material-support-cover.webp',
+				'razrabotchik-perestal-otvechat'          => 'assets/images/material-developer-silent-cover.png',
+				'dorabotka-sayta-ili-novaya-razrabotka'  => 'assets/images/material-rebuild-cover.webp',
+			);
+
+			if ( isset( $cover_map[ $material_slug ] ) ) {
+				$thumbnail_url = argokov_asset( $cover_map[ $material_slug ] );
+			}
+		}
+
 		$materials[] = array(
 			'title'        => get_the_title( $material_id ),
 			'url'          => get_permalink( $material_id ),
