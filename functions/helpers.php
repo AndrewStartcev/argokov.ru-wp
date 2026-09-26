@@ -377,3 +377,49 @@ function argokov_service_mega_menu_data( $services_per_direction = 6 ) {
 
 	return $result;
 }
+
+
+function argokov_menu_top_level_links( $location, $fallback_items = array() ) {
+	$locations = get_nav_menu_locations();
+
+	if ( ! empty( $locations[ $location ] ) ) {
+		$items = wp_get_nav_menu_items( (int) $locations[ $location ] );
+
+		if ( is_array( $items ) ) {
+			$result = array();
+
+			foreach ( $items as $item ) {
+				if ( (int) $item->menu_item_parent !== 0 ) {
+					continue;
+				}
+
+				$result[] = array(
+					'label' => $item->title,
+					'url'   => $item->url,
+				);
+			}
+
+			if ( $result ) {
+				return $result;
+			}
+		}
+	}
+
+	$result = array();
+
+	foreach ( $fallback_items as $item ) {
+		$result[] = array(
+			'label' => $item['label'] ?? '',
+			'url'   => home_url( $item['url'] ?? '/' ),
+		);
+	}
+
+	return $result;
+}
+
+function argokov_is_services_menu_url( $url ) {
+	$path = wp_parse_url( (string) $url, PHP_URL_PATH );
+	$path = '/' . trim( (string) $path, '/' ) . '/';
+
+	return '/services/' === $path;
+}
