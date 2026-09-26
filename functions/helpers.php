@@ -310,3 +310,70 @@ function argokov_render_nested_menu( $location, $fallback_items, $variant = 'des
 
 	argokov_render_nested_menu_fallback( $fallback_items, $variant );
 }
+
+
+/**
+ * Build desktop mega-menu data from Service CPT and service directions.
+ *
+ * @param int $services_per_direction Maximum visible services per direction.
+ * @return array<int,array<string,mixed>>
+ */
+function argokov_service_mega_menu_data( $services_per_direction = 6 ) {
+	$directions = get_terms(
+		array(
+			'taxonomy'   => 'service_direction',
+			'hide_empty' => false,
+			'orderby'    => 'term_id',
+			'order'      => 'ASC',
+		)
+	);
+
+	if ( is_wp_error( $directions ) || ! $directions ) {
+		return array();
+	}
+
+	$result = array();
+
+	foreach ( $directions as $direction ) {
+		$service_posts = get_posts(
+			array(
+				'post_type'      => 'service',
+				'post_status'    => 'publish',
+				'posts_per_page' => max( 1, (int) $services_per_direction ),
+				'orderby'        => array(
+					'menu_order' => 'ASC',
+					'title'      => 'ASC',
+				),
+				'order'          => 'ASC',
+				'no_found_rows'  => true,
+				'tax_query'      => array(
+					array(
+						'taxonomy' => 'service_direction',
+						'field'    => 'term_id',
+						'terms'    => array( $direction->term_id ),
+					),
+				),
+			)
+		);
+
+		$services = array();
+
+		foreach ( $service_posts as $service_post ) {
+			$services[] = array(
+				'id'    => (int) $service_post->ID,
+				'title' => get_the_title( $service_post ),
+				'url'   => get_permalink( $service_post ),
+			);
+		}
+
+		$result[] = array(
+			'term'     => $direction,
+			'title'    => $direction->name,
+			'url'      => get_term_link( $direction ),
+			'services' => $services,
+			'total'    => (int) $direction->count,
+		);
+	}
+
+	return $result;
+}
