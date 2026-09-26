@@ -76,6 +76,13 @@ $directions = argokov_rows(
 			}
 
 			$direction_url = $direction_path ? home_url( $direction_path ) : '';
+			$button_label  = $direction['button_label'] ?? 'Подробнее';
+
+			if ( 'development' === $direction_id && in_array( $button_label, array( '', 'Обсудить новый сайт' ), true ) ) {
+				$button_label = 'Подробнее о разработке';
+			} elseif ( 'support' === $direction_id && in_array( $button_label, array( '', 'Передать сайт на поддержку' ), true ) ) {
+				$button_label = 'Подробнее о поддержке';
+			}
 			?>
 			<article class="direction-card<?php echo esc_attr( $variant ); ?>"<?php if ( $anchor_id ) : ?> id="<?php echo esc_attr( $anchor_id ); ?>"<?php endif; ?>>
 				<?php if ( $direction_url ) : ?><a class="direction-card__cover" href="<?php echo esc_url( $direction_url ); ?>"><?php else : ?><div class="direction-card__cover"><?php endif; ?>
@@ -97,7 +104,7 @@ $directions = argokov_rows(
 
 					<div class="direction-card__footer">
 						<span><?php echo esc_html( $direction['footer_text'] ?? '' ); ?></span>
-						<a href="<?php echo esc_url( $direction_url ?: '#contact' ); ?>"<?php if ( ! $direction_url ) : ?> data-contact-modal="true"<?php endif; ?>><?php echo esc_html( $direction['button_label'] ?? 'Подробнее' ); ?> <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
+						<a href="<?php echo esc_url( $direction_url ?: '#contact' ); ?>"<?php if ( ! $direction_url ) : ?> data-contact-modal="true"<?php endif; ?>><?php echo esc_html( $button_label ); ?> <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
 					</div>
 				</div>
 			</article>
