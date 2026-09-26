@@ -1,0 +1,129 @@
+{
+  "key": "group_argokov_site_settings",
+  "title": "Аргоков — общие данные",
+  "fields": [
+    {
+      "key": "field_argokov_tab_contacts",
+      "label": "Контакты",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_location_short",
+      "label": "География — коротко",
+      "name": "site_location_short",
+      "type": "text",
+      "default_value": "Иркутск · вся Россия",
+      "wrapper": { "width": "50" }
+    },
+    {
+      "key": "field_argokov_location_full",
+      "label": "География — подробно",
+      "name": "site_location_full",
+      "type": "text",
+      "default_value": "Иркутск · работаем по всей России",
+      "wrapper": { "width": "50" }
+    },
+    {
+      "key": "field_argokov_availability_short",
+      "label": "Статус — коротко",
+      "name": "site_availability_short",
+      "type": "text",
+      "default_value": "Обращения 24/7",
+      "wrapper": { "width": "50" }
+    },
+    {
+      "key": "field_argokov_availability_full",
+      "label": "Статус — подробно",
+      "name": "site_availability_full",
+      "type": "text",
+      "default_value": "Принимаем обращения 24/7",
+      "wrapper": { "width": "50" }
+    },
+    {
+      "key": "field_argokov_phone",
+      "label": "Телефон",
+      "name": "site_phone",
+      "type": "text",
+      "default_value": "+7 999 000-00-00",
+      "wrapper": { "width": "50" }
+    },
+    {
+      "key": "field_argokov_email",
+      "label": "E-mail",
+      "name": "site_email",
+      "type": "email",
+      "default_value": "mail@argokov.ru",
+      "wrapper": { "width": "50" }
+    },
+    {
+      "key": "field_argokov_tab_social",
+      "label": "Соцсети",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_telegram",
+      "label": "Telegram",
+      "name": "site_telegram_url",
+      "type": "url",
+      "wrapper": { "width": "50" }
+    },
+    {
+      "key": "field_argokov_vk",
+      "label": "ВКонтакте",
+      "name": "site_vk_url",
+      "type": "url",
+      "wrapper": { "width": "50" }
+    },
+    {
+      "key": "field_argokov_tab_footer",
+      "label": "Подвал",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_footer_description",
+      "label": "Описание в подвале",
+      "name": "site_footer_description",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": "",
+      "default_value": "Разрабатываем новые сайты, поддерживаем существующие и берёмся за сложные доработки."
+    },
+    {
+      "key": "field_argokov_operator_name",
+      "label": "Оператор сайта",
+      "name": "site_operator_name",
+      "type": "text",
+      "default_value": "ИП Андрей Старцев",
+      "wrapper": { "width": "50" }
+    },
+    {
+      "key": "field_argokov_operator_details",
+      "label": "ИНН / ОГРНИП",
+      "name": "site_operator_details",
+      "type": "text",
+      "default_value": "ИНН и ОГРНИП добавим перед запуском",
+      "wrapper": { "width": "50" }
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "options_page",
+        "operator": "==",
+        "value": "argokov-settings"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "active": true,
+  "description": "Глобальные контакты, география, соцсети и данные оператора сайта.",
+  "show_in_rest": 0,
+  "modified": 1790390000
+}
