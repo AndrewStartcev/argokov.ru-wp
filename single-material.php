@@ -37,7 +37,7 @@ get_header();
 <div class="article-meta">
 
 <div class="article-author">
-<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/andrey-startsev.png" alt="Андрей Старцев" width="48" height="48" loading="lazy" decoding="async" srcset="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/andrey-startsev.png 48w"/>
+<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/andrey-startsev.png" alt="Андрей Старцев" width="48" height="48" loading="lazy" decoding="async" srcset="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/andrey-startsev.png 48w"/>
 <div>
 <strong itemprop="author">Андрей Старцев</strong><span>Веб-разработчик · 10 лет опыта</span>
 </div>
@@ -53,7 +53,7 @@ get_header();
 </div>
 
 <figure class="article-hero__cover">
-<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/material-developer-silent-cover.png" alt="Рабочее место разработчика и открытый проект сайта" loading="eager" fetchpriority="high" decoding="async" sizes="(max-width: 960px) 100vw, 44vw" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/>
+<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/material-developer-silent-cover.png" alt="Рабочее место разработчика и открытый проект сайта" loading="eager" fetchpriority="high" decoding="async" sizes="(max-width: 960px) 100vw, 44vw" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover"/>
 </figure>
 
 </div>
@@ -459,7 +459,7 @@ define( &#x27;WP_DEBUG_DISPLAY&#x27;, false );</code>
 </section>
 
 <section class="article-author-box" aria-labelledby="about-author">
-<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/andrey-startsev.png" alt="Андрей Старцев" width="92" height="92" loading="lazy" decoding="async" srcset="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/andrey-startsev.png 92w"/>
+<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/andrey-startsev.png" alt="Андрей Старцев" width="92" height="92" loading="lazy" decoding="async" srcset="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/images/andrey-startsev.png 92w"/>
 <div>
 
 <p class="section-eyebrow">
