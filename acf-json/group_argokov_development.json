@@ -1,0 +1,663 @@
+{
+  "key": "group_argokov_development",
+  "title": "Разработка — контент",
+  "fields": [
+    {
+      "key": "field_argokov_dev_tab_hero",
+      "label": "Первый экран",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_dev_hero_eyebrow",
+      "label": "Надзаголовок",
+      "name": "dev_hero_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_dev_hero_title",
+      "label": "H1 — основной текст",
+      "name": "dev_hero_title",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_dev_hero_accent",
+      "label": "H1 — акцент",
+      "name": "dev_hero_title_accent",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_dev_hero_lead",
+      "label": "Описание",
+      "name": "dev_hero_lead",
+      "type": "textarea",
+      "rows": 4,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_dev_hero_primary",
+      "label": "Основная кнопка",
+      "name": "dev_hero_primary_label",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_dev_hero_secondary",
+      "label": "Вторая ссылка",
+      "name": "dev_hero_secondary_label",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_dev_hero_proof",
+      "label": "Факты",
+      "name": "dev_hero_proof",
+      "type": "repeater",
+      "layout": "table",
+      "button_label": "Добавить",
+      "sub_fields": [
+        {
+          "key": "field_argokov_dev_hero_proof_value",
+          "label": "Выделение",
+          "name": "value",
+          "type": "text",
+          "wrapper": {
+            "width": "35"
+          }
+        },
+        {
+          "key": "field_argokov_dev_hero_proof_label",
+          "label": "Подпись",
+          "name": "label",
+          "type": "text",
+          "wrapper": {
+            "width": "65"
+          }
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_dev_visual_label",
+      "label": "Правый блок — подпись",
+      "name": "dev_visual_label",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_dev_visual_steps",
+      "label": "Правый блок — состав",
+      "name": "dev_visual_steps",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить",
+      "sub_fields": [
+        {
+          "key": "field_argokov_dev_visual_step_number",
+          "label": "Номер",
+          "name": "number",
+          "type": "text",
+          "wrapper": {
+            "width": "15"
+          }
+        },
+        {
+          "key": "field_argokov_dev_visual_step_title",
+          "label": "Название",
+          "name": "title",
+          "type": "text",
+          "wrapper": {
+            "width": "35"
+          }
+        },
+        {
+          "key": "field_argokov_dev_visual_step_text",
+          "label": "Подпись",
+          "name": "text",
+          "type": "text",
+          "wrapper": {
+            "width": "50"
+          }
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_dev_visual_tags",
+      "label": "Правый блок — теги",
+      "name": "dev_visual_tags",
+      "type": "repeater",
+      "layout": "table",
+      "button_label": "Добавить",
+      "sub_fields": [
+        {
+          "key": "field_argokov_dev_visual_tag",
+          "label": "Тег",
+          "name": "text",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_dev_tab_types",
+      "label": "Форматы сайтов",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_dev_types_eyebrow",
+      "label": "Надзаголовок",
+      "name": "dev_types_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_dev_types_title",
+      "label": "H2",
+      "name": "dev_types_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_dev_types_copy",
+      "label": "Описание",
+      "name": "dev_types_copy",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_dev_types",
+      "label": "Карточки",
+      "name": "dev_types",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить",
+      "sub_fields": [
+        {
+          "key": "field_argokov_dev_type_number",
+          "label": "Номер",
+          "name": "number",
+          "type": "text",
+          "wrapper": {
+            "width": "15"
+          }
+        },
+        {
+          "key": "field_argokov_dev_type_title",
+          "label": "H3",
+          "name": "title",
+          "type": "text",
+          "wrapper": {
+            "width": "35"
+          }
+        },
+        {
+          "key": "field_argokov_dev_type_text",
+          "label": "Описание",
+          "name": "text",
+          "type": "textarea",
+          "rows": 3,
+          "new_lines": "",
+          "wrapper": {
+            "width": "50"
+          }
+        },
+        {
+          "key": "field_argokov_dev_type_features",
+          "label": "Пункты",
+          "name": "features",
+          "type": "repeater",
+          "layout": "table",
+          "button_label": "Добавить",
+          "sub_fields": [
+            {
+              "key": "field_argokov_dev_type_feature",
+              "label": "Текст",
+              "name": "text",
+              "type": "text"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_dev_tab_included",
+      "label": "Что входит",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_dev_included_eyebrow",
+      "label": "Надзаголовок",
+      "name": "dev_included_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_dev_included_title",
+      "label": "H2",
+      "name": "dev_included_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_dev_included_copy",
+      "label": "Описание",
+      "name": "dev_included_copy",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_dev_included",
+      "label": "Этапы / состав",
+      "name": "dev_included",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить",
+      "sub_fields": [
+        {
+          "key": "field_argokov_dev_included_number",
+          "label": "Номер",
+          "name": "number",
+          "type": "text",
+          "wrapper": {
+            "width": "15"
+          }
+        },
+        {
+          "key": "field_argokov_dev_included_item_title",
+          "label": "H3",
+          "name": "title",
+          "type": "text",
+          "wrapper": {
+            "width": "35"
+          }
+        },
+        {
+          "key": "field_argokov_dev_included_item_text",
+          "label": "Описание",
+          "name": "text",
+          "type": "textarea",
+          "rows": 3,
+          "new_lines": "",
+          "wrapper": {
+            "width": "50"
+          }
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_dev_tab_seo",
+      "label": "SEO-основа",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_dev_seo_eyebrow",
+      "label": "Надзаголовок",
+      "name": "dev_seo_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_dev_seo_title",
+      "label": "H2",
+      "name": "dev_seo_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_dev_seo_text",
+      "label": "Описание",
+      "name": "dev_seo_text",
+      "type": "textarea",
+      "rows": 4,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_dev_seo_quote",
+      "label": "Цитата",
+      "name": "dev_seo_quote",
+      "type": "textarea",
+      "rows": 4,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_dev_seo_checklist",
+      "label": "Чек-лист",
+      "name": "dev_seo_checklist",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить",
+      "sub_fields": [
+        {
+          "key": "field_argokov_dev_seo_number",
+          "label": "Номер",
+          "name": "number",
+          "type": "text",
+          "wrapper": {
+            "width": "15"
+          }
+        },
+        {
+          "key": "field_argokov_dev_seo_item",
+          "label": "Текст",
+          "name": "text",
+          "type": "text",
+          "wrapper": {
+            "width": "85"
+          }
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_dev_tab_stages",
+      "label": "Процесс",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_dev_stages_eyebrow",
+      "label": "Надзаголовок",
+      "name": "dev_stages_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_dev_stages_title",
+      "label": "H2",
+      "name": "dev_stages_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_dev_stages_copy",
+      "label": "Описание",
+      "name": "dev_stages_copy",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_dev_stages",
+      "label": "Этапы",
+      "name": "dev_stages",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить",
+      "sub_fields": [
+        {
+          "key": "field_argokov_dev_stage_number",
+          "label": "Номер",
+          "name": "number",
+          "type": "text",
+          "wrapper": {
+            "width": "15"
+          }
+        },
+        {
+          "key": "field_argokov_dev_stage_title",
+          "label": "H3",
+          "name": "title",
+          "type": "text",
+          "wrapper": {
+            "width": "35"
+          }
+        },
+        {
+          "key": "field_argokov_dev_stage_text",
+          "label": "Описание",
+          "name": "text",
+          "type": "textarea",
+          "rows": 3,
+          "new_lines": "",
+          "wrapper": {
+            "width": "50"
+          }
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_dev_tab_tech",
+      "label": "Технологии",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_dev_tech_eyebrow",
+      "label": "Надзаголовок",
+      "name": "dev_tech_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_dev_tech_title",
+      "label": "H2",
+      "name": "dev_tech_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_dev_tech_text",
+      "label": "Описание",
+      "name": "dev_tech_text",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_dev_tech_tags",
+      "label": "Технологии",
+      "name": "dev_tech_tags",
+      "type": "repeater",
+      "layout": "table",
+      "button_label": "Добавить",
+      "sub_fields": [
+        {
+          "key": "field_argokov_dev_tech_tag",
+          "label": "Название",
+          "name": "text",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_dev_tab_estimate",
+      "label": "Стоимость",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_dev_estimate_eyebrow",
+      "label": "Надзаголовок",
+      "name": "dev_estimate_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_dev_estimate_title",
+      "label": "H2",
+      "name": "dev_estimate_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_dev_estimate_text",
+      "label": "Описание",
+      "name": "dev_estimate_text",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_dev_estimate_button",
+      "label": "Кнопка",
+      "name": "dev_estimate_button_label",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_dev_estimate_factors_title",
+      "label": "Заголовок факторов",
+      "name": "dev_estimate_factors_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_dev_estimate_factors",
+      "label": "Факторы",
+      "name": "dev_estimate_factors",
+      "type": "repeater",
+      "layout": "table",
+      "button_label": "Добавить",
+      "sub_fields": [
+        {
+          "key": "field_argokov_dev_estimate_factor",
+          "label": "Текст",
+          "name": "text",
+          "type": "text"
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_dev_tab_cases",
+      "label": "Кейсы",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_dev_cases_eyebrow",
+      "label": "Надзаголовок",
+      "name": "dev_cases_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_dev_cases_title",
+      "label": "H2",
+      "name": "dev_cases_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_dev_cases_selected",
+      "label": "Выбранные кейсы",
+      "name": "dev_cases_selected",
+      "type": "relationship",
+      "post_type": [
+        "case"
+      ],
+      "filters": [
+        "search"
+      ],
+      "return_format": "id",
+      "max": 3
+    },
+    {
+      "key": "field_argokov_dev_cases_note",
+      "label": "Примечание",
+      "name": "dev_cases_note",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_dev_cases_link",
+      "label": "Текст ссылки",
+      "name": "dev_cases_link_label",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_dev_tab_faq",
+      "label": "FAQ",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_dev_faq_eyebrow",
+      "label": "Надзаголовок",
+      "name": "dev_faq_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_dev_faq_title",
+      "label": "H2",
+      "name": "dev_faq_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_dev_faq",
+      "label": "Вопросы",
+      "name": "dev_faq",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить",
+      "sub_fields": [
+        {
+          "key": "field_argokov_dev_faq_question",
+          "label": "Вопрос",
+          "name": "question",
+          "type": "text"
+        },
+        {
+          "key": "field_argokov_dev_faq_answer",
+          "label": "Ответ",
+          "name": "answer",
+          "type": "textarea",
+          "rows": 4,
+          "new_lines": ""
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_dev_tab_contact",
+      "label": "Контактный блок",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_dev_contact_eyebrow",
+      "label": "Надзаголовок",
+      "name": "dev_contact_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_dev_contact_title",
+      "label": "H2",
+      "name": "dev_contact_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_dev_contact_text",
+      "label": "Описание",
+      "name": "dev_contact_text",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": ""
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "page-development.php"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "the_content",
+    "excerpt",
+    "discussion",
+    "comments",
+    "revisions",
+    "author",
+    "format",
+    "featured_image",
+    "categories",
+    "tags",
+    "send-trackbacks"
+  ],
+  "active": true,
+  "description": "Структурный контент страницы разработки.",
+  "show_in_rest": 0,
+  "modified": 1790400000
+}
