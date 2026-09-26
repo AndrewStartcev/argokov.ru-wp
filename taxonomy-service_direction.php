@@ -30,7 +30,7 @@ if ( $term instanceof WP_Term && 'development' === $term->slug ) {
 			<?php while ( have_posts() ) : the_post(); ?>
 				<article class="service-catalog-card">
 					<h3><?php the_title(); ?></h3>
-					<p><?php echo esc_html( argokov_field( 'service_hero_lead', get_the_excerpt() ) ); ?></p>
+					<p><?php echo esc_html( argokov_field( 'service_hero_lead', get_the_excerpt(), get_the_ID() ) ); ?></p>
 					<a href="<?php the_permalink(); ?>">Подробнее <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
 				</article>
 			<?php endwhile; ?>
