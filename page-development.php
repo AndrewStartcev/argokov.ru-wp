@@ -130,7 +130,7 @@ while ( have_posts() ) :
 
 	<section class="development-hero surface" aria-labelledby="development-title">
 		<div class="development-hero__content">
-			<nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Главная</a><span>/</span><span><?php the_title(); ?></span></nav>
+			<nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Главная</a><span>/</span><a href="<?php echo esc_url( home_url( '/services/' ) ); ?>">Услуги</a><span>/</span><span><?php the_title(); ?></span></nav>
 			<p class="section-eyebrow"><?php echo esc_html( argokov_field( 'dev_hero_eyebrow', 'Сайты для бизнеса по всей России' ) ); ?></p>
 			<h1 id="development-title"><?php echo esc_html( argokov_field( 'dev_hero_title', 'Разработка сайтов' ) ); ?> <span><?php echo esc_html( argokov_field( 'dev_hero_title_accent', 'от структуры до запуска' ) ); ?></span></h1>
 			<p class="development-hero__lead"><?php echo esc_html( argokov_field( 'dev_hero_lead', 'Проектируем и разрабатываем корпоративные сайты, интернет-магазины и веб-сервисы. Берём на себя интерфейс, код, интеграции, техническую SEO-подготовку и запуск.' ) ); ?></p>
