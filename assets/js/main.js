@@ -216,9 +216,7 @@
 
     filter.querySelectorAll("button").forEach((button) => {
       button.addEventListener("click", () => {
-        const labels = { "Все услуги": "all", "Все вопросы": "all", "Разработка": "development", "Поддержка": "support", "SEO": "seo", "Интеграции": "integration", "Начало": "start", "Процесс": "process", "Стоимость": "money" };
-        const buttonText = Array.from(button.childNodes).find((node) => node.nodeType === Node.TEXT_NODE)?.textContent?.trim();
-        const category = labels[buttonText] || "all";
+        const category = button.dataset.filter || "all";
 
         filter.querySelectorAll("button").forEach((item) => {
           item.classList.toggle("is-active", item === button);
