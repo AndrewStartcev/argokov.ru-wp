@@ -65,7 +65,7 @@ foreach ( $topic_posts as $topic_post_id ) {
 
 				<div class="material-card__body">
 					<div class="material-card__top"><span><?php echo esc_html( $topic ); ?></span><time datetime="<?php echo esc_attr( get_the_date( 'Y-m-d' ) ); ?>"><?php echo esc_html( get_the_date( 'j F Y' ) ); ?></time></div>
-					<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+					<h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 					<p><?php echo esc_html( get_the_excerpt() ); ?></p>
 					<footer class="material-card__footer">
 						<div class="material-card__metrics"><?php if ( $reading ) : ?><span><?php echo esc_html( $reading . ' минут' ); ?></span><?php endif; ?></div>
