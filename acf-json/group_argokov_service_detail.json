@@ -1,0 +1,338 @@
+{
+  "key": "group_argokov_service_detail",
+  "title": "Услуга — контент",
+  "fields": [
+    {
+      "key": "field_argokov_service_tab_hero",
+      "label": "Первый экран",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_service_hero_eyebrow",
+      "label": "Надзаголовок",
+      "name": "service_hero_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_service_hero_title",
+      "label": "H1 — основной текст",
+      "name": "service_hero_title",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_service_hero_accent",
+      "label": "H1 — акцент",
+      "name": "service_hero_title_accent",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_service_hero_lead",
+      "label": "Описание",
+      "name": "service_hero_lead",
+      "type": "textarea",
+      "rows": 4,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_service_tab_benefits",
+      "label": "Для чего нужна",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_service_benefits_eyebrow",
+      "label": "Надзаголовок",
+      "name": "service_benefits_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_service_benefits_title",
+      "label": "H2",
+      "name": "service_benefits_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_service_benefits_copy",
+      "label": "Описание",
+      "name": "service_benefits_copy",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_service_benefits",
+      "label": "Карточки",
+      "name": "service_benefits",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить карточку",
+      "sub_fields": [
+        {
+          "key": "field_argokov_service_benefit_number",
+          "label": "Номер",
+          "name": "number",
+          "type": "text",
+          "wrapper": {
+            "width": "15"
+          }
+        },
+        {
+          "key": "field_argokov_service_benefit_title",
+          "label": "H3",
+          "name": "title",
+          "type": "text",
+          "wrapper": {
+            "width": "35"
+          }
+        },
+        {
+          "key": "field_argokov_service_benefit_text",
+          "label": "Описание",
+          "name": "text",
+          "type": "textarea",
+          "rows": 3,
+          "new_lines": "",
+          "wrapper": {
+            "width": "50"
+          }
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_service_tab_scope",
+      "label": "Что входит",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_service_scope_eyebrow",
+      "label": "Надзаголовок",
+      "name": "service_scope_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_service_scope_title",
+      "label": "H2",
+      "name": "service_scope_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_service_scope_copy",
+      "label": "Описание",
+      "name": "service_scope_copy",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_service_scope",
+      "label": "Состав работ",
+      "name": "service_scope",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить пункт",
+      "sub_fields": [
+        {
+          "key": "field_argokov_service_scope_number",
+          "label": "Номер",
+          "name": "number",
+          "type": "text",
+          "wrapper": {
+            "width": "15"
+          }
+        },
+        {
+          "key": "field_argokov_service_scope_title_item",
+          "label": "H3",
+          "name": "title",
+          "type": "text",
+          "wrapper": {
+            "width": "35"
+          }
+        },
+        {
+          "key": "field_argokov_service_scope_text",
+          "label": "Описание",
+          "name": "text",
+          "type": "textarea",
+          "rows": 3,
+          "new_lines": "",
+          "wrapper": {
+            "width": "50"
+          }
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_service_tab_process",
+      "label": "Процесс",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_service_process_eyebrow",
+      "label": "Надзаголовок",
+      "name": "service_process_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_service_process_title",
+      "label": "H2",
+      "name": "service_process_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_service_process_copy",
+      "label": "Описание",
+      "name": "service_process_copy",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_service_process",
+      "label": "Этапы",
+      "name": "service_process",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить этап",
+      "sub_fields": [
+        {
+          "key": "field_argokov_service_process_number",
+          "label": "Номер",
+          "name": "number",
+          "type": "text",
+          "wrapper": {
+            "width": "15"
+          }
+        },
+        {
+          "key": "field_argokov_service_process_title_item",
+          "label": "H3",
+          "name": "title",
+          "type": "text",
+          "wrapper": {
+            "width": "35"
+          }
+        },
+        {
+          "key": "field_argokov_service_process_text",
+          "label": "Описание",
+          "name": "text",
+          "type": "textarea",
+          "rows": 3,
+          "new_lines": "",
+          "wrapper": {
+            "width": "50"
+          }
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_service_tab_faq",
+      "label": "FAQ",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_service_faq_eyebrow",
+      "label": "Надзаголовок",
+      "name": "service_faq_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_service_faq_title",
+      "label": "H2",
+      "name": "service_faq_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_service_faq",
+      "label": "Вопросы",
+      "name": "service_faq",
+      "type": "repeater",
+      "layout": "row",
+      "button_label": "Добавить вопрос",
+      "sub_fields": [
+        {
+          "key": "field_argokov_service_faq_question",
+          "label": "Вопрос",
+          "name": "question",
+          "type": "text"
+        },
+        {
+          "key": "field_argokov_service_faq_answer",
+          "label": "Ответ",
+          "name": "answer",
+          "type": "textarea",
+          "rows": 4,
+          "new_lines": ""
+        }
+      ]
+    },
+    {
+      "key": "field_argokov_service_tab_contact",
+      "label": "Контактный блок",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_service_contact_eyebrow",
+      "label": "Надзаголовок",
+      "name": "service_contact_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_service_contact_title",
+      "label": "H2",
+      "name": "service_contact_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_service_contact_text",
+      "label": "Описание",
+      "name": "service_contact_text",
+      "type": "textarea",
+      "rows": 4,
+      "new_lines": ""
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "page-service-detail.php"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "the_content",
+    "excerpt",
+    "discussion",
+    "comments",
+    "revisions",
+    "author",
+    "format",
+    "featured_image",
+    "categories",
+    "tags",
+    "send-trackbacks"
+  ],
+  "active": true,
+  "description": "Универсальная SEO-страница конкретной услуги. Schema.org настраивается отдельно.",
+  "show_in_rest": 0,
+  "modified": 1790410000
+}
