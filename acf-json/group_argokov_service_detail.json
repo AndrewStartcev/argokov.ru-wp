@@ -307,9 +307,9 @@
   "location": [
     [
       {
-        "param": "page_template",
+        "param": "post_type",
         "operator": "==",
-        "value": "page-service-detail.php"
+        "value": "service"
       }
     ]
   ],
@@ -332,7 +332,7 @@
     "send-trackbacks"
   ],
   "active": true,
-  "description": "Универсальная SEO-страница конкретной услуги. Schema.org настраивается отдельно.",
+  "description": "Контент отдельной услуги CPT service. Schema.org настраивается отдельно.",
   "show_in_rest": 0,
-  "modified": 1790410000
+  "modified": 1790411002
 }
