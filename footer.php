@@ -1,5 +1,35 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
+
+$location        = argokov_option( 'site_location_short', 'Иркутск · вся Россия' );
+$availability    = argokov_option( 'site_availability_full', 'Принимаем обращения 24/7' );
+$phone           = argokov_option( 'site_phone', '+7 999 000-00-00' );
+$email           = argokov_option( 'site_email', 'mail@argokov.ru' );
+$telegram_url    = argokov_option( 'site_telegram_url', '' );
+$vk_url          = argokov_option( 'site_vk_url', '' );
+$description     = argokov_option( 'site_footer_description', 'Разрабатываем новые сайты, поддерживаем существующие и берёмся за сложные доработки.' );
+$operator_name   = argokov_option( 'site_operator_name', 'ИП Андрей Старцев' );
+$operator_detail = argokov_option( 'site_operator_details', 'ИНН и ОГРНИП добавим перед запуском' );
+
+$footer_services = array(
+	array( '/services/', 'Все услуги' ),
+	array( '/development/', 'Разработка сайтов' ),
+	array( '/support/', 'Поддержка сайтов' ),
+	array( '/#improvements', 'Доработка сайтов' ),
+	array( '/development/#types', 'Интернет-магазины' ),
+	array( '/development/#included', 'Интеграции' ),
+	array( '/development/#seo', 'Техническое SEO' ),
+	array( '/#improvements', 'Сложные проекты' ),
+);
+
+$footer_studio = array(
+	array( '/cases/', 'Кейсы' ),
+	array( '/about/', 'О студии' ),
+	array( '/process/', 'Как работаем' ),
+	array( '/materials/', 'Материалы' ),
+	array( '/faq/', 'Частые вопросы' ),
+	array( '/contacts/', 'Контакты' ),
+);
 ?>
 		<footer class="site-footer surface">
 			<div class="site-footer__modules">
@@ -13,33 +43,30 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 						</svg>
 						<div><strong>Аргоков<span>.</span></strong><small>Разработка и поддержка сайтов</small></div>
 					</div>
-					<p>Разрабатываем новые сайты, поддерживаем существующие и берёмся за сложные доработки.</p>
+					<p><?php echo esc_html( $description ); ?></p>
 					<div class="site-footer__brand-meta">
-						<span>Иркутск · вся Россия</span><span class="availability"><span class="availability__dot" aria-hidden="true"></span>Принимаем обращения 24/7</span>
+						<span><?php echo esc_html( $location ); ?></span><span class="availability"><span class="availability__dot" aria-hidden="true"></span><?php echo esc_html( $availability ); ?></span>
 					</div>
 				</section>
 
 				<nav class="footer-module site-footer__nav site-footer__nav--services" aria-label="Услуги">
 					<span class="footer-module__title">Услуги</span>
-					<div>
-						<a href="/services/">Все услуги</a><a href="/development/">Разработка сайтов</a><a href="/support/">Поддержка сайтов</a><a href="/#improvements">Доработка сайтов</a><a href="/development/#types">Интернет-магазины</a><a href="/development/#included">Интеграции</a><a href="/development/#seo">Техническое SEO</a><a href="/#improvements">Сложные проекты</a>
-					</div>
+					<div><?php argokov_render_flat_menu( 'footer_services', $footer_services ); ?></div>
 				</nav>
 
 				<nav class="footer-module site-footer__nav site-footer__nav--studio" aria-label="Студия">
 					<span class="footer-module__title">Студия</span>
-					<div>
-						<a href="/cases/">Кейсы</a><a href="/about/">О студии</a><a href="/process/">Как работаем</a><a href="/materials/">Материалы</a><a href="/faq/">Частые вопросы</a><a href="/contacts/">Контакты</a>
-					</div>
+					<div><?php argokov_render_flat_menu( 'footer_studio', $footer_studio ); ?></div>
 				</nav>
 
 				<section class="footer-module site-footer__contacts">
 					<span class="footer-module__title">Связаться</span>
 					<div class="site-footer__contacts-main">
-						<span>Напишите удобным способом</span><a href="tel:+79990000000">+7 999 000-00-00</a><a href="mailto:mail@argokov.ru">mail@argokov.ru</a>
+						<span>Напишите удобным способом</span><a href="<?php echo esc_url( 'tel:' . argokov_phone_href( $phone ) ); ?>"><?php echo esc_html( $phone ); ?></a><a href="<?php echo esc_url( 'mailto:' . sanitize_email( $email ) ); ?>"><?php echo esc_html( antispambot( $email ) ); ?></a>
 					</div>
 					<div class="site-footer__messengers" aria-label="Мессенджеры и социальные сети">
-						<span>Telegram</span><span>ВКонтакте</span>
+						<span><?php if ( $telegram_url ) : ?><a href="<?php echo esc_url( $telegram_url ); ?>" target="_blank" rel="noopener noreferrer">Telegram</a><?php else : ?>Telegram<?php endif; ?></span>
+						<span><?php if ( $vk_url ) : ?><a href="<?php echo esc_url( $vk_url ); ?>" target="_blank" rel="noopener noreferrer">ВКонтакте</a><?php else : ?>ВКонтакте<?php endif; ?></span>
 					</div>
 					<a class="site-footer__contact-link" href="#contact" data-contact-modal="true">Обсудить задачу
 						<svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg>
@@ -49,7 +76,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 
 			<div class="site-footer__legal">
 				<div class="site-footer__operator">
-					<span>Оператор сайта</span><strong>ИП Андрей Старцев</strong><small>ИНН и ОГРНИП добавим перед запуском</small>
+					<span>Оператор сайта</span><strong><?php echo esc_html( $operator_name ); ?></strong><small><?php echo esc_html( $operator_detail ); ?></small>
 				</div>
 				<div class="site-footer__documents" aria-label="Юридическая информация">
 					<a href="/privacy/">Политика обработки персональных данных</a><a href="/consent/">Согласие на обработку персональных данных</a><a href="/cookies/">Использование cookie</a><a href="/requisites/">Реквизиты</a>
@@ -60,6 +87,7 @@ if ( ! defined( 'ABSPATH' ) ) { exit; }
 			</div>
 		</footer>
 	</div>
+
 	<button type="button" class="theme-toggle" aria-label="Включить светлую тему" aria-pressed="false">
 		<svg class="theme-toggle__sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="3.3"></circle><path d="M12 2.8v2M12 19.2v2M2.8 12h2M19.2 12h2M5.5 5.5l1.4 1.4M17.1 17.1l1.4 1.4M18.5 5.5l-1.4 1.4M6.9 17.1l-1.4 1.4"></path></svg>
 		<svg class="theme-toggle__moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19.2 15.1A7.8 7.8 0 0 1 8.9 4.8 7.8 7.8 0 1 0 19.2 15.1Z"></path></svg>
