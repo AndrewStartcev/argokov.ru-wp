@@ -34,6 +34,25 @@ while ( have_posts() ) :
 		'CRM, 1С и внешние сервисы'     => '/services/development/integrations/',
 	);
 
+	$hub_items = array(
+		array(
+			'category'       => 'development',
+			'category_label' => 'Направление',
+			'title'          => 'Разработка сайтов',
+			'text'           => 'Проектируем и запускаем корпоративные сайты, интернет-магазины и веб-сервисы. От структуры и дизайна до CMS, интеграций и запуска.',
+			'tags'           => array( array( 'text' => 'Корпоративные сайты' ), array( 'text' => 'Магазины' ), array( 'text' => 'Веб-сервисы' ) ),
+			'url'            => '/services/development/',
+		),
+		array(
+			'category'       => 'support',
+			'category_label' => 'Направление',
+			'title'          => 'Поддержка и развитие',
+			'text'           => 'Принимаем готовые сайты, исправляем ошибки, добавляем функционал и ведём проект дальше — в том числе после других разработчиков.',
+			'tags'           => array( array( 'text' => 'Доработки' ), array( 'text' => 'Поддержка' ), array( 'text' => 'Сложные проекты' ) ),
+			'url'            => '/services/support/',
+		),
+	);
+
 	$items = argokov_rows(
 		'services_items',
 		array(
@@ -111,6 +130,21 @@ while ( have_posts() ) :
 			),
 		)
 	);
+
+	$has_development_hub = (bool) array_filter( $items, static function ( $item ) {
+		return isset( $item['title'] ) && 'Разработка сайтов' === $item['title'];
+	} );
+	$has_support_hub = (bool) array_filter( $items, static function ( $item ) {
+		return isset( $item['title'] ) && 'Поддержка и развитие' === $item['title'];
+	} );
+
+	if ( ! $has_support_hub ) {
+		array_unshift( $items, $hub_items[1] );
+	}
+
+	if ( ! $has_development_hub ) {
+		array_unshift( $items, $hub_items[0] );
+	}
 	?>
 	<section class="inner-hero surface">
 		<nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Главная</a><span>/</span><span><?php the_title(); ?></span></nav>
@@ -138,7 +172,7 @@ while ( have_posts() ) :
 		<?php endif; ?>
 
 		<div class="services-grid" aria-live="polite">
-			<?php foreach ( $items as $item ) : ?>
+			<?php foreach ( $items as $item_index => $item ) : ?>
 				<?php
 				$item_title = $item['title'] ?? '';
 				$item_url   = isset( $service_url_map[ $item_title ] )
@@ -146,7 +180,7 @@ while ( have_posts() ) :
 					: ( $item['url'] ?? '' );
 				?>
 				<article class="service-catalog-card" data-category="<?php echo esc_attr( $item['category'] ?? '' ); ?>">
-					<div class="service-catalog-card__top"><span><?php echo esc_html( $item['number'] ?? '' ); ?></span><small><?php echo esc_html( $item['category_label'] ?? '' ); ?></small></div>
+					<div class="service-catalog-card__top"><span><?php echo esc_html( sprintf( '%02d', $item_index + 1 ) ); ?></span><small><?php echo esc_html( $item['category_label'] ?? '' ); ?></small></div>
 					<h3><?php echo esc_html( $item_title ); ?></h3>
 					<p><?php echo esc_html( $item['text'] ?? '' ); ?></p>
 					<?php if ( ! empty( $item['tags'] ) && is_array( $item['tags'] ) ) : ?><div class="service-catalog-card__tags"><?php foreach ( $item['tags'] as $tag ) : ?><span><?php echo esc_html( $tag['text'] ?? '' ); ?></span><?php endforeach; ?></div><?php endif; ?>
