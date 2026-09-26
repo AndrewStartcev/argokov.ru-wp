@@ -6,6 +6,14 @@ function argokov_field( $name, $default = '', $post_id = false ) {
 		return $default;
 	}
 
+	if ( false === $post_id && is_tax( 'service_direction' ) ) {
+		$term = get_queried_object();
+
+		if ( $term instanceof WP_Term ) {
+			$post_id = 'service_direction_' . $term->term_id;
+		}
+	}
+
 	$value = get_field( $name, $post_id );
 
 	return ( null === $value || false === $value || '' === $value ) ? $default : $value;
