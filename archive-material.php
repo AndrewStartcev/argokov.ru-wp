@@ -31,9 +31,9 @@ foreach ( $topic_posts as $topic_post_id ) {
 ?>
 <section class="materials-hero surface" aria-labelledby="materials-page-title">
 	<nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Главная</a><span>/</span><span>Статьи</span></nav>
-	<p class="section-eyebrow">Практика веб-разработки</p>
-	<h1 id="materials-page-title">Статьи о разработке, <span>поддержке и развитии сайтов</span></h1>
-	<p>Разбираем реальные технические ситуации: как принять чужой проект, не потерять данные, оценить доработки и подготовить сайт к продвижению.</p>
+	<p class="section-eyebrow"><?php echo esc_html( argokov_option( 'materials_archive_eyebrow', 'Практика веб-разработки' ) ); ?></p>
+	<h1 id="materials-page-title"><?php echo esc_html( argokov_option( 'materials_archive_title', 'Статьи о разработке,' ) ); ?> <span><?php echo esc_html( argokov_option( 'materials_archive_title_accent', 'поддержке и развитии сайтов' ) ); ?></span></h1>
+	<p><?php echo esc_html( argokov_option( 'materials_archive_text', 'Разбираем реальные технические ситуации: как принять чужой проект, не потерять данные, оценить доработки и подготовить сайт к продвижению.' ) ); ?></p>
 
 	<?php if ( $topics ) : ?>
 		<div class="materials-categories" aria-label="Темы материалов">
@@ -45,8 +45,8 @@ foreach ( $topic_posts as $topic_post_id ) {
 
 <section class="materials-catalog surface" aria-labelledby="latest-title">
 	<header class="development-heading">
-		<div><p class="section-eyebrow">Новые материалы</p><h2 id="latest-title">Полезно владельцу сайта и команде</h2></div>
-		<p>Пишем о том, с чем сталкиваемся в проектах: конкретно, честно и с понятным следующим действием.</p>
+		<div><p class="section-eyebrow"><?php echo esc_html( argokov_option( 'materials_catalog_eyebrow', 'Новые материалы' ) ); ?></p><h2 id="latest-title"><?php echo esc_html( argokov_option( 'materials_catalog_title', 'Полезно владельцу сайта и команде' ) ); ?></h2></div>
+		<p><?php echo esc_html( argokov_option( 'materials_catalog_text', 'Пишем о том, с чем сталкиваемся в проектах: конкретно, честно и с понятным следующим действием.' ) ); ?></p>
 	</header>
 
 	<div class="materials-grid">
