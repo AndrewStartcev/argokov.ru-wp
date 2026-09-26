@@ -13,13 +13,13 @@ $operator_detail = argokov_option( 'site_operator_details', 'ИНН и ОГРН�
 
 $footer_services = array(
 	array( '/services/', 'Все услуги' ),
-	array( '/development/', 'Разработка сайтов' ),
-	array( '/support/', 'Поддержка сайтов' ),
-	array( '/#improvements', 'Доработка сайтов' ),
-	array( '/development/#types', 'Интернет-магазины' ),
-	array( '/development/#included', 'Интеграции' ),
-	array( '/development/#seo', 'Техническое SEO' ),
-	array( '/#improvements', 'Сложные проекты' ),
+	array( '/services/development/', 'Разработка сайтов' ),
+	array( '/services/support/', 'Поддержка сайтов' ),
+	array( '/services/support/one-time-improvement/', 'Доработка сайтов' ),
+	array( '/services/development/internet-shops/', 'Интернет-магазины' ),
+	array( '/services/development/integrations/', 'Интеграции' ),
+	array( '/services/development/technical-seo/', 'Техническое SEO' ),
+	array( '/services/support/project-takeover/', 'Сложные проекты' ),
 );
 
 $footer_studio = array(
