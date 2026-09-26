@@ -82,6 +82,131 @@ function argokov_base_content_apply_seo( $post_id, $seo ) {
 	}
 }
 
+function argokov_base_content_apply_term_seo( $term_id, $taxonomy, $seo ) {
+	$term_id = (int) $term_id;
+
+	if ( ! $term_id || ! taxonomy_exists( $taxonomy ) || ! is_array( $seo ) ) {
+		return;
+	}
+
+	if ( ! empty( $seo['title'] ) && ! get_term_meta( $term_id, 'rank_math_title', true ) ) {
+		update_term_meta( $term_id, 'rank_math_title', sanitize_text_field( $seo['title'] ) );
+	}
+
+	if ( ! empty( $seo['description'] ) && ! get_term_meta( $term_id, 'rank_math_description', true ) ) {
+		update_term_meta( $term_id, 'rank_math_description', sanitize_textarea_field( $seo['description'] ) );
+	}
+}
+
+function argokov_base_content_upsert_service_direction( $item, $entity_ids ) {
+	if ( empty( $item['key'] ) || empty( $item['name'] ) || empty( $item['slug'] ) ) {
+		return 0;
+	}
+
+	$term = get_term_by( 'slug', (string) $item['slug'], 'service_direction' );
+
+	if ( ! $term ) {
+		$result = wp_insert_term(
+			(string) $item['name'],
+			'service_direction',
+			array(
+				'slug'        => (string) $item['slug'],
+				'description' => isset( $item['description'] ) ? (string) $item['description'] : '',
+			)
+		);
+
+		if ( is_wp_error( $result ) ) {
+			return 0;
+		}
+
+		$term_id = (int) $result['term_id'];
+	} else {
+		$term_id = (int) $term->term_id;
+
+		$update = array();
+
+		if ( $term->name !== (string) $item['name'] ) {
+			$update['name'] = (string) $item['name'];
+		}
+
+		if ( empty( $term->description ) && ! empty( $item['description'] ) ) {
+			$update['description'] = (string) $item['description'];
+		}
+
+		if ( $update ) {
+			wp_update_term( $term_id, 'service_direction', $update );
+		}
+	}
+
+	update_term_meta( $term_id, '_argokov_base_content_key', sanitize_key( $item['key'] ) );
+
+	$context = 'service_direction_' . $term_id;
+
+	if ( ! empty( $item['fields'] ) && is_array( $item['fields'] ) ) {
+		foreach ( $item['fields'] as $field_name => $value ) {
+			$value = argokov_base_content_resolve_value( $value, $entity_ids );
+			argokov_base_content_update_field_if_empty( $field_name, $value, $context );
+		}
+	}
+
+	if ( ! empty( $item['seo'] ) ) {
+		argokov_base_content_apply_term_seo( $term_id, 'service_direction', $item['seo'] );
+	}
+
+	return $term_id;
+}
+
+function argokov_base_content_upsert_service( $item, $direction_ids ) {
+	if ( empty( $item['direction'] ) ) {
+		return 0;
+	}
+
+	$post_item = $item;
+
+	if ( empty( $post_item['excerpt'] ) && ! empty( $post_item['fields']['service_hero_lead'] ) ) {
+		$post_item['excerpt'] = (string) $post_item['fields']['service_hero_lead'];
+	}
+
+	$service_id = argokov_base_content_upsert_item( $post_item, 'service' );
+
+	if ( ! $service_id ) {
+		return 0;
+	}
+
+	$direction_key = sanitize_key( $item['direction'] );
+
+	if ( ! empty( $direction_ids[ $direction_key ] ) ) {
+		wp_set_object_terms(
+			$service_id,
+			array( (int) $direction_ids[ $direction_key ] ),
+			'service_direction',
+			false
+		);
+	}
+
+	return $service_id;
+}
+
+function argokov_base_content_trash_legacy_service_pages( $keys ) {
+	foreach ( $keys as $key ) {
+		$existing = get_posts(
+			array(
+				'post_type'      => 'page',
+				'post_status'    => array( 'publish', 'draft', 'private' ),
+				'posts_per_page' => 1,
+				'fields'         => 'ids',
+				'meta_key'       => '_argokov_base_content_key',
+				'meta_value'     => sanitize_key( $key ),
+				'no_found_rows'  => true,
+			)
+		);
+
+		if ( $existing ) {
+			wp_trash_post( (int) $existing[0] );
+		}
+	}
+}
+
 function argokov_base_content_upsert_item( $item, $post_type ) {
 	if ( empty( $item['key'] ) || empty( $item['title'] ) || empty( $item['slug'] ) ) {
 		return 0;
@@ -486,7 +611,10 @@ function argokov_seed_base_content() {
 	$entity_ids = array(
 		'case'     => array(),
 		'material' => array(),
+		'service'  => array(),
 	);
+
+	$service_direction_ids = array();
 
 	if ( ! empty( $data['options'] ) && is_array( $data['options'] ) ) {
 		foreach ( $data['options'] as $field_name => $value ) {
@@ -547,6 +675,26 @@ function argokov_seed_base_content() {
 		}
 	}
 
+	if ( ! empty( $data['service_directions'] ) && is_array( $data['service_directions'] ) ) {
+		foreach ( $data['service_directions'] as $direction ) {
+			$term_id = argokov_base_content_upsert_service_direction( $direction, $entity_ids );
+
+			if ( $term_id && ! empty( $direction['key'] ) ) {
+				$service_direction_ids[ sanitize_key( $direction['key'] ) ] = $term_id;
+			}
+		}
+	}
+
+	if ( ! empty( $data['services'] ) && is_array( $data['services'] ) ) {
+		foreach ( $data['services'] as $service ) {
+			$service_id = argokov_base_content_upsert_service( $service, $service_direction_ids );
+
+			if ( $service_id && ! empty( $service['key'] ) ) {
+				$entity_ids['service'][ sanitize_key( $service['key'] ) ] = $service_id;
+			}
+		}
+	}
+
 	if ( ! empty( $data['home'] ) && is_array( $data['home'] ) ) {
 		$home_id = argokov_base_content_home_page( $data['home'] );
 
@@ -579,6 +727,21 @@ function argokov_seed_base_content() {
 	if ( ! empty( $page_ids['privacy'] ) ) {
 		update_option( 'wp_page_for_privacy_policy', (int) $page_ids['privacy'] );
 	}
+
+	argokov_base_content_trash_legacy_service_pages(
+		array(
+			'services',
+			'development',
+			'support',
+			'service-corporate-sites',
+			'service-internet-shops',
+			'service-web-services',
+			'service-one-time-improvement',
+			'service-project-takeover',
+			'service-technical-seo',
+			'service-integrations',
+		)
+	);
 
 	argokov_base_content_seed_menus();
 
