@@ -7889,3 +7889,71 @@ html[data-theme="light"] .catalog-filter button.is-active { background: #f2eafa;
   .nda-note { padding: 20px; }
 }
 
+
+
+/* Argokov WordPress / Contact Form 7 integration */
+.contact > .wpcf7 {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-width: 0;
+  flex: 1 1 51%;
+}
+
+.contact > .wpcf7 .contact__form {
+  width: 100%;
+  flex: 1 1 auto;
+}
+
+.contacts-page > .wpcf7 {
+  min-width: 0;
+}
+
+.contacts-page > .wpcf7 .contact__form {
+  width: 100%;
+  height: 100%;
+}
+
+.contact-modal__form {
+  padding: 0;
+}
+
+.contact-modal__form > .wpcf7 .contact__form {
+  width: 100%;
+  padding: 28px;
+}
+
+.contact__form .wpcf7-form-control-wrap {
+  display: block;
+  width: 100%;
+}
+
+.contact-form__consent .wpcf7-form-control-wrap,
+.contact-form__consent .wpcf7-acceptance,
+.contact-form__consent .wpcf7-list-item {
+  display: contents;
+}
+
+.contact-form__consent .wpcf7-list-item {
+  margin: 0;
+}
+
+.contact__form .wpcf7-not-valid-tip {
+  margin-top: 5px;
+  color: #dca29b;
+  font-size: 10px;
+}
+
+.contact__form .wpcf7-response-output {
+  margin: 0;
+  border-radius: var(--radius-small);
+  color: var(--text);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+@media (max-width: 760px) {
+  .contact > .wpcf7 {
+    flex: 1 1 100%;
+  }
+}
