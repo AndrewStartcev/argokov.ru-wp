@@ -7002,7 +7002,8 @@ html[data-theme="light"] :where(.comment-form input::placeholder, .comment-form 
   text-transform: uppercase;
 }
 
-.cases-page-card__content h2 {
+.cases-page-card__content h2,
+.cases-page-card__content h3 {
   margin: 17px 0 10px;
   color: var(--heading);
   font-size: 28px;
