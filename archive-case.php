@@ -11,15 +11,15 @@ get_header();
 ?>
 <section class="inner-hero surface">
 	<nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Главная</a><span>/</span><span>Кейсы</span></nav>
-	<p class="section-eyebrow">Выполненная работа</p>
-	<h1>Кейсы <span>без красивых легенд</span></h1>
-	<p>Показываем задачу, техническую работу и то, как проект развивается после запуска. Часть проектов не публикуем из-за NDA.</p>
+	<p class="section-eyebrow"><?php echo esc_html( argokov_option( 'cases_archive_eyebrow', 'Выполненная работа' ) ); ?></p>
+	<h1><?php echo esc_html( argokov_option( 'cases_archive_title', 'Кейсы' ) ); ?> <span><?php echo esc_html( argokov_option( 'cases_archive_title_accent', 'без красивых легенд' ) ); ?></span></h1>
+	<p><?php echo esc_html( argokov_option( 'cases_archive_text', 'Показываем задачу, техническую работу и то, как проект развивается после запуска. Часть проектов не публикуем из-за NDA.' ) ); ?></p>
 </section>
 
 <section class="cases-catalog surface" aria-labelledby="cases-page-title">
 	<header class="development-heading">
-		<div><p class="section-eyebrow">Выбранные проекты</p><h2 id="cases-page-title">Сайты, за которые продолжаем отвечать</h2></div>
-		<p>Кейс для нас — не только макет. Важны архитектура, интеграции, управляемость и возможность развивать проект дальше.</p>
+		<div><p class="section-eyebrow"><?php echo esc_html( argokov_option( 'cases_catalog_eyebrow', 'Выбранные проекты' ) ); ?></p><h2 id="cases-page-title"><?php echo esc_html( argokov_option( 'cases_catalog_title', 'Сайты, за которые продолжаем отвечать' ) ); ?></h2></div>
+		<p><?php echo esc_html( argokov_option( 'cases_catalog_text', 'Кейс для нас — не только макет. Важны архитектура, интеграции, управляемость и возможность развивать проект дальше.' ) ); ?></p>
 	</header>
 
 	<div class="cases-page-grid">
@@ -56,9 +56,9 @@ get_header();
 	</div>
 
 	<aside class="nda-note">
-		<strong>Не все проекты можно показать публично</strong>
-		<p>Работаем по NDA и соблюдаем договорённости. По запросу можем подобрать похожий опыт без раскрытия закрытых данных.</p>
-		<a href="<?php echo esc_url( home_url( '/contacts/' ) ); ?>">Запросить похожий кейс <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
+		<strong><?php echo esc_html( argokov_option( 'cases_nda_title', 'Не все проекты можно показать публично' ) ); ?></strong>
+		<p><?php echo esc_html( argokov_option( 'cases_nda_text', 'Работаем по NDA и соблюдаем договорённости. По запросу можем подобрать похожий опыт без раскрытия закрытых данных.' ) ); ?></p>
+		<a href="<?php echo esc_url( home_url( '/contacts/' ) ); ?>"><?php echo esc_html( argokov_option( 'cases_nda_link_label', 'Запросить похожий кейс' ) ); ?> <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
 	</aside>
 </section>
 <?php
