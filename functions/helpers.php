@@ -106,3 +106,66 @@ function argokov_rows( $name, $fallback = array(), $post_id = false ) {
 	$rows = argokov_field( $name, array(), $post_id );
 	return is_array( $rows ) && $rows ? $rows : $fallback;
 }
+
+
+function argokov_case_data( $case_id ) {
+	$case_id = (int) $case_id;
+
+	if ( ! $case_id || 'case' !== get_post_type( $case_id ) ) {
+		return array();
+	}
+
+	return array(
+		'id'           => $case_id,
+		'title'        => get_the_title( $case_id ),
+		'type'         => argokov_field( 'case_type', '', $case_id ),
+		'lead'         => argokov_field( 'case_lead', get_the_excerpt( $case_id ), $case_id ),
+		'work'         => argokov_rows( 'case_work', array(), $case_id ),
+		'technologies' => argokov_rows( 'case_technologies', array(), $case_id ),
+		'url'          => argokov_field( 'case_website_url', '', $case_id ),
+		'permalink'    => get_permalink( $case_id ),
+	);
+}
+
+function argokov_selected_cases( $field_name, $limit = 3, $post_id = false ) {
+	$selected = argokov_field( $field_name, array(), $post_id );
+	$items    = array();
+
+	if ( is_array( $selected ) ) {
+		foreach ( $selected as $case_id ) {
+			$item = argokov_case_data( $case_id );
+
+			if ( $item ) {
+				$items[] = $item;
+			}
+
+			if ( count( $items ) >= $limit ) {
+				break;
+			}
+		}
+	}
+
+	if ( $items ) {
+		return $items;
+	}
+
+	$posts = get_posts(
+		array(
+			'post_type'      => 'case',
+			'post_status'    => 'publish',
+			'posts_per_page' => $limit,
+			'orderby'        => array( 'menu_order' => 'ASC', 'date' => 'DESC' ),
+			'no_found_rows'  => true,
+		)
+	);
+
+	foreach ( $posts as $post ) {
+		$item = argokov_case_data( $post->ID );
+
+		if ( $item ) {
+			$items[] = $item;
+		}
+	}
+
+	return $items;
+}
