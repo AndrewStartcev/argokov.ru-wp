@@ -2,9 +2,8 @@
 /**
  * One-time base content seeder.
  *
- * Seeds the initial homepage, cases and materials from data/base-content.json.
- * It runs automatically once after the theme code is deployed and ACF Pro is available.
- * Existing non-empty ACF values are preserved.
+ * Creates the initial content model from data/base-content.json.
+ * Existing non-empty ACF fields, Rank Math fields and page content are preserved.
  *
  * @package Argokov
  */
@@ -67,6 +66,22 @@ function argokov_base_content_find_item( $post_type, $key, $slug ) {
 	return 0;
 }
 
+function argokov_base_content_apply_seo( $post_id, $seo ) {
+	$post_id = (int) $post_id;
+
+	if ( ! $post_id || ! is_array( $seo ) ) {
+		return;
+	}
+
+	if ( ! empty( $seo['title'] ) && ! get_post_meta( $post_id, 'rank_math_title', true ) ) {
+		update_post_meta( $post_id, 'rank_math_title', sanitize_text_field( $seo['title'] ) );
+	}
+
+	if ( ! empty( $seo['description'] ) && ! get_post_meta( $post_id, 'rank_math_description', true ) ) {
+		update_post_meta( $post_id, 'rank_math_description', sanitize_textarea_field( $seo['description'] ) );
+	}
+}
+
 function argokov_base_content_upsert_item( $item, $post_type ) {
 	if ( empty( $item['key'] ) || empty( $item['title'] ) || empty( $item['slug'] ) ) {
 		return 0;
@@ -115,12 +130,12 @@ function argokov_base_content_upsert_item( $item, $post_type ) {
 
 	if ( ! empty( $item['fields'] ) && is_array( $item['fields'] ) ) {
 		foreach ( $item['fields'] as $field_name => $value ) {
-			argokov_base_content_update_field_if_empty(
-				$field_name,
-				$value,
-				$post_id
-			);
+			argokov_base_content_update_field_if_empty( $field_name, $value, $post_id );
 		}
+	}
+
+	if ( ! empty( $item['seo'] ) ) {
+		argokov_base_content_apply_seo( $post_id, $item['seo'] );
 	}
 
 	return $post_id;
@@ -187,10 +202,191 @@ function argokov_base_content_home_page( $home_data ) {
 
 	$page_id = (int) $page_id;
 
+	update_post_meta( $page_id, '_argokov_base_content_key', 'home' );
 	update_option( 'show_on_front', 'page' );
 	update_option( 'page_on_front', $page_id );
 
 	return $page_id;
+}
+
+function argokov_base_content_upsert_page( $page_data, $entity_ids ) {
+	if ( empty( $page_data['key'] ) || empty( $page_data['title'] ) || empty( $page_data['slug'] ) ) {
+		return 0;
+	}
+
+	$page_id = argokov_base_content_find_item(
+		'page',
+		(string) $page_data['key'],
+		(string) $page_data['slug']
+	);
+
+	if ( ! $page_id ) {
+		$result = wp_insert_post(
+			array(
+				'post_type'    => 'page',
+				'post_status'  => 'publish',
+				'post_title'   => (string) $page_data['title'],
+				'post_name'    => (string) $page_data['slug'],
+				'post_content' => isset( $page_data['content'] ) ? (string) $page_data['content'] : '',
+			),
+			true
+		);
+
+		if ( is_wp_error( $result ) || ! $result ) {
+			return 0;
+		}
+
+		$page_id = (int) $result;
+	} else {
+		$page = get_post( $page_id );
+
+		if ( $page && isset( $page_data['content'] ) && '' === trim( (string) $page->post_content ) ) {
+			wp_update_post(
+				wp_slash(
+					array(
+						'ID'           => $page_id,
+						'post_content' => (string) $page_data['content'],
+					)
+				)
+			);
+		}
+	}
+
+	update_post_meta(
+		$page_id,
+		'_argokov_base_content_key',
+		sanitize_key( $page_data['key'] )
+	);
+
+	if ( ! empty( $page_data['template'] ) ) {
+		update_post_meta(
+			$page_id,
+			'_wp_page_template',
+			sanitize_file_name( $page_data['template'] )
+		);
+	}
+
+	if ( ! empty( $page_data['fields'] ) && is_array( $page_data['fields'] ) ) {
+		foreach ( $page_data['fields'] as $field_name => $value ) {
+			$value = argokov_base_content_resolve_value( $value, $entity_ids );
+			argokov_base_content_update_field_if_empty( $field_name, $value, $page_id );
+		}
+	}
+
+	if ( ! empty( $page_data['seo'] ) ) {
+		argokov_base_content_apply_seo( $page_id, $page_data['seo'] );
+	}
+
+	return $page_id;
+}
+
+function argokov_base_content_create_menu( $name, $location, $items ) {
+	$locations = get_theme_mod( 'nav_menu_locations', array() );
+
+	if ( ! empty( $locations[ $location ] ) ) {
+		return;
+	}
+
+	$menu = wp_get_nav_menu_object( $name );
+
+	if ( $menu ) {
+		$menu_id = (int) $menu->term_id;
+	} else {
+		$menu_id = wp_create_nav_menu( $name );
+
+		if ( is_wp_error( $menu_id ) ) {
+			return;
+		}
+	}
+
+	$existing = wp_get_nav_menu_items( $menu_id );
+	$existing = is_array( $existing ) ? $existing : array();
+
+	if ( ! $existing ) {
+		foreach ( $items as $item ) {
+			if ( empty( $item['label'] ) || empty( $item['path'] ) ) {
+				continue;
+			}
+
+			$url = 0 === strpos( $item['path'], 'http' )
+				? $item['path']
+				: home_url( $item['path'] );
+
+			wp_update_nav_menu_item(
+				$menu_id,
+				0,
+				array(
+					'menu-item-title'  => (string) $item['label'],
+					'menu-item-url'    => $url,
+					'menu-item-status' => 'publish',
+					'menu-item-type'   => 'custom',
+				)
+			);
+		}
+	}
+
+	$locations[ $location ] = (int) $menu_id;
+	set_theme_mod( 'nav_menu_locations', $locations );
+}
+
+function argokov_base_content_seed_menus() {
+	argokov_base_content_create_menu(
+		'Основное меню',
+		'primary',
+		array(
+			array( 'label' => 'Услуги', 'path' => '/services/' ),
+			array( 'label' => 'Разработка', 'path' => '/development/' ),
+			array( 'label' => 'Поддержка', 'path' => '/support/' ),
+			array( 'label' => 'Кейсы', 'path' => '/cases/' ),
+			array( 'label' => 'Статьи', 'path' => '/materials/' ),
+			array( 'label' => 'Студия', 'path' => '/about/' ),
+			array( 'label' => 'Контакты', 'path' => '/contacts/' ),
+		)
+	);
+
+	argokov_base_content_create_menu(
+		'Мобильное меню',
+		'mobile',
+		array(
+			array( 'label' => 'Услуги', 'path' => '/services/' ),
+			array( 'label' => 'Разработка', 'path' => '/development/' ),
+			array( 'label' => 'Поддержка', 'path' => '/support/' ),
+			array( 'label' => 'Статьи', 'path' => '/materials/' ),
+			array( 'label' => 'Кейсы', 'path' => '/cases/' ),
+			array( 'label' => 'О студии', 'path' => '/about/' ),
+			array( 'label' => 'Как работаем', 'path' => '/process/' ),
+			array( 'label' => 'Частые вопросы', 'path' => '/faq/' ),
+			array( 'label' => 'Контакты', 'path' => '/contacts/' ),
+		)
+	);
+
+	argokov_base_content_create_menu(
+		'Подвал — услуги',
+		'footer_services',
+		array(
+			array( 'label' => 'Все услуги', 'path' => '/services/' ),
+			array( 'label' => 'Разработка сайтов', 'path' => '/development/' ),
+			array( 'label' => 'Поддержка сайтов', 'path' => '/support/' ),
+			array( 'label' => 'Доработка сайтов', 'path' => '/#improvements' ),
+			array( 'label' => 'Интернет-магазины', 'path' => '/development/#types' ),
+			array( 'label' => 'Интеграции', 'path' => '/development/#included' ),
+			array( 'label' => 'Техническое SEO', 'path' => '/development/#seo' ),
+			array( 'label' => 'Сложные проекты', 'path' => '/#improvements' ),
+		)
+	);
+
+	argokov_base_content_create_menu(
+		'Подвал — студия',
+		'footer_studio',
+		array(
+			array( 'label' => 'Кейсы', 'path' => '/cases/' ),
+			array( 'label' => 'О студии', 'path' => '/about/' ),
+			array( 'label' => 'Как работаем', 'path' => '/process/' ),
+			array( 'label' => 'Материалы', 'path' => '/materials/' ),
+			array( 'label' => 'Частые вопросы', 'path' => '/faq/' ),
+			array( 'label' => 'Контакты', 'path' => '/contacts/' ),
+		)
+	);
 }
 
 function argokov_seed_base_content() {
@@ -208,8 +404,8 @@ function argokov_seed_base_content() {
 		return;
 	}
 
-	$version         = isset( $data['version'] ) ? (int) $data['version'] : 1;
-	$seeded_version  = (int) get_option( 'argokov_base_content_seed_version', 0 );
+	$version        = isset( $data['version'] ) ? (int) $data['version'] : 1;
+	$seeded_version = (int) get_option( 'argokov_base_content_seed_version', 0 );
 
 	if ( $seeded_version >= $version ) {
 		return;
@@ -222,11 +418,7 @@ function argokov_seed_base_content() {
 
 	if ( ! empty( $data['options'] ) && is_array( $data['options'] ) ) {
 		foreach ( $data['options'] as $field_name => $value ) {
-			argokov_base_content_update_field_if_empty(
-				$field_name,
-				$value,
-				'option'
-			);
+			argokov_base_content_update_field_if_empty( $field_name, $value, 'option' );
 		}
 	}
 
@@ -250,45 +442,40 @@ function argokov_seed_base_content() {
 		}
 	}
 
-	if ( empty( $data['home'] ) || ! is_array( $data['home'] ) ) {
-		return;
-	}
+	if ( ! empty( $data['home'] ) && is_array( $data['home'] ) ) {
+		$home_id = argokov_base_content_home_page( $data['home'] );
 
-	$home_id = argokov_base_content_home_page( $data['home'] );
+		if ( $home_id ) {
+			if ( ! empty( $data['home']['fields'] ) && is_array( $data['home']['fields'] ) ) {
+				foreach ( $data['home']['fields'] as $field_name => $value ) {
+					$value = argokov_base_content_resolve_value( $value, $entity_ids );
+					argokov_base_content_update_field_if_empty( $field_name, $value, $home_id );
+				}
+			}
 
-	if ( ! $home_id ) {
-		return;
-	}
-
-	if ( ! empty( $data['home']['fields'] ) && is_array( $data['home']['fields'] ) ) {
-		foreach ( $data['home']['fields'] as $field_name => $value ) {
-			$value = argokov_base_content_resolve_value( $value, $entity_ids );
-
-			argokov_base_content_update_field_if_empty(
-				$field_name,
-				$value,
-				$home_id
-			);
+			if ( ! empty( $data['home']['seo'] ) ) {
+				argokov_base_content_apply_seo( $home_id, $data['home']['seo'] );
+			}
 		}
 	}
 
-	if ( ! empty( $data['home']['seo'] ) && is_array( $data['home']['seo'] ) ) {
-		if ( ! empty( $data['home']['seo']['title'] ) && ! get_post_meta( $home_id, 'rank_math_title', true ) ) {
-			update_post_meta(
-				$home_id,
-				'rank_math_title',
-				sanitize_text_field( $data['home']['seo']['title'] )
-			);
-		}
+	$page_ids = array();
 
-		if ( ! empty( $data['home']['seo']['description'] ) && ! get_post_meta( $home_id, 'rank_math_description', true ) ) {
-			update_post_meta(
-				$home_id,
-				'rank_math_description',
-				sanitize_textarea_field( $data['home']['seo']['description'] )
-			);
+	if ( ! empty( $data['pages'] ) && is_array( $data['pages'] ) ) {
+		foreach ( $data['pages'] as $page_data ) {
+			$page_id = argokov_base_content_upsert_page( $page_data, $entity_ids );
+
+			if ( $page_id && ! empty( $page_data['key'] ) ) {
+				$page_ids[ sanitize_key( $page_data['key'] ) ] = $page_id;
+			}
 		}
 	}
+
+	if ( ! empty( $page_ids['privacy'] ) ) {
+		update_option( 'wp_page_for_privacy_policy', (int) $page_ids['privacy'] );
+	}
+
+	argokov_base_content_seed_menus();
 
 	update_option( 'argokov_base_content_seed_version', $version );
 
