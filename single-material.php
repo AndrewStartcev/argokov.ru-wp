@@ -116,7 +116,7 @@ while ( have_posts() ) :
 					<div>
 						<p class="section-eyebrow">Об авторе</p>
 						<h2 id="about-author"><?php echo esc_html( $founder_name ); ?></h2>
-						<p>Веб-разработчик и основатель студии «Аргоков». Более 10 лет разрабатывает и принимает на поддержку сайты на WordPress, 1С-Битрикс и с самописным кодом.</p>
+						<p><?php echo esc_html( argokov_option( 'site_author_bio', 'Веб-разработчик и основатель студии «Аргоков». Более 10 лет разрабатывает и принимает на поддержку сайты на WordPress, 1С-Битрикс и с самописным кодом.' ) ); ?></p>
 						<a href="<?php echo esc_url( home_url( '/about/' ) ); ?>" class="text-link">О студии <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
 					</div>
 				</section>
