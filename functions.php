@@ -8,6 +8,7 @@ foreach ( array(
 	'/functions/base-content.php',
 	'/functions/comments.php',
 	'/functions/helpers.php',
+	'/functions/contact-form.php',
 	'/functions/remove-functions.php',
 	'/functions/post-types.php',
 ) as $argokov_file ) {
