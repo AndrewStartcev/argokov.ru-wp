@@ -13,9 +13,9 @@ $form = argokov_contact_form_shortcode();
 	<section class="contact-modal__panel" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
 		<header class="contact-modal__header">
 			<div>
-				<p class="section-eyebrow">Обсудить задачу</p>
-				<h2 id="contact-modal-title">Расскажите о проекте</h2>
-				<p>Можно отправить ссылку, описание или готовое техническое задание. Изучим и предложим следующий шаг.</p>
+				<p class="section-eyebrow"><?php echo esc_html( argokov_option( 'contact_modal_eyebrow', 'Обсудить задачу' ) ); ?></p>
+				<h2 id="contact-modal-title"><?php echo esc_html( argokov_option( 'contact_modal_title', 'Расскажите о проекте' ) ); ?></h2>
+				<p><?php echo esc_html( argokov_option( 'contact_modal_text', 'Можно отправить ссылку, описание или готовое техническое задание. Изучим и предложим следующий шаг.' ) ); ?></p>
 			</div>
 			<button class="contact-modal__close" type="button" aria-label="Закрыть форму">
 				<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"></path></svg>
