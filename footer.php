@@ -62,7 +62,7 @@ $footer_studio = array(
 				<section class="footer-module site-footer__contacts">
 					<span class="footer-module__title">Связаться</span>
 					<div class="site-footer__contacts-main">
-						<span>Напишите удобным способом</span><a href="<?php echo esc_url( 'tel:' . argokov_phone_href( $phone ) ); ?>"><?php echo esc_html( $phone ); ?></a><a href="<?php echo esc_url( 'mailto:' . sanitize_email( $email ) ); ?>"><?php echo esc_html( antispambot( $email ) ); ?></a>
+						<span>Напишите удобным способом</span><a href="<?php echo esc_url( 'tel:' . argokov_phone_href( $phone ) ); ?>"><?php echo esc_html( $phone ); ?></a><a href="<?php echo esc_url( 'mailto:' . sanitize_email( $email ) ); ?>"><?php echo esc_html( $email ); ?></a>
 					</div>
 					<div class="site-footer__messengers" aria-label="Мессенджеры и социальные сети">
 						<span><?php if ( $telegram_url ) : ?><a href="<?php echo esc_url( $telegram_url ); ?>" target="_blank" rel="noopener noreferrer">Telegram</a><?php else : ?>Telegram<?php endif; ?></span>
