@@ -235,6 +235,8 @@ defined( 'ABSPATH' ) || exit;
 		<div class="development-faq"><?php foreach ( $faq as $item ) : ?><details><summary><?php echo esc_html( $item['question'] ?? '' ); ?><span>+</span></summary><p><?php echo esc_html( $item['answer'] ?? '' ); ?></p></details><?php endforeach; ?></div>
 	</section>
 
+	<?php get_template_part( 'template-parts/service/direction-services' ); ?>
+
 	<?php
 	get_template_part(
 		'template-parts/common/contact-section',
