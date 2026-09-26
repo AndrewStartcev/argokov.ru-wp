@@ -1,6 +1,6 @@
 {
   "key": "group_argokov_services",
-  "title": "Услуги — контент",
+  "title": "Архив услуг",
   "fields": [
     {
       "key": "field_argokov_services_tab_hero",
@@ -67,110 +67,6 @@
       "new_lines": ""
     },
     {
-      "key": "field_argokov_services_filters",
-      "label": "Фильтры",
-      "name": "services_filters",
-      "type": "repeater",
-      "layout": "table",
-      "button_label": "Добавить",
-      "sub_fields": [
-        {
-          "key": "field_argokov_services_filter_key",
-          "label": "Ключ",
-          "name": "key",
-          "type": "text",
-          "wrapper": {
-            "width": "35"
-          }
-        },
-        {
-          "key": "field_argokov_services_filter_label",
-          "label": "Название",
-          "name": "label",
-          "type": "text",
-          "wrapper": {
-            "width": "65"
-          }
-        }
-      ]
-    },
-    {
-      "key": "field_argokov_services_items",
-      "label": "Услуги",
-      "name": "services_items",
-      "type": "repeater",
-      "layout": "row",
-      "button_label": "Добавить услугу",
-      "sub_fields": [
-        {
-          "key": "field_argokov_services_item_number",
-          "label": "Номер",
-          "name": "number",
-          "type": "text",
-          "wrapper": {
-            "width": "10"
-          }
-        },
-        {
-          "key": "field_argokov_services_item_category",
-          "label": "Ключ категории",
-          "name": "category",
-          "type": "text",
-          "wrapper": {
-            "width": "20"
-          }
-        },
-        {
-          "key": "field_argokov_services_item_category_label",
-          "label": "Подпись категории",
-          "name": "category_label",
-          "type": "text",
-          "wrapper": {
-            "width": "20"
-          }
-        },
-        {
-          "key": "field_argokov_services_item_title",
-          "label": "H2",
-          "name": "title",
-          "type": "text",
-          "wrapper": {
-            "width": "50"
-          }
-        },
-        {
-          "key": "field_argokov_services_item_text",
-          "label": "Описание",
-          "name": "text",
-          "type": "textarea",
-          "rows": 3,
-          "new_lines": ""
-        },
-        {
-          "key": "field_argokov_services_item_tags",
-          "label": "Теги",
-          "name": "tags",
-          "type": "repeater",
-          "layout": "table",
-          "button_label": "Добавить",
-          "sub_fields": [
-            {
-              "key": "field_argokov_services_item_tag",
-              "label": "Тег",
-              "name": "text",
-              "type": "text"
-            }
-          ]
-        },
-        {
-          "key": "field_argokov_services_item_url",
-          "label": "Ссылка",
-          "name": "url",
-          "type": "text"
-        }
-      ]
-    },
-    {
       "key": "field_argokov_services_tab_cta",
       "label": "CTA",
       "type": "tab",
@@ -206,9 +102,9 @@
   "location": [
     [
       {
-        "param": "page_template",
+        "param": "options_page",
         "operator": "==",
-        "value": "page-services.php"
+        "value": "argokov-settings"
       }
     ]
   ],
@@ -231,7 +127,7 @@
     "send-trackbacks"
   ],
   "active": true,
-  "description": "Структурный каталог услуг.",
+  "description": "Тексты архива /services/. Список услуг формируется автоматически из CPT «Услуги».",
   "show_in_rest": 0,
-  "modified": 1790397000
+  "modified": 1790411003
 }
