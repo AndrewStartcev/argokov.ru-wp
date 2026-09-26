@@ -1,5 +1,5 @@
 {
-  "version": 10,
+  "version": 11,
   "options": {
     "site_founder_name": "Андрей Старцев",
     "site_founder_role": "Основатель и ведущий разработчик",
@@ -46,7 +46,15 @@
     "services_cta_eyebrow": "Не нашли задачу",
     "services_cta_title": "Пришли ссылку на сайт — разберёмся",
     "services_cta_text": "Не обязательно подбирать правильное название услуги. Сначала поймём задачу и предложим подходящий формат.",
-    "services_cta_button_label": "Обсудить задачу"
+    "services_cta_button_label": "Обсудить задачу",
+    "mega_menu_eyebrow": "Услуги",
+    "mega_menu_title": "Разработка и поддержка сайтов",
+    "mega_menu_all_label": "Все услуги",
+    "mega_menu_cta_eyebrow": "Не знаешь, что выбрать?",
+    "mega_menu_cta_title": "Разберём задачу и подскажем, с чего начать",
+    "mega_menu_cta_text": "Пришли ссылку на сайт или коротко опиши задачу. Сначала изучим проект, потом предложим решение.",
+    "mega_menu_cta_button": "Получить консультацию",
+    "mega_menu_cta_note": "Можно обратиться даже без готового ТЗ"
   },
   "cases": [
     {
