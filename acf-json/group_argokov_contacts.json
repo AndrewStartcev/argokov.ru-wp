@@ -1,0 +1,147 @@
+{
+  "key": "group_argokov_contacts",
+  "title": "Контакты — контент",
+  "fields": [
+    {
+      "key": "field_argokov_contacts_tab_hero",
+      "label": "Первый экран",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_contacts_hero_eyebrow",
+      "label": "Надзаголовок",
+      "name": "contacts_hero_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_contacts_hero_title",
+      "label": "H1 — основной текст",
+      "name": "contacts_hero_title",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_contacts_hero_accent",
+      "label": "H1 — акцент",
+      "name": "contacts_hero_title_accent",
+      "type": "text",
+      "wrapper": {
+        "width": "50"
+      }
+    },
+    {
+      "key": "field_argokov_contacts_hero_text",
+      "label": "Описание",
+      "name": "contacts_hero_text",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_contacts_tab_main",
+      "label": "Контактный блок",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_contacts_main_eyebrow",
+      "label": "Надзаголовок",
+      "name": "contacts_main_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_contacts_main_title",
+      "label": "H2",
+      "name": "contacts_main_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_contacts_main_note",
+      "label": "Примечание",
+      "name": "contacts_main_note",
+      "type": "textarea",
+      "rows": 3,
+      "new_lines": ""
+    },
+    {
+      "key": "field_argokov_contacts_tab_links",
+      "label": "Ссылки",
+      "type": "tab",
+      "placement": "left"
+    },
+    {
+      "key": "field_argokov_contacts_links_eyebrow",
+      "label": "Надзаголовок",
+      "name": "contacts_links_eyebrow",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_contacts_links_title",
+      "label": "H2",
+      "name": "contacts_links_title",
+      "type": "text"
+    },
+    {
+      "key": "field_argokov_contacts_links",
+      "label": "Ссылки",
+      "name": "contacts_links",
+      "type": "repeater",
+      "layout": "table",
+      "button_label": "Добавить",
+      "sub_fields": [
+        {
+          "key": "field_argokov_contacts_link_label",
+          "label": "Название",
+          "name": "label",
+          "type": "text",
+          "wrapper": {
+            "width": "50"
+          }
+        },
+        {
+          "key": "field_argokov_contacts_link_url",
+          "label": "URL",
+          "name": "url",
+          "type": "text",
+          "wrapper": {
+            "width": "50"
+          }
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "page_template",
+        "operator": "==",
+        "value": "page-contacts.php"
+      }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "acf_after_title",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [
+    "the_content",
+    "excerpt",
+    "discussion",
+    "comments",
+    "revisions",
+    "author",
+    "format",
+    "featured_image",
+    "categories",
+    "tags",
+    "send-trackbacks"
+  ],
+  "active": true,
+  "description": "Контактная страница; контакты и CF7 берутся из глобальных настроек.",
+  "show_in_rest": 0,
+  "modified": 1790397000
+}
