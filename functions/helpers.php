@@ -207,3 +207,98 @@ function argokov_material_cover_alt( $material_id ) {
 
 	return get_the_title( $material_id );
 }
+
+
+class Argokov_Nested_Menu_Walker extends Walker_Nav_Menu {
+	public function start_lvl( &$output, $depth = 0, $args = null ) {
+		$variant = ! empty( $args->argokov_variant ) ? $args->argokov_variant : 'desktop';
+		$class   = 'mobile' === $variant ? 'mobile-nav__submenu' : 'site-nav__submenu';
+		$output .= '<div class="' . esc_attr( $class ) . '">';
+	}
+
+	public function end_lvl( &$output, $depth = 0, $args = null ) {
+		$output .= '</div>';
+	}
+
+	public function start_el( &$output, $item, $depth = 0, $args = null, $id = 0 ) {
+		$variant      = ! empty( $args->argokov_variant ) ? $args->argokov_variant : 'desktop';
+		$has_children = ! empty( $args->has_children );
+		$current      = ! empty( $item->current ) || ! empty( $item->current_item_ancestor );
+		$attributes   = ' href="' . esc_url( $item->url ) . '"';
+
+		if ( $current ) {
+			$attributes .= ' aria-current="page"';
+		}
+
+		if ( 0 === $depth && $has_children ) {
+			$class = 'mobile' === $variant ? 'mobile-nav__item mobile-nav__item--parent' : 'site-nav__item site-nav__item--parent';
+			$output .= '<div class="' . esc_attr( $class ) . '">';
+		}
+
+		$output .= '<a' . $attributes . '>' . esc_html( $item->title );
+
+		if ( 0 === $depth && $has_children && 'desktop' === $variant ) {
+			$output .= '<svg class="site-nav__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m4 6 4 4 4-4"></path></svg>';
+		}
+
+		$output .= '</a>';
+	}
+
+	public function end_el( &$output, $item, $depth = 0, $args = null ) {
+		if ( 0 === $depth && ! empty( $args->has_children ) ) {
+			$output .= '</div>';
+		}
+	}
+}
+
+function argokov_render_nested_menu_fallback( $items, $variant = 'desktop' ) {
+	foreach ( $items as $item ) {
+		$url      = isset( $item['url'] ) ? $item['url'] : '/';
+		$label    = isset( $item['label'] ) ? $item['label'] : '';
+		$children = ! empty( $item['children'] ) && is_array( $item['children'] ) ? $item['children'] : array();
+
+		if ( $children ) {
+			$item_class = 'mobile' === $variant ? 'mobile-nav__item mobile-nav__item--parent' : 'site-nav__item site-nav__item--parent';
+			$sub_class  = 'mobile' === $variant ? 'mobile-nav__submenu' : 'site-nav__submenu';
+
+			echo '<div class="' . esc_attr( $item_class ) . '">';
+		}
+
+		echo '<a href="' . esc_url( home_url( $url ) ) . '">' . esc_html( $label );
+
+		if ( $children && 'desktop' === $variant ) {
+			echo '<svg class="site-nav__chevron" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="m4 6 4 4 4-4"></path></svg>';
+		}
+
+		echo '</a>';
+
+		if ( $children ) {
+			echo '<div class="' . esc_attr( $sub_class ) . '">';
+
+			foreach ( $children as $child ) {
+				echo '<a href="' . esc_url( home_url( $child['url'] ?? '/' ) ) . '">' . esc_html( $child['label'] ?? '' ) . '</a>';
+			}
+
+			echo '</div></div>';
+		}
+	}
+}
+
+function argokov_render_nested_menu( $location, $fallback_items, $variant = 'desktop' ) {
+	if ( has_nav_menu( $location ) ) {
+		wp_nav_menu(
+			array(
+				'theme_location'  => $location,
+				'container'       => false,
+				'items_wrap'      => '%3$s',
+				'depth'           => 2,
+				'fallback_cb'     => false,
+				'walker'          => new Argokov_Nested_Menu_Walker(),
+				'argokov_variant' => $variant,
+			)
+		);
+		return;
+	}
+
+	argokov_render_nested_menu_fallback( $fallback_items, $variant );
+}
