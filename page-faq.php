@@ -40,8 +40,15 @@ while ( have_posts() ) :
 			<div class="catalog-filter faq-filter" role="group" aria-label="Фильтр вопросов">
 				<?php foreach ( $filters as $index => $filter ) : ?>
 					<?php
-					$key   = $filter['key'] ?? '';
-					$count = 'all' === $key ? count( $items ) : count( array_filter( $items, static function ( $item ) use ( $key ) { return isset( $item['category'] ) && $item['category'] === $key; } ) );
+					$key = $filter['key'] ?? '';
+					$count = 'all' === $key ? count( $items ) : count(
+						array_filter(
+							$items,
+							static function ( $item ) use ( $key ) {
+								return isset( $item['category'] ) && $item['category'] === $key;
+							}
+						)
+					);
 					?>
 					<button type="button" class="<?php echo 0 === $index ? 'is-active' : ''; ?>" aria-pressed="<?php echo 0 === $index ? 'true' : 'false'; ?>" data-filter="<?php echo esc_attr( $key ); ?>"><?php echo esc_html( $filter['label'] ?? '' ); ?><span><?php echo (int) $count; ?></span></button>
 				<?php endforeach; ?>
