@@ -1,849 +1,255 @@
 <?php
 /**
- * Support page
+ * Support page.
  *
  * @package Argokov
  */
 
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+defined( 'ABSPATH' ) || exit;
 
 get_header();
-?>
 
-<section class="support-hero surface" aria-labelledby="support-title">
-
-<div class="support-hero__content">
-
-<nav class="breadcrumbs" aria-label="Хлебные крошки">
-<a href="/">Главная</a><span>/</span><span>Поддержка сайтов</span>
-</nav>
-
-<p class="section-eyebrow">
-Любая CMS · самописные сайты · доисторический код
-</p>
-
-<h1 id="support-title">
-Техническая поддержка <span>и развитие сайтов</span>
-</h1>
-
-<p class="support-hero__lead">
-Берём на себя техническую сторону готового сайта: исправляем ошибки, внедряем новые функции, поддерживаем интеграции и последовательно развиваем проект.
-</p>
-
-<div class="support-hero__actions">
-<a class="button" href="#contact" data-contact-modal="true">Передать сайт на поддержку <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a><a class="text-link" href="#directions">Что можем сделать <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
-</div>
-
-<div class="support-hero__proof">
-<span><strong>Чужой проект — не проблема</strong> начинаем с диагностики</span><span><strong>Прямой контакт</strong> с ведущим разработчиком</span><span><strong>По всей России</strong> принимаем обращения 24/7</span>
-</div>
-
-</div>
-
-<aside class="support-hero__visual" aria-label="Состояние проекта под контролем">
-
-<div class="support-visual__heading">
-
-<div>
-<span>Технический контур</span><strong>Сайт под контролем</strong>
-</div>
-<i aria-hidden="true"></i>
-</div>
-
-<div class="support-signals">
-
-<article>
-<span>Работоспособность</span><strong>Проверяем</strong><i class="support-signal support-signal--ok"></i>
-</article>
-
-<article>
-<span>Резервные копии</span><strong>Контролируем</strong><i class="support-signal support-signal--ok"></i>
-</article>
-
-<article>
-<span>Ошибки и логи</span><strong>Разбираем причины</strong><i class="support-signal"></i>
-</article>
-
-<article>
-<span>План развития</span><strong>Двигаемся по приоритетам</strong><i class="support-signal support-signal--amber"></i>
-</article>
-
-</div>
-
-<div class="support-visual__footer">
-<span>CMS</span><strong>WordPress · Битрикс · custom</strong>
-</div>
-
-</aside>
-
-</section>
-
-<section class="development-section surface" id="directions" aria-labelledby="directions-title">
-
-<header class="development-heading">
-
-<div>
-
-<p class="section-eyebrow">
-Задачи поддержки
-</p>
-
-<h2 id="directions-title">
-Не только следим, чтобы сайт не упал
-</h2>
-
-</div>
-
-<p>
-Поддержка — это техническая работа с живым проектом: от срочного исправления ошибки до регулярного развития вместе с бизнесом.
-</p>
-
-</header>
-
-<div class="development-types support-directions">
-
-<article class="development-type">
-<span class="development-card-number">01</span>
-<h3>
-Исправление ошибок
-</h3>
-
-<p>
-Находим причину сбоя, а не маскируем симптом. Восстанавливаем формы, страницы, обмены и отдельные функции.
-</p>
-
-<ul>
-
-<li>
-Ошибки PHP и JavaScript
-</li>
-
-<li>
-Проблемы после обновлений
-</li>
-
-<li>
-Сбои форм и интеграций
-</li>
-
-</ul>
-
-</article>
-
-<article class="development-type">
-<span class="development-card-number">02</span>
-<h3>
-Доработка сайта
-</h3>
-
-<p>
-Добавляем новые страницы, компоненты и бизнес-логику без обязательного переписывания всего проекта.
-</p>
-
-<ul>
-
-<li>
-Новый функционал
-</li>
-
-<li>
-Интерфейсы и адаптив
-</li>
-
-<li>
-Личные кабинеты и API
-</li>
-
-</ul>
-
-</article>
-
-<article class="development-type">
-<span class="development-card-number">03</span>
-<h3>
-Техническое обслуживание
-</h3>
-
-<p>
-Поддерживаем рабочее состояние сайта и уменьшаем риск неприятных сюрпризов в эксплуатации.
-</p>
-
-<ul>
-
-<li>
-Обновления и резервные копии
-</li>
-
-<li>
-Скорость и безопасность
-</li>
-
-<li>
-Домены, SSL и сервер
-</li>
-
-</ul>
-
-</article>
-
-<article class="development-type">
-<span class="development-card-number">04</span>
-<h3>
-Развитие и SEO-задачи
-</h3>
-
-<p>
-Реализуем рекомендации SEO-команды и развиваем сайт под новые направления, города и услуги.
-</p>
-
-<ul>
-
-<li>
-Посадочные страницы
-</li>
-
-<li>
-Schema.org и шаблоны
-</li>
-
-<li>
-Аналитика и конверсии
-</li>
-
-</ul>
-
-</article>
-
-</div>
-
-</section>
-
-<section class="support-for surface" aria-labelledby="support-for-title">
-
-<div class="support-for__intro">
-
-<p class="section-eyebrow">
-Когда мы полезны
-</p>
-
-<h2 id="support-for-title">
-Подключаемся там, где проект нельзя просто остановить
-</h2>
-
-<p>
-Не требуем переписывать сайт с нуля ради удобства разработчика. Сначала выясняем, что уже работает и что мешает бизнесу двигаться дальше.
-</p>
-
-</div>
-
-<div class="support-for__list">
-
-<article>
-<span>01</span>
-<div>
-
-<h3>
-Предыдущий подрядчик пропал
-</h3>
-
-<p>
-Нет документации, накопились вопросы и некому отвечать за техническую часть.
-</p>
-
-</div>
-
-</article>
-
-<article>
-<span>02</span>
-<div>
-
-<h3>
-Сайт работает нестабильно
-</h3>
-
-<p>
-Появляются ошибки, ломаются формы, обмены или отдельные сценарии пользователей.
-</p>
-
-</div>
-
-</article>
-
-<article>
-<span>03</span>
-<div>
-
-<h3>
-Нужны постоянные доработки
-</h3>
-
-<p>
-Маркетинг, SEO и продажи регулярно приносят задачи, которым нужна техническая реализация.
-</p>
-
-</div>
-
-</article>
-
-<article>
-<span>04</span>
-<div>
-
-<h3>
-Проект старый и сложный
-</h3>
-
-<p>
-CMS устарела, код самописный, много зависимостей — и никто не хочет в этом разбираться.
-</p>
-
-</div>
-
-</article>
-
-</div>
-
-</section>
-
-<section class="development-section surface" id="formats" aria-labelledby="formats-title">
-
-<header class="development-heading">
-
-<div>
-
-<p class="section-eyebrow">
-Форматы работы
-</p>
-
-<h2 id="formats-title">
-Поддержка под реальный объём задач
-</h2>
-
-</div>
-
-<p>
-Не заставляем покупать большой тариф. Формат можно выбрать после первой задачи и менять по мере развития проекта.
-</p>
-
-</header>
-
-<div class="support-formats">
-
-<article class="support-format">
-<span>Разовая задача</span>
-<h3>
-Когда нужно починить или добавить конкретную функцию
-</h3>
-
-<p>
-Изучаем проблему, оцениваем работу и закрываем задачу без обязательной ежемесячной поддержки.
-</p>
-
-<ul>
-
-<li>
-Фиксируем ожидаемый результат
-</li>
-
-<li>
-Согласуем оценку до начала
-</li>
-
-<li>
-Передаём выполненную работу
-</li>
-
-</ul>
-
-</article>
-
-<article class="support-format support-format--accent">
-<span>Регулярная поддержка</span>
-<h3>
-Когда задачи по сайту появляются каждый месяц
-</h3>
-
-<p>
-Погружаемся в проект и последовательно закрываем технические, контентные и продуктовые задачи.
-</p>
-
-<ul>
-
-<li>
-Общий список приоритетов
-</li>
-
-<li>
-Планирование доступного времени
-</li>
-
-<li>
-Понятный отчёт по работам
-</li>
-
-</ul>
-
-</article>
-
-<article class="support-format">
-<span>Технический партнёр</span>
-<h3>
-Когда бизнесу или агентству нужен свой разработчик
-</h3>
-
-<p>
-Подключаемся к команде, общаемся с SEO, дизайном и маркетингом и отвечаем за техническую реализацию.
-</p>
-
-<ul>
-
-<li>
-Прямое общение со специалистами
-</li>
-
-<li>
-Сохраняем знания о проекте
-</li>
-
-<li>
-Развиваем без постоянного старта с нуля
-</li>
-
-</ul>
-
-</article>
-
-</div>
-
-</section>
-
-<section class="support-start surface" id="start" aria-labelledby="support-start-title">
-
-<header class="development-heading">
-
-<div>
-
-<p class="section-eyebrow">
-Как берём сайт на поддержку
-</p>
-
-<h2 id="support-start-title">
-Сначала разбираемся, затем меняем
-</h2>
-
-</div>
-
-<p>
-Особенно важно для старых сайтов: одно необдуманное обновление может задеть продажи, данные или интеграции.
-</p>
-
-</header>
-
-<ol class="support-start__steps">
-
-<li>
-<span>01</span>
-<div>
-
-<h3>
-Получаем доступы и материалы
-</h3>
-
-<p>
-Нужны CMS, хостинг или сервер, репозиторий и описание известных проблем. Запрашиваем только то, что действительно необходимо.
-</p>
-
-</div>
-
-</li>
-
-<li>
-<span>02</span>
-<div>
-
-<h3>
-Делаем техническую диагностику
-</h3>
-
-<p>
-Проверяем код, логи, резервные копии, обновления, интеграции и критичные риски. Ничего не меняем вслепую.
-</p>
-
-</div>
-
-</li>
-
-<li>
-<span>03</span>
-<div>
-
-<h3>
-Формируем порядок работ
-</h3>
-
-<p>
-Отделяем срочное от желательного и объясняем, что можно исправить сразу, а что безопаснее делать поэтапно.
-</p>
-
-</div>
-
-</li>
-
-<li>
-<span>04</span>
-<div>
-
-<h3>
-Берём проект в работу
-</h3>
-
-<p>
-Фиксируем изменения, проверяем результат и постепенно собираем понятную техническую историю сайта.
-</p>
-
-</div>
-
-</li>
-
-</ol>
-
-</section>
-
-<section class="support-safety surface" aria-labelledby="safety-title">
-
-<div class="support-safety__content">
-
-<p class="section-eyebrow">
-Безопасная работа
-</p>
-
-<h2 id="safety-title">
-Не правим рабочий сайт вслепую
-</h2>
-
-<p>
-Перед изменениями оцениваем риск, сохраняем возможность отката и проверяем критичные сценарии. Если проект позволяет — используем тестовую среду и систему контроля версий.
-</p>
-
-<blockquote>
-Доступы, резервная копия и понятный план изменений — обязательная основа, а не дополнительная услуга.
-</blockquote>
-
-</div>
-
-<div class="support-safety__grid">
-
-<article>
-<span>01</span><strong>Копия до изменений</strong>
-<p>
-Сохраняем состояние проекта перед потенциально рискованной работой.
-</p>
-
-</article>
-
-<article>
-<span>02</span><strong>Фиксация изменений</strong>
-<p>
-Понимаем, что и зачем было изменено и как вернуть предыдущую версию.
-</p>
-
-</article>
-
-<article>
-<span>03</span><strong>Проверка сценариев</strong>
-<p>
-Тестируем формы, оплату, интеграции и другие важные функции.
-</p>
-
-</article>
-
-<article>
-<span>04</span><strong>Работа по NDA</strong>
-<p>
-Можем закрепить конфиденциальность данных и устройства проекта.
-</p>
-
-</article>
-
-</div>
-
-</section>
-
-<section class="development-tech surface" aria-labelledby="support-tech-title">
-
-<div>
-
-<p class="section-eyebrow">
-CMS и технологии
-</p>
-
-<h2 id="support-tech-title">
-WordPress — основа, но поддерживаем не только его
-</h2>
-
-<p>
-Не отказываем только потому, что сайт собран на другой CMS или давно не обновлялся. Сначала смотрим код и инфраструктуру, затем честно говорим, можем ли отвечать за результат.
-</p>
-
-</div>
-
-<div class="development-tech__list">
-<span>WordPress</span><span>1С-Битрикс</span><span>WooCommerce</span><span>OpenCart</span><span>MODX</span><span>PHP</span><span>Laravel</span><span>JavaScript</span><span>Самописный код</span>
-</div>
-
-</section>
-
-<section class="support-estimate surface" aria-labelledby="support-estimate-title">
-
-<div class="support-estimate__content">
-
-<p class="section-eyebrow">
-Стоимость поддержки
-</p>
-
-<h2 id="support-estimate-title">
-Оцениваем не CMS, а состояние и задачи проекта
-</h2>
-
-<p>
-Два сайта на WordPress могут отличаться по сложности в десятки раз. Смотрим код, интеграции, риски и нужную скорость реакции — после этого предлагаем разовую оценку или регулярный формат.
-</p>
-<a class="button" href="#contact" data-contact-modal="true">Оценить поддержку <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
-</div>
-
-<div class="support-estimate__matrix">
-
-<div>
-<span>Разовая задача</span><strong>Оценка по составу работ</strong>
-</div>
-
-<div>
-<span>Регулярные задачи</span><strong>Планируемый объём в месяц</strong>
-</div>
-
-<div>
-<span>Сложный проект</span><strong>Диагностика и работа по этапам</strong>
-</div>
-
-<div>
-<span>Критичная ситуация</span><strong>Приоритет и сроки согласуем отдельно</strong>
-</div>
-
-</div>
-
-</section>
-
-<section class="development-section surface" id="support-cases" aria-labelledby="support-cases-title">
-
-<header class="development-heading">
-
-<div>
-
-<p class="section-eyebrow">
-Проекты на поддержке
-</p>
-
-<h2 id="support-cases-title">
-Знаем сайт целиком и развиваем годами
-</h2>
-
-</div>
-<a href="/#work" class="text-link">Все кейсы <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
-</header>
-
-<div class="development-cases">
-
-<article>
-<span>Медицина · постоянное развитие</span>
-<h3>
-Урал Медикал Групп
-</h3>
-
-<p>
-Развиваем структуру сети клиник, формы записи, интеграции, страницы услуг и техническую основу для SEO.
-</p>
-
-<div>
-<span>WordPress</span><span>CRM</span><span>Schema.org</span>
-</div>
-<a href="https://www.medgrup.online/" target="_blank" rel="noreferrer">Открыть сайт <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
-</article>
-
-<article>
-<span>Строительство · поддержка после запуска</span>
-<h3>
-Кровельная компания «МИК»
-</h3>
-
-<p>
-Добавляем новые услуги и посадочные страницы, развиваем калькулятор и поддерживаем формы обращений.
-</p>
-
-<div>
-<span>WordPress</span><span>ACF</span><span>JavaScript</span>
-</div>
-<a href="https://www.pvhkrovlya.ru/" target="_blank" rel="noreferrer">Открыть сайт <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
-</article>
-
-</div>
-
-<p class="development-cases__note">
-Не все проекты можем показывать из-за NDA. По запросу расскажем о релевантном опыте без раскрытия закрытых данных.
-</p>
-
-</section>
-
-<section class="development-section surface" id="support-faq" aria-labelledby="support-faq-title">
-
-<header class="development-heading">
-
-<div>
-
-<p class="section-eyebrow">
-Частые вопросы
-</p>
-
-<h2 id="support-faq-title">
-До передачи сайта на поддержку
-</h2>
-
-</div>
-
-</header>
-
-<div class="development-faq">
-
-<details>
-
-<summary>
-Берёте ли вы на поддержку сайты, которые делали не вы?<span>+</span>
-</summary>
-
-<p>
-Да. Большая часть задач поддержки начинается именно с чужого проекта. Берём WordPress, 1С-Битрикс, интернет-магазины, самописные CMS и доисторический код, если можем получить необходимые доступы и безопасно разобраться в системе.
-</p>
-
-</details>
-
-<details>
-
-<summary>
-Можно обратиться только с одной задачей?<span>+</span>
-</summary>
-
-<p>
-Да. Не обязательно сразу переходить на абонентское сопровождение. Можно начать с ошибки, интеграции, новой страницы или технической диагностики, а формат дальнейшей работы выбрать по результату.
-</p>
-
-</details>
-
-<details>
-
-<summary>
-Как быстро вы начинаете работу?<span>+</span>
-</summary>
-
-<p>
-Сначала оцениваем критичность и текущую загрузку. Обращения принимаем круглосуточно, но конкретное время реакции и начала работ согласуем отдельно. Для регулярной поддержки приоритеты и порядок реакции фиксируем заранее.
-</p>
-
-</details>
-
-<details>
-
-<summary>
-Что входит в техническую поддержку сайта?<span>+</span>
-</summary>
-
-<p>
-Исправление ошибок, обновления CMS и окружения, резервные копии, контроль безопасности, доработка функционала, интеграции, улучшение скорости, реализация SEO-задач и помощь с содержимым. Точный состав зависит от проекта и выбранного формата.
-</p>
-
-</details>
-
-<details>
-
-<summary>
-Как вы работаете с доступами и рабочим сайтом?<span>+</span>
-</summary>
-
-<p>
-Запрашиваем минимально необходимые доступы, перед изменениями делаем копию и по возможности проверяем работу на тестовой среде. Критичные действия и риски согласуем до внедрения. Для закрытых проектов можем работать по NDA.
-</p>
-
-</details>
-
-<details>
-
-<summary>
-Можно ли передать задачи от SEO-агентства или внутренней команды?<span>+</span>
-</summary>
-
-<p>
-Да. Работаем напрямую с SEO-специалистами, дизайнерами и маркетологами: уточняем технические требования, предлагаем безопасный способ реализации и возвращаем результат без потери деталей через менеджеров.
-</p>
-
-</details>
-
-<details>
-
-<summary>
-От чего зависит стоимость поддержки?<span>+</span>
-</summary>
-
-<p>
-От состояния сайта, стека, качества исходного кода, срочности, необходимого времени реакции, количества интеграций и объёма задач. После первичного знакомства предлагаем разовую оценку или удобный регулярный формат.
-</p>
-
-</details>
-
-</div>
-
-</section>
-
-<section class="contact surface" id="contact" aria-labelledby="support-contact-title">
-
-<div class="contact__main">
-
-<p class="section-eyebrow">
-Начнём с сайта
-</p>
-
-<h2 id="support-contact-title">
-Пришлите ссылку и опишите задачу
-</h2>
-
-<p>
-Можно написать, что сломалось, какие доработки нужны или почему ищешь нового разработчика. Изучим вводные и предложим безопасный первый шаг.
-</p>
-
-<div class="contact__direct">
-<a href="tel:+79990000000"><span>Телефон</span><strong>+7 999 000-00-00</strong></a><a href="mailto:mail@argokov.ru"><span>Почта</span><strong>mail@argokov.ru</strong></a>
-</div>
-
-<div class="contact__location">
-<i aria-hidden="true"></i><span>Иркутск · работаем по всей России</span><span>Принимаем обращения 24/7</span>
-</div>
-
-</div>
-
-<form class="contact__form" aria-label="Форма для обсуждения задачи">
-
-<div class="contact-form__row">
-<label class="contact-form__field"><span>Имя</span><input type="text" autoComplete="name" placeholder="Как к вам обращаться" name="name"/></label><label class="contact-form__field"><span>Телефон</span><input type="tel" autoComplete="tel" placeholder="+7 999 000-00-00" required="" name="phone"/></label>
-</div>
-<label class="contact-form__field"><span>Описание задачи</span><textarea name="task" rows="5" placeholder="Ссылка на сайт, что нужно сделать и какой результат хотите получить" required=""></textarea></label><label class="contact-form__file"><span>Прикрепить файл</span><small>PDF, DOCX, XLSX, JPG, PNG или ZIP · до 10 МБ</small><input type="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png,.zip" name="file"/></label><label class="contact-form__consent"><input type="checkbox" required="" name="consent"/><span>Даю <a href="/consent/">согласие на обработку персональных данных</a> и подтверждаю, что ознакомлен с <a href="/privacy/">политикой обработки персональных данных</a>.</span></label>
-<div class="contact-form__submit">
-<button class="button" type="button">Отправить задачу <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></button>
-<p>
-Ответим, уточним детали и предложим следующий шаг.
-</p>
-
-</div>
-
-</form>
-
-</section>
-
-<?php get_footer(); ?>
+while ( have_posts() ) :
+	the_post();
+
+	$hero_proof = argokov_rows(
+		'support_hero_proof',
+		array(
+			array( 'value' => 'Чужой проект — не проблема', 'label' => 'начинаем с диагностики' ),
+			array( 'value' => 'Прямой контакт', 'label' => 'с ведущим разработчиком' ),
+			array( 'value' => 'По всей России', 'label' => 'принимаем обращения 24/7' ),
+		)
+	);
+
+	$signals = argokov_rows(
+		'support_signals',
+		array(
+			array( 'label' => 'Работоспособность', 'value' => 'Проверяем', 'tone' => 'ok' ),
+			array( 'label' => 'Резервные копии', 'value' => 'Контролируем', 'tone' => 'ok' ),
+			array( 'label' => 'Ошибки и логи', 'value' => 'Разбираем причины', 'tone' => 'normal' ),
+			array( 'label' => 'План развития', 'value' => 'Двигаемся по приоритетам', 'tone' => 'amber' ),
+		)
+	);
+
+	$directions = argokov_rows(
+		'support_directions',
+		array(
+			array( 'number' => '01', 'title' => 'Исправление ошибок', 'text' => 'Находим причину сбоя, а не маскируем симптом. Восстанавливаем формы, страницы, обмены и отдельные функции.', 'features' => array( array( 'text' => 'Ошибки PHP и JavaScript' ), array( 'text' => 'Проблемы после обновлений' ), array( 'text' => 'Сбои форм и интеграций' ) ) ),
+			array( 'number' => '02', 'title' => 'Доработка сайта', 'text' => 'Добавляем новые страницы, компоненты и бизнес-логику без обязательного переписывания всего проекта.', 'features' => array( array( 'text' => 'Новый функционал' ), array( 'text' => 'Интерфейсы и адаптив' ), array( 'text' => 'Личные кабинеты и API' ) ) ),
+			array( 'number' => '03', 'title' => 'Техническое обслуживание', 'text' => 'Поддерживаем рабочее состояние сайта и уменьшаем риск неприятных сюрпризов в эксплуатации.', 'features' => array( array( 'text' => 'Обновления и резервные копии' ), array( 'text' => 'Скорость и безопасность' ), array( 'text' => 'Домены, SSL и сервер' ) ) ),
+			array( 'number' => '04', 'title' => 'Развитие и SEO-задачи', 'text' => 'Реализуем рекомендации SEO-команды и развиваем сайт под новые направления, города и услуги.', 'features' => array( array( 'text' => 'Посадочные страницы' ), array( 'text' => 'Schema.org и шаблоны' ), array( 'text' => 'Аналитика и конверсии' ) ) ),
+		)
+	);
+
+	$for_items = argokov_rows(
+		'support_for_items',
+		array(
+			array( 'number' => '01', 'title' => 'Предыдущий подрядчик пропал', 'text' => 'Нет документации, накопились вопросы и некому отвечать за техническую часть.' ),
+			array( 'number' => '02', 'title' => 'Сайт работает нестабильно', 'text' => 'Появляются ошибки, ломаются формы, обмены или отдельные сценарии пользователей.' ),
+			array( 'number' => '03', 'title' => 'Нужны постоянные доработки', 'text' => 'Маркетинг, SEO и продажи регулярно приносят задачи, которым нужна техническая реализация.' ),
+			array( 'number' => '04', 'title' => 'Проект старый и сложный', 'text' => 'CMS устарела, код самописный, много зависимостей — и никто не хочет в этом разбираться.' ),
+		)
+	);
+
+	$formats = argokov_rows(
+		'support_formats',
+		array(
+			array( 'label' => 'Разовая задача', 'variant' => 'default', 'title' => 'Когда нужно починить или добавить конкретную функцию', 'text' => 'Изучаем проблему, оцениваем работу и закрываем задачу без обязательной ежемесячной поддержки.', 'features' => array( array( 'text' => 'Фиксируем ожидаемый результат' ), array( 'text' => 'Согласуем оценку до начала' ), array( 'text' => 'Передаём выполненную работу' ) ) ),
+			array( 'label' => 'Регулярная поддержка', 'variant' => 'accent', 'title' => 'Когда задачи по сайту появляются каждый месяц', 'text' => 'Погружаемся в проект и последовательно закрываем технические, контентные и продуктовые задачи.', 'features' => array( array( 'text' => 'Общий список приоритетов' ), array( 'text' => 'Планирование доступного времени' ), array( 'text' => 'Понятный отчёт по работам' ) ) ),
+			array( 'label' => 'Технический партнёр', 'variant' => 'default', 'title' => 'Когда бизнесу или агентству нужен свой разработчик', 'text' => 'Подключаемся к команде, общаемся с SEO, дизайном и маркетингом и отвечаем за техническую реализацию.', 'features' => array( array( 'text' => 'Прямое общение со специалистами' ), array( 'text' => 'Сохраняем знания о проекте' ), array( 'text' => 'Развиваем без постоянного старта с нуля' ) ) ),
+		)
+	);
+
+	$start_steps = argokov_rows(
+		'support_start_steps',
+		array(
+			array( 'number' => '01', 'title' => 'Получаем доступы и материалы', 'text' => 'Нужны CMS, хостинг или сервер, репозиторий и описание известных проблем. Запрашиваем только то, что действительно необходимо.' ),
+			array( 'number' => '02', 'title' => 'Делаем техническую диагностику', 'text' => 'Проверяем код, логи, резервные копии, обновления, интеграции и критичные риски. Ничего не меняем вслепую.' ),
+			array( 'number' => '03', 'title' => 'Формируем порядок работ', 'text' => 'Отделяем срочное от желательного и объясняем, что можно исправить сразу, а что безопаснее делать поэтапно.' ),
+			array( 'number' => '04', 'title' => 'Берём проект в работу', 'text' => 'Фиксируем изменения, проверяем результат и постепенно собираем понятную техническую историю сайта.' ),
+		)
+	);
+
+	$safety = argokov_rows(
+		'support_safety_items',
+		array(
+			array( 'number' => '01', 'title' => 'Копия до изменений', 'text' => 'Сохраняем состояние проекта перед потенциально рискованной работой.' ),
+			array( 'number' => '02', 'title' => 'Фиксация изменений', 'text' => 'Понимаем, что и зачем было изменено и как вернуть предыдущую версию.' ),
+			array( 'number' => '03', 'title' => 'Проверка сценариев', 'text' => 'Тестируем формы, оплату, интеграции и другие важные функции.' ),
+			array( 'number' => '04', 'title' => 'Работа по NDA', 'text' => 'Можем закрепить конфиденциальность данных и устройства проекта.' ),
+		)
+	);
+
+	$tech = argokov_rows(
+		'support_tech_tags',
+		array(
+			array( 'text' => 'WordPress' ),
+			array( 'text' => '1С-Битрикс' ),
+			array( 'text' => 'WooCommerce' ),
+			array( 'text' => 'OpenCart' ),
+			array( 'text' => 'MODX' ),
+			array( 'text' => 'PHP' ),
+			array( 'text' => 'Laravel' ),
+			array( 'text' => 'JavaScript' ),
+			array( 'text' => 'Самописный код' ),
+		)
+	);
+
+	$matrix = argokov_rows(
+		'support_estimate_matrix',
+		array(
+			array( 'label' => 'Разовая задача', 'value' => 'Оценка по составу работ' ),
+			array( 'label' => 'Регулярные задачи', 'value' => 'Планируемый объём в месяц' ),
+			array( 'label' => 'Сложный проект', 'value' => 'Диагностика и работа по этапам' ),
+			array( 'label' => 'Критичная ситуация', 'value' => 'Приоритет и сроки согласуем отдельно' ),
+		)
+	);
+
+	$cases = argokov_selected_cases( 'support_cases_selected', 2 );
+
+	$faq = argokov_rows(
+		'support_faq',
+		array(
+			array( 'question' => 'Берёте ли вы на поддержку сайты, которые делали не вы?', 'answer' => 'Да. Большая часть задач поддержки начинается именно с чужого проекта. Берём WordPress, 1С-Битрикс, интернет-магазины, самописные CMS и доисторический код, если можем получить необходимые доступы и безопасно разобраться в системе.' ),
+			array( 'question' => 'Можно обратиться только с одной задачей?', 'answer' => 'Да. Не обязательно сразу переходить на абонентское сопровождение. Можно начать с ошибки, интеграции, новой страницы или технической диагностики, а формат дальнейшей работы выбрать по результату.' ),
+			array( 'question' => 'Как быстро вы начинаете работу?', 'answer' => 'Сначала оцениваем критичность и текущую загрузку. Обращения принимаем круглосуточно, но конкретное время реакции и начала работ согласуем отдельно. Для регулярной поддержки приоритеты и порядок реакции фиксируем заранее.' ),
+			array( 'question' => 'Что входит в техническую поддержку сайта?', 'answer' => 'Исправление ошибок, обновления CMS и окружения, резервные копии, контроль безопасности, доработка функционала, интеграции, улучшение скорости, реализация SEO-задач и помощь с содержимым. Точный состав зависит от проекта и выбранного формата.' ),
+			array( 'question' => 'Как вы работаете с доступами и рабочим сайтом?', 'answer' => 'Запрашиваем минимально необходимые доступы, перед изменениями делаем копию и по возможности проверяем работу на тестовой среде. Критичные действия и риски согласуем до внедрения. Для закрытых проектов можем работать по NDA.' ),
+			array( 'question' => 'Можно ли передать задачи от SEO-агентства или внутренней команды?', 'answer' => 'Да. Работаем напрямую с SEO-специалистами, дизайнерами и маркетологами: уточняем технические требования, предлагаем безопасный способ реализации и возвращаем результат без потери деталей через менеджеров.' ),
+			array( 'question' => 'От чего зависит стоимость поддержки?', 'answer' => 'От состояния сайта, стека, качества исходного кода, срочности, необходимого времени реакции, количества интеграций и объёма задач. После первичного знакомства предлагаем разовую оценку или удобный регулярный формат.' ),
+		)
+	);
+	?>
+
+	<section class="support-hero surface" aria-labelledby="support-title">
+		<div class="support-hero__content">
+			<nav class="breadcrumbs" aria-label="Хлебные крошки"><a href="<?php echo esc_url( home_url( '/' ) ); ?>">Главная</a><span>/</span><span><?php the_title(); ?></span></nav>
+			<p class="section-eyebrow"><?php echo esc_html( argokov_field( 'support_hero_eyebrow', 'Любая CMS · самописные сайты · доисторический код' ) ); ?></p>
+			<h1 id="support-title"><?php echo esc_html( argokov_field( 'support_hero_title', 'Техническая поддержка' ) ); ?> <span><?php echo esc_html( argokov_field( 'support_hero_title_accent', 'и развитие сайтов' ) ); ?></span></h1>
+			<p class="support-hero__lead"><?php echo esc_html( argokov_field( 'support_hero_lead', 'Берём на себя техническую сторону готового сайта: исправляем ошибки, внедряем новые функции, поддерживаем интеграции и последовательно развиваем проект.' ) ); ?></p>
+			<div class="support-hero__actions">
+				<a class="button" href="#contact" data-contact-modal="true"><?php echo esc_html( argokov_field( 'support_hero_primary_label', 'Передать сайт на поддержку' ) ); ?> <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
+				<a class="text-link" href="#directions"><?php echo esc_html( argokov_field( 'support_hero_secondary_label', 'Что можем сделать' ) ); ?> <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
+			</div>
+			<div class="support-hero__proof"><?php foreach ( $hero_proof as $item ) : ?><span><strong><?php echo esc_html( $item['value'] ?? '' ); ?></strong> <?php echo esc_html( $item['label'] ?? '' ); ?></span><?php endforeach; ?></div>
+		</div>
+
+		<aside class="support-hero__visual" aria-label="Состояние проекта под контролем">
+			<div class="support-visual__heading"><div><span><?php echo esc_html( argokov_field( 'support_visual_eyebrow', 'Технический контур' ) ); ?></span><strong><?php echo esc_html( argokov_field( 'support_visual_title', 'Сайт под контролем' ) ); ?></strong></div><i aria-hidden="true"></i></div>
+			<div class="support-signals">
+				<?php foreach ( $signals as $signal ) : ?>
+					<?php
+					$tone  = $signal['tone'] ?? 'normal';
+					$class = 'support-signal';
+					if ( 'ok' === $tone ) {
+						$class .= ' support-signal--ok';
+					} elseif ( 'amber' === $tone ) {
+						$class .= ' support-signal--amber';
+					}
+					?>
+					<article><span><?php echo esc_html( $signal['label'] ?? '' ); ?></span><strong><?php echo esc_html( $signal['value'] ?? '' ); ?></strong><i class="<?php echo esc_attr( $class ); ?>"></i></article>
+				<?php endforeach; ?>
+			</div>
+			<div class="support-visual__footer"><span><?php echo esc_html( argokov_field( 'support_visual_footer_label', 'CMS' ) ); ?></span><strong><?php echo esc_html( argokov_field( 'support_visual_footer_value', 'WordPress · Битрикс · custom' ) ); ?></strong></div>
+		</aside>
+	</section>
+
+	<section class="development-section surface" id="directions" aria-labelledby="directions-title">
+		<header class="development-heading">
+			<div><p class="section-eyebrow"><?php echo esc_html( argokov_field( 'support_directions_eyebrow', 'Задачи поддержки' ) ); ?></p><h2 id="directions-title"><?php echo esc_html( argokov_field( 'support_directions_title', 'Не только следим, чтобы сайт не упал' ) ); ?></h2></div>
+			<p><?php echo esc_html( argokov_field( 'support_directions_copy', 'Поддержка — это техническая работа с живым проектом: от срочного исправления ошибки до регулярного развития вместе с бизнесом.' ) ); ?></p>
+		</header>
+		<div class="development-types support-directions">
+			<?php foreach ( $directions as $item ) : ?>
+				<article class="development-type"><span class="development-card-number"><?php echo esc_html( $item['number'] ?? '' ); ?></span><h3><?php echo esc_html( $item['title'] ?? '' ); ?></h3><p><?php echo esc_html( $item['text'] ?? '' ); ?></p><?php if ( ! empty( $item['features'] ) ) : ?><ul><?php foreach ( $item['features'] as $feature ) : ?><li><?php echo esc_html( $feature['text'] ?? '' ); ?></li><?php endforeach; ?></ul><?php endif; ?></article>
+			<?php endforeach; ?>
+		</div>
+	</section>
+
+	<section class="support-for surface" aria-labelledby="support-for-title">
+		<div class="support-for__intro">
+			<p class="section-eyebrow"><?php echo esc_html( argokov_field( 'support_for_eyebrow', 'Когда мы полезны' ) ); ?></p>
+			<h2 id="support-for-title"><?php echo esc_html( argokov_field( 'support_for_title', 'Подключаемся там, где проект нельзя просто остановить' ) ); ?></h2>
+			<p><?php echo esc_html( argokov_field( 'support_for_text', 'Не требуем переписывать сайт с нуля ради удобства разработчика. Сначала выясняем, что уже работает и что мешает бизнесу двигаться дальше.' ) ); ?></p>
+		</div>
+		<div class="support-for__list"><?php foreach ( $for_items as $item ) : ?><article><span><?php echo esc_html( $item['number'] ?? '' ); ?></span><div><h3><?php echo esc_html( $item['title'] ?? '' ); ?></h3><p><?php echo esc_html( $item['text'] ?? '' ); ?></p></div></article><?php endforeach; ?></div>
+	</section>
+
+	<section class="development-section surface" id="formats" aria-labelledby="formats-title">
+		<header class="development-heading">
+			<div><p class="section-eyebrow"><?php echo esc_html( argokov_field( 'support_formats_eyebrow', 'Форматы работы' ) ); ?></p><h2 id="formats-title"><?php echo esc_html( argokov_field( 'support_formats_title', 'Поддержка под реальный объём задач' ) ); ?></h2></div>
+			<p><?php echo esc_html( argokov_field( 'support_formats_copy', 'Не заставляем покупать большой тариф. Формат можно выбрать после первой задачи и менять по мере развития проекта.' ) ); ?></p>
+		</header>
+		<div class="support-formats">
+			<?php foreach ( $formats as $item ) : ?>
+				<?php $class = 'support-format' . ( ( $item['variant'] ?? 'default' ) === 'accent' ? ' support-format--accent' : '' ); ?>
+				<article class="<?php echo esc_attr( $class ); ?>"><span><?php echo esc_html( $item['label'] ?? '' ); ?></span><h3><?php echo esc_html( $item['title'] ?? '' ); ?></h3><p><?php echo esc_html( $item['text'] ?? '' ); ?></p><?php if ( ! empty( $item['features'] ) ) : ?><ul><?php foreach ( $item['features'] as $feature ) : ?><li><?php echo esc_html( $feature['text'] ?? '' ); ?></li><?php endforeach; ?></ul><?php endif; ?></article>
+			<?php endforeach; ?>
+		</div>
+	</section>
+
+	<section class="support-start surface" id="start" aria-labelledby="support-start-title">
+		<header class="development-heading">
+			<div><p class="section-eyebrow"><?php echo esc_html( argokov_field( 'support_start_eyebrow', 'Как берём сайт на поддержку' ) ); ?></p><h2 id="support-start-title"><?php echo esc_html( argokov_field( 'support_start_title', 'Сначала разбираемся, затем меняем' ) ); ?></h2></div>
+			<p><?php echo esc_html( argokov_field( 'support_start_copy', 'Особенно важно для старых сайтов: одно необдуманное обновление может задеть продажи, данные или интеграции.' ) ); ?></p>
+		</header>
+		<ol class="support-start__steps"><?php foreach ( $start_steps as $item ) : ?><li><span><?php echo esc_html( $item['number'] ?? '' ); ?></span><div><h3><?php echo esc_html( $item['title'] ?? '' ); ?></h3><p><?php echo esc_html( $item['text'] ?? '' ); ?></p></div></li><?php endforeach; ?></ol>
+	</section>
+
+	<section class="support-safety surface" aria-labelledby="safety-title">
+		<div class="support-safety__content">
+			<p class="section-eyebrow"><?php echo esc_html( argokov_field( 'support_safety_eyebrow', 'Безопасная работа' ) ); ?></p>
+			<h2 id="safety-title"><?php echo esc_html( argokov_field( 'support_safety_title', 'Не правим рабочий сайт вслепую' ) ); ?></h2>
+			<p><?php echo esc_html( argokov_field( 'support_safety_text', 'Перед изменениями оцениваем риск, сохраняем возможность отката и проверяем критичные сценарии. Если проект позволяет — используем тестовую среду и систему контроля версий.' ) ); ?></p>
+			<blockquote><?php echo esc_html( argokov_field( 'support_safety_quote', 'Доступы, резервная копия и понятный план изменений — обязательная основа, а не дополнительная услуга.' ) ); ?></blockquote>
+		</div>
+		<div class="support-safety__grid"><?php foreach ( $safety as $item ) : ?><article><span><?php echo esc_html( $item['number'] ?? '' ); ?></span><strong><?php echo esc_html( $item['title'] ?? '' ); ?></strong><p><?php echo esc_html( $item['text'] ?? '' ); ?></p></article><?php endforeach; ?></div>
+	</section>
+
+	<section class="development-tech surface" aria-labelledby="support-tech-title">
+		<div><p class="section-eyebrow"><?php echo esc_html( argokov_field( 'support_tech_eyebrow', 'CMS и технологии' ) ); ?></p><h2 id="support-tech-title"><?php echo esc_html( argokov_field( 'support_tech_title', 'WordPress — основа, но поддерживаем не только его' ) ); ?></h2><p><?php echo esc_html( argokov_field( 'support_tech_text', 'Не отказываем только потому, что сайт собран на другой CMS или давно не обновлялся. Сначала смотрим код и инфраструктуру, затем честно говорим, можем ли отвечать за результат.' ) ); ?></p></div>
+		<div class="development-tech__list"><?php foreach ( $tech as $tag ) : ?><span><?php echo esc_html( $tag['text'] ?? '' ); ?></span><?php endforeach; ?></div>
+	</section>
+
+	<section class="support-estimate surface" aria-labelledby="support-estimate-title">
+		<div class="support-estimate__content">
+			<p class="section-eyebrow"><?php echo esc_html( argokov_field( 'support_estimate_eyebrow', 'Стоимость поддержки' ) ); ?></p>
+			<h2 id="support-estimate-title"><?php echo esc_html( argokov_field( 'support_estimate_title', 'Оцениваем не CMS, а состояние и задачи проекта' ) ); ?></h2>
+			<p><?php echo esc_html( argokov_field( 'support_estimate_text', 'Два сайта на WordPress могут отличаться по сложности в десятки раз. Смотрим код, интеграции, риски и нужную скорость реакции — после этого предлагаем разовую оценку или регулярный формат.' ) ); ?></p>
+			<a class="button" href="#contact" data-contact-modal="true"><?php echo esc_html( argokov_field( 'support_estimate_button_label', 'Оценить поддержку' ) ); ?> <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
+		</div>
+		<div class="support-estimate__matrix"><?php foreach ( $matrix as $item ) : ?><div><span><?php echo esc_html( $item['label'] ?? '' ); ?></span><strong><?php echo esc_html( $item['value'] ?? '' ); ?></strong></div><?php endforeach; ?></div>
+	</section>
+
+	<section class="development-section surface" id="support-cases" aria-labelledby="support-cases-title">
+		<header class="development-heading">
+			<div><p class="section-eyebrow"><?php echo esc_html( argokov_field( 'support_cases_eyebrow', 'Проекты на поддержке' ) ); ?></p><h2 id="support-cases-title"><?php echo esc_html( argokov_field( 'support_cases_title', 'Знаем сайт целиком и развиваем годами' ) ); ?></h2></div>
+			<a href="<?php echo esc_url( get_post_type_archive_link( 'case' ) ?: home_url( '/cases/' ) ); ?>" class="text-link">Все кейсы <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a>
+		</header>
+		<div class="development-cases">
+			<?php foreach ( $cases as $case ) : ?>
+				<article><span><?php echo esc_html( $case['type'] ?? '' ); ?></span><h3><?php echo esc_html( $case['title'] ?? '' ); ?></h3><p><?php echo esc_html( $case['lead'] ?? '' ); ?></p><?php if ( ! empty( $case['technologies'] ) ) : ?><div><?php foreach ( $case['technologies'] as $tech_item ) : ?><span><?php echo esc_html( $tech_item['text'] ?? '' ); ?></span><?php endforeach; ?></div><?php endif; ?><?php if ( ! empty( $case['url'] ) ) : ?><a href="<?php echo esc_url( $case['url'] ); ?>" target="_blank" rel="noopener noreferrer">Открыть сайт <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></a><?php endif; ?></article>
+			<?php endforeach; ?>
+		</div>
+		<p class="development-cases__note"><?php echo esc_html( argokov_field( 'support_cases_note', 'Не все проекты можем показывать из-за NDA. По запросу расскажем о релевантном опыте без раскрытия закрытых данных.' ) ); ?></p>
+	</section>
+
+	<section class="development-section surface" id="support-faq" aria-labelledby="support-faq-title">
+		<header class="development-heading"><div><p class="section-eyebrow"><?php echo esc_html( argokov_field( 'support_faq_eyebrow', 'Частые вопросы' ) ); ?></p><h2 id="support-faq-title"><?php echo esc_html( argokov_field( 'support_faq_title', 'До передачи сайта на поддержку' ) ); ?></h2></div></header>
+		<div class="development-faq"><?php foreach ( $faq as $item ) : ?><details><summary><?php echo esc_html( $item['question'] ?? '' ); ?><span>+</span></summary><p><?php echo esc_html( $item['answer'] ?? '' ); ?></p></details><?php endforeach; ?></div>
+	</section>
+
+	<?php
+	get_template_part(
+		'template-parts/common/contact-section',
+		null,
+		array(
+			'eyebrow'  => argokov_field( 'support_contact_eyebrow', 'Начнём с сайта' ),
+			'title'    => argokov_field( 'support_contact_title', 'Пришлите ссылку и опишите задачу' ),
+			'text'     => argokov_field( 'support_contact_text', 'Можно написать, что сломалось, какие доработки нужны или почему ищешь нового разработчика. Изучим вводные и предложим безопасный первый шаг.' ),
+			'title_id' => 'support-contact-title',
+		)
+	);
+endwhile;
+
+get_footer();
