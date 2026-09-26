@@ -9,26 +9,23 @@ $phone             = argokov_option( 'site_phone', '+7 999 000-00-00' );
 $email             = argokov_option( 'site_email', 'mail@argokov.ru' );
 
 $primary_menu = array(
-	array( '/services/', 'Услуги' ),
-	array( '/development/', 'Разработка' ),
-	array( '/support/', 'Поддержка' ),
-	array( '/cases/', 'Кейсы' ),
-	array( '/materials/', 'Статьи' ),
-	array( '/about/', 'Студия' ),
-	array( '/contacts/', 'Контакты' ),
+	array(
+		'url'      => '/services/',
+		'label'    => 'Услуги',
+		'children' => array(
+			array( 'url' => '/services/development/', 'label' => 'Разработка' ),
+			array( 'url' => '/services/support/', 'label' => 'Поддержка' ),
+		),
+	),
+	array( 'url' => '/cases/', 'label' => 'Кейсы' ),
+	array( 'url' => '/process/', 'label' => 'Как работаем' ),
+	array( 'url' => '/materials/', 'label' => 'Статьи' ),
+	array( 'url' => '/faq/', 'label' => 'Вопросы' ),
+	array( 'url' => '/about/', 'label' => 'Студия' ),
+	array( 'url' => '/contacts/', 'label' => 'Контакты' ),
 );
 
-$mobile_menu = array(
-	array( '/services/', 'Услуги' ),
-	array( '/development/', 'Разработка' ),
-	array( '/support/', 'Поддержка' ),
-	array( '/materials/', 'Статьи' ),
-	array( '/cases/', 'Кейсы' ),
-	array( '/about/', 'О студии' ),
-	array( '/process/', 'Как работаем' ),
-	array( '/faq/', 'Частые вопросы' ),
-	array( '/contacts/', 'Контакты' ),
-);
+$mobile_menu = $primary_menu;
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -69,7 +66,7 @@ $mobile_menu = array(
 			</a>
 
 			<nav class="site-nav" aria-label="Основная навигация">
-				<?php argokov_render_flat_menu( 'primary', $primary_menu ); ?>
+				<?php argokov_render_nested_menu( 'primary', $primary_menu, 'desktop' ); ?>
 			</nav>
 
 			<div class="site-header__right">
@@ -92,7 +89,7 @@ $mobile_menu = array(
 						<summary aria-label="Открыть меню"><span></span><span></span><span></span></summary>
 						<div class="mobile-nav__panel surface">
 							<nav aria-label="Мобильная навигация">
-								<?php argokov_render_flat_menu( 'mobile', $mobile_menu ); ?>
+								<?php argokov_render_nested_menu( 'mobile', $mobile_menu, 'mobile' ); ?>
 							</nav>
 							<div class="mobile-nav__meta">
 								<span><?php echo esc_html( $location_full ); ?></span><span class="availability"><span class="availability__dot" aria-hidden="true"></span><?php echo esc_html( $availability_full ); ?></span><a href="<?php echo esc_url( 'tel:' . argokov_phone_href( $phone ) ); ?>"><?php echo esc_html( $phone ); ?></a><a href="<?php echo esc_url( 'mailto:' . sanitize_email( $email ) ); ?>"><?php echo esc_html( $email ); ?></a>
