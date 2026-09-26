@@ -100,6 +100,10 @@ function argokov_base_content_upsert_item( $item, $post_type ) {
 		'post_name'   => (string) $item['slug'],
 	);
 
+	if ( 'material' === $post_type ) {
+		$postarr['comment_status'] = 'open';
+	}
+
 	if ( isset( $item['excerpt'] ) ) {
 		$postarr['post_excerpt'] = (string) $item['excerpt'];
 	}
