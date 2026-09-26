@@ -94,7 +94,10 @@ function argokov_register_post_types() {
 			'show_in_rest' => true,
 			'menu_icon'    => 'dashicons-hammer',
 			'has_archive'  => 'services',
-			'rewrite'      => false,
+			'rewrite'      => array(
+				'slug'       => 'service-item',
+				'with_front' => false,
+			),
 			'supports'     => array( 'title', 'excerpt', 'thumbnail', 'page-attributes' ),
 			'taxonomies'   => array( 'service_direction' ),
 		)
@@ -196,3 +199,22 @@ function argokov_service_admin_direction_filter( $post_type ) {
 	);
 }
 add_action( 'restrict_manage_posts', 'argokov_service_admin_direction_filter' );
+
+
+/**
+ * The internal rewrite slug only exists so WordPress can register the
+ * /services/ archive. Public service links always use the direction URL.
+ */
+function argokov_redirect_internal_service_permalink() {
+	if ( ! is_singular( 'service' ) ) {
+		return;
+	}
+
+	$path = wp_parse_url( $_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH );
+
+	if ( is_string( $path ) && 0 === strpos( $path, '/service-item/' ) ) {
+		wp_safe_redirect( get_permalink(), 301 );
+		exit;
+	}
+}
+add_action( 'template_redirect', 'argokov_redirect_internal_service_permalink', 2 );
