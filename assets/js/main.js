@@ -126,56 +126,38 @@
 
   window.setTimeout(showCookieNotice, 700);
 
-  const contactFormMarkup = `
-    <form class="contact__form contact-modal__form" aria-label="Форма для обсуждения задачи">
-      <div class="contact-form__row">
-        <label class="contact-form__field"><span>Имя</span><input type="text" name="name" autocomplete="name" placeholder="Как к вам обращаться"></label>
-        <label class="contact-form__field"><span>Телефон</span><input type="tel" name="phone" autocomplete="tel" placeholder="+7 999 000-00-00" required></label>
-      </div>
-      <label class="contact-form__field"><span>Описание задачи</span><textarea name="task" rows="5" placeholder="Ссылка на сайт, что нужно сделать и какой результат хотите получить" required></textarea></label>
-      <label class="contact-form__file"><span>Прикрепить файл</span><small>PDF, DOCX, XLSX, JPG, PNG или ZIP · до 10 МБ</small><input type="file" name="file" accept=".pdf,.doc,.docx,.xls,.xlsx,.jpg,.jpeg,.png,.zip"></label>
-      <label class="contact-form__consent"><input type="checkbox" name="consent" required><span>Даю <a href="/consent/">согласие на обработку персональных данных</a> и подтверждаю, что ознакомлен с <a href="/privacy/">политикой обработки персональных данных</a>.</span></label>
-      <div class="contact-form__submit"><button class="button" type="button">Отправить задачу <svg aria-hidden="true" class="arrow" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 7l5 5-5 5"></path></svg></button><p>Ответим, уточним детали и предложим следующий шаг.</p></div>
-    </form>`;
+  const contactModal = document.querySelector("#contact-modal");
+  const contactModalClose = contactModal?.querySelector(".contact-modal__close");
 
   const closeContactModal = () => {
-    const modal = document.querySelector(".contact-modal");
-
-    if (!modal) {
+    if (!contactModal || contactModal.hidden) {
       return;
     }
 
-    modal.remove();
+    contactModal.hidden = true;
     document.body.style.overflow = "";
     lastFocusedElement?.focus();
   };
 
   const openContactModal = (trigger) => {
+    if (!contactModal) {
+      return;
+    }
+
     lastFocusedElement = trigger;
     trigger.closest("details")?.removeAttribute("open");
-
-    const modal = document.createElement("div");
-    modal.className = "contact-modal";
-    modal.setAttribute("role", "presentation");
-    modal.innerHTML = `
-      <section class="contact-modal__panel" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
-        <header class="contact-modal__header">
-          <div><p class="section-eyebrow">Обсудить задачу</p><h2 id="contact-modal-title">Расскажите о проекте</h2><p>Можно отправить ссылку, описание или готовое техническое задание. Изучим и предложим следующий шаг.</p></div>
-          <button class="contact-modal__close" type="button" aria-label="Закрыть форму"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m7 7 10 10M17 7 7 17"></path></svg></button>
-        </header>
-        ${contactFormMarkup}
-      </section>`;
-
-    document.body.append(modal);
+    contactModal.hidden = false;
     document.body.style.overflow = "hidden";
-    modal.querySelector(".contact-modal__close")?.focus();
-    modal.querySelector(".contact-modal__close")?.addEventListener("click", closeContactModal);
-    modal.addEventListener("mousedown", (event) => {
-      if (event.target === modal) {
-        closeContactModal();
-      }
-    });
+    contactModalClose?.focus();
   };
+
+  contactModalClose?.addEventListener("click", closeContactModal);
+
+  contactModal?.addEventListener("mousedown", (event) => {
+    if (event.target === contactModal) {
+      closeContactModal();
+    }
+  });
 
   document.addEventListener("click", (event) => {
     const trigger = event.target.closest("[data-contact-modal]");
