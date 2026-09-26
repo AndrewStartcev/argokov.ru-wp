@@ -20,14 +20,14 @@ function argokov_register_post_types() {
 				'edit_item'     => 'Редактировать материал',
 			),
 			'public'       => true,
-			'show_in_rest' => true,
+			'show_in_rest' => false,
 			'menu_icon'    => 'dashicons-media-document',
 			'has_archive'  => 'materials',
 			'rewrite'      => array(
 				'slug'       => 'materials',
 				'with_front' => false,
 			),
-			'supports'     => array( 'title', 'editor', 'excerpt', 'thumbnail', 'author', 'comments' ),
+			'supports'     => array( 'title', 'excerpt', 'thumbnail', 'comments' ),
 		)
 	);
 
@@ -48,7 +48,7 @@ function argokov_register_post_types() {
 				'slug'       => 'cases',
 				'with_front' => false,
 			),
-			'supports'     => array( 'title', 'editor', 'excerpt', 'thumbnail', 'page-attributes' ),
+			'supports'     => array( 'title', 'thumbnail', 'page-attributes' ),
 		)
 	);
 }
@@ -60,3 +60,22 @@ function argokov_flush_rewrite_rules() {
 	flush_rewrite_rules();
 }
 add_action( 'after_switch_theme', 'argokov_flush_rewrite_rules' );
+
+
+function argokov_order_content_archives( $query ) {
+	if ( is_admin() || ! $query->is_main_query() ) {
+		return;
+	}
+
+	if ( $query->is_post_type_archive( 'material' ) ) {
+		$query->set( 'posts_per_page', 12 );
+		$query->set( 'orderby', 'date' );
+		$query->set( 'order', 'DESC' );
+	}
+
+	if ( $query->is_post_type_archive( 'case' ) ) {
+		$query->set( 'posts_per_page', 12 );
+		$query->set( 'orderby', array( 'menu_order' => 'ASC', 'date' => 'DESC' ) );
+	}
+}
+add_action( 'pre_get_posts', 'argokov_order_content_archives' );
