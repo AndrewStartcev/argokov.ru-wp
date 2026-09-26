@@ -65,7 +65,7 @@ $mobile_menu = array(
 					<path class="brand__mark-shape" d="m45 44-12.9-15.6-8.1 7.9V46l6.2-6.1 3.4-3.3 5.7 7.4H45Z"></path>
 					<circle class="brand__mark-core" cx="24" cy="25" r="5.2"></circle>
 				</svg>
-				<span class="brand__copy"><span class="brand__name">Аргоков<span>.</span></span><span class="brand__description">Разработка и поддержка сайтов</span></span>
+				<span class="brand__copy"><span class="brand__name"><?php echo esc_html( get_bloginfo( 'name' ) ?: 'Аргоков' ); ?><span>.</span></span><span class="brand__description"><?php echo esc_html( get_bloginfo( 'description' ) ?: 'Разработка и поддержка сайтов' ); ?></span></span>
 			</a>
 
 			<nav class="site-nav" aria-label="Основная навигация">
