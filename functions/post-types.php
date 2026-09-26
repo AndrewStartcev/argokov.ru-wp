@@ -53,3 +53,10 @@ function argokov_register_post_types() {
 	);
 }
 add_action( 'init', 'argokov_register_post_types' );
+
+
+function argokov_flush_rewrite_rules() {
+	argokov_register_post_types();
+	flush_rewrite_rules();
+}
+add_action( 'after_switch_theme', 'argokov_flush_rewrite_rules' );
