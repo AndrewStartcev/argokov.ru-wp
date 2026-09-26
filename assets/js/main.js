@@ -76,9 +76,25 @@
     scrollTopButton?.classList.toggle("scroll-top--cookie-visible", visible);
   };
 
+  const emitCookieChoice = (choice) => {
+    if (choice !== "all" && choice !== "necessary") {
+      return;
+    }
+
+    window.argokovCookieChoice = choice;
+    window.dispatchEvent(
+      new CustomEvent("argokov:cookie-choice", {
+        detail: { choice },
+      }),
+    );
+  };
+
   const showCookieNotice = () => {
     try {
-      if (window.localStorage.getItem(COOKIE_KEY)) {
+      const savedChoice = window.localStorage.getItem(COOKIE_KEY);
+
+      if (savedChoice) {
+        emitCookieChoice(savedChoice);
         return;
       }
     } catch {
@@ -99,7 +115,7 @@
       </div>
       <div class="cookie-notice__content">
         <strong>Файлы cookie</strong>
-        <p>Используем cookie для корректной работы сайта и улучшения сервиса. Можно разрешить все или оставить только необходимые.</p>
+        <p>Используем cookie для корректной работы сайта и улучшения сервиса. Можно разрешить все или оставить только необходимые. <a href="/cookies/">Подробнее</a>.</p>
         <div class="cookie-notice__actions">
           <button type="button" data-cookie-choice="all">Принять все</button>
           <button type="button" data-cookie-choice="necessary">Только необходимые</button>
@@ -117,6 +133,7 @@
           // Уведомление можно закрыть без localStorage.
         }
 
+        emitCookieChoice(button.dataset.cookieChoice);
         notice.classList.add("cookie-notice--closing");
         setCookieControlsOffset(false);
         window.setTimeout(() => notice.remove(), 280);
