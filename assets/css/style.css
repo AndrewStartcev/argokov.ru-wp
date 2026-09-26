@@ -8043,3 +8043,107 @@ html[data-theme="light"] .catalog-filter button.is-active { background: #f2eafa;
     width: 100%;
   }
 }
+
+
+/* Header nested navigation */
+.site-nav__item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.site-nav__item > a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.site-nav__chevron {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.4;
+  transition: transform 180ms ease;
+}
+
+.site-nav__item--parent:hover .site-nav__chevron,
+.site-nav__item--parent:focus-within .site-nav__chevron {
+  transform: rotate(180deg);
+}
+
+.site-nav__submenu {
+  position: absolute;
+  z-index: 40;
+  top: calc(100% + 14px);
+  left: 50%;
+  display: flex;
+  min-width: 230px;
+  visibility: hidden;
+  flex-direction: column;
+  gap: 3px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-medium);
+  background: rgba(18, 19, 24, 0.98);
+  padding: 8px;
+  opacity: 0;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.32);
+  transform: translate(-50%, -5px);
+  transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease;
+  backdrop-filter: blur(18px);
+}
+
+.site-nav__item--parent:hover .site-nav__submenu,
+.site-nav__item--parent:focus-within .site-nav__submenu {
+  visibility: visible;
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.site-nav__submenu::before {
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+  left: 0;
+  height: 15px;
+  content: "";
+}
+
+.site-nav__submenu a {
+  display: flex;
+  width: 100%;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+}
+
+.site-nav__submenu a:hover,
+.site-nav__submenu a:focus-visible {
+  background: rgba(147, 116, 223, 0.08);
+  color: var(--heading);
+}
+
+.mobile-nav__item--parent {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mobile-nav__item--parent > a {
+  font-weight: 560;
+}
+
+.mobile-nav__submenu {
+  display: flex;
+  margin-left: 14px;
+  padding-left: 14px;
+  flex-direction: column;
+  gap: 6px;
+  border-left: 1px solid var(--border-soft);
+}
+
+.mobile-nav__submenu a {
+  color: var(--muted);
+  font-size: 13px;
+}
