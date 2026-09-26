@@ -423,3 +423,14 @@ function argokov_is_services_menu_url( $url ) {
 
 	return '/services/' === $path;
 }
+
+
+function argokov_menu_url_is_current( $url ) {
+	$target_path  = wp_parse_url( (string) $url, PHP_URL_PATH );
+	$current_path = wp_parse_url( $_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH );
+
+	$target_path  = '/' . trim( (string) $target_path, '/' ) . '/';
+	$current_path = '/' . trim( (string) $current_path, '/' ) . '/';
+
+	return $target_path === $current_path;
+}
