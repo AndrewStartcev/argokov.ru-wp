@@ -173,3 +173,26 @@ function argokov_order_content_archives( $query ) {
 	}
 }
 add_action( 'pre_get_posts', 'argokov_order_content_archives' );
+
+
+function argokov_service_admin_direction_filter( $post_type ) {
+	if ( 'service' !== $post_type ) {
+		return;
+	}
+
+	$selected = isset( $_GET['service_direction'] ) ? sanitize_text_field( wp_unslash( $_GET['service_direction'] ) ) : '';
+
+	wp_dropdown_categories(
+		array(
+			'show_option_all' => 'Все направления',
+			'taxonomy'        => 'service_direction',
+			'name'            => 'service_direction',
+			'orderby'         => 'name',
+			'selected'        => $selected,
+			'hierarchical'    => true,
+			'hide_empty'      => false,
+			'value_field'     => 'slug',
+		)
+	);
+}
+add_action( 'restrict_manage_posts', 'argokov_service_admin_direction_filter' );
