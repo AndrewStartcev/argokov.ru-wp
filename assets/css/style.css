@@ -406,7 +406,7 @@ a {
 .mobile-nav__panel {
   position: absolute;
   z-index: 30;
-  top: calc(100% + 6px);
+  top: calc(100% + 10px);
   right: 0;
   width: min(360px, calc(100vw - 32px));
   padding: 22px;
@@ -8187,7 +8187,7 @@ html[data-theme="light"] .catalog-filter button.is-active { background: #f2eafa;
 .site-nav__mega {
   position: absolute;
   z-index: 80;
-  top: calc(100% + 10px);
+  top: calc(100% + 6px);
   right: 10px;
   left: 10px;
   display: grid;
@@ -8435,12 +8435,3 @@ html[data-theme="light"] .site-nav__mega-cta {
   }
 }
 
-
-.site-nav__mega-item::after {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-  height: 14px;
-  content: "";
-}
