@@ -1,101 +1,17 @@
 <?php
 /**
- * Cookies page
+ * Legal page.
  *
  * @package Argokov
  */
 
-if ( ! defined( 'ABSPATH' ) ) { exit; }
+defined( 'ABSPATH' ) || exit;
 
 get_header();
-?>
 
-<article class="legal-page surface">
+while ( have_posts() ) :
+	the_post();
+	get_template_part( 'template-parts/common/legal-page' );
+endwhile;
 
-<nav class="breadcrumbs" aria-label="Хлебные крошки">
-<a href="/">Главная</a><span>/</span><span>Использование файлов cookie</span>
-</nav>
-
-<header>
-
-<p class="section-eyebrow">
-Юридическая информация
-</p>
-
-<h1>
-Использование файлов cookie
-</h1>
-
-<p>
-Редакция от <time dateTime="2026-08-23">23 августа 2026 года</time>
-</p>
-
-</header>
-
-<div class="legal-page__content">
-
-<section>
-
-<h2>
-1. Что такое cookie
-</h2>
-
-<p>
-Cookie — небольшие файлы, которые сайт сохраняет в браузере. Они помогают запомнить выбранную тему, настройки интерфейса и получить обезличенную статистику использования сайта.
-</p>
-
-</section>
-
-<section>
-
-<h2>
-2. Какие cookie используются
-</h2>
-
-<ul>
-
-<li>
-необходимые — для основных функций и безопасности;
-</li>
-
-<li>
-функциональные — для сохранения выбранной темы и настроек;
-</li>
-
-<li>
-аналитические — для оценки посещаемости и улучшения страниц после подключения системы аналитики.
-</li>
-
-</ul>
-
-</section>
-
-<section>
-
-<h2>
-3. Управление cookie
-</h2>
-
-<p>
-Пользователь может принять необязательные cookie через уведомление сайта или ограничить их в настройках браузера. Отключение необходимых cookie может повлиять на отдельные функции.
-</p>
-
-</section>
-
-<section>
-
-<h2>
-4. Связь с персональными данными
-</h2>
-
-<p>
-Если сведения cookie позволяют прямо или косвенно определить пользователя, они обрабатываются в соответствии с <a href="/privacy/">Политикой обработки персональных данных</a>.
-</p>
-
-</section>
-
-</div>
-
-</article>
-
-<?php get_footer(); ?>
+get_footer();
