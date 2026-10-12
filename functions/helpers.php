@@ -80,13 +80,26 @@ function argokov_asset( $path ) {
 	return get_theme_file_uri( ltrim( (string) $path, '/' ) );
 }
 
-function argokov_image_url( $image, $fallback = '' ) {
+function argokov_image_url( $image, $fallback = '', $size = 'full' ) {
 	if ( is_array( $image ) && ! empty( $image['url'] ) ) {
+		if ( 'full' !== $size ) {
+			$attachment_id = (int) ( $image['ID'] ?? $image['id'] ?? 0 );
+			$url = $attachment_id ? wp_get_attachment_image_url( $attachment_id, $size ) : false;
+
+			if ( $url ) {
+				return $url;
+			}
+
+			if ( ! empty( $image['sizes'][ $size ] ) ) {
+				return $image['sizes'][ $size ];
+			}
+		}
+
 		return $image['url'];
 	}
 
 	if ( is_numeric( $image ) ) {
-		$url = wp_get_attachment_image_url( (int) $image, 'full' );
+		$url = wp_get_attachment_image_url( (int) $image, $size );
 		if ( $url ) {
 			return $url;
 		}

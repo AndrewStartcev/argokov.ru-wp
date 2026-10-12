@@ -24,7 +24,7 @@ $founder_name  = argokov_option( 'site_founder_name', 'Андрей Старце
 $founder_role  = argokov_option( 'site_founder_role', 'Основатель и ведущий разработчик' );
 $founder_note  = argokov_option( 'site_founder_note', 'Лично отвечаю за архитектуру и качество проектов' );
 $founder_photo = argokov_option( 'site_founder_photo', array() );
-$founder_url   = argokov_image_url( $founder_photo, 'assets/images/andrey-startsev.png' );
+$founder_url   = argokov_image_url( $founder_photo, 'assets/images/andrey-startsev.png', 'thumbnail' );
 ?>
 <section class="hero" aria-labelledby="hero-title">
 	<article class="hero__content surface">
