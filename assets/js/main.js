@@ -67,6 +67,22 @@
   window.addEventListener("scroll", updateScrollState, { passive: true });
   scrollTopButton?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
 
+  document.querySelectorAll(".mobile-nav").forEach((menu) => {
+    const toggle = menu.querySelector(":scope > summary");
+
+    menu.addEventListener("toggle", () => {
+      toggle?.setAttribute("aria-label", menu.open ? "Закрыть меню" : "Открыть меню");
+    });
+
+    menu.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && menu.open) {
+        event.preventDefault();
+        menu.removeAttribute("open");
+        toggle?.focus();
+      }
+    });
+  });
+
   document.querySelectorAll(".mobile-nav a").forEach((link) => {
     link.addEventListener("click", () => link.closest("details")?.removeAttribute("open"));
   });
